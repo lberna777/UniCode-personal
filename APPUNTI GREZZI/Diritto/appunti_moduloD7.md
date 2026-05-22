@@ -1,4 +1,4 @@
-
+	
 Obbiettivo: 
 Spiegare le due grandi categorie della **proprietà industriale**, ovvero **marchi e brevetti**, i requisiti per ottenere la **tutela**, i diritti del titolare e le relative limitazioni.
 
