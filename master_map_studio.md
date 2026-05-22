@@ -1,5 +1,5 @@
 # Master Map — Studio Attivo Universitario
-**Aggiornato**: 2026-05-15 | **Sessione**: 23
+**Aggiornato**: 2026-05-20 | **Sessione**: 24
 
 > **Istruzione per l'AI**: Leggere questo file all'inizio di ogni sessione per riprendere il filo. Non assumere mai che i moduli "verificati" negli appunti GitHub siano stati interiorizzati, a meno che non compaiano come ✅ nel log di sessione qui sotto.
 
@@ -405,14 +405,14 @@ I titoli di Virtuale e i nomi file effettivi divergono. Tabella di riferimento p
 **Corso**: Diritto dell'Informatica T  
 **PDF**: `06_DirInfo_2026_SchemaContratt_DEF.pdf`  
 **Concetti chiave**: lettura guidata di un contratto reale, clausole fondamentali, garanzie, penali, proprietà intellettuale nel contratto, foro competente  
-**Stato**: 🔄 Appunti elaborati (`claudeAppunti/APPUNTI DIRITTO/appunti_moduloD6_contratto_sviluppo_software.md`) — domande di autoverifica da completare in autonomia
+**Stato**: ✅ Completato (Sessione 24 — 2026-05-20) — `claudeAppunti/APPUNTI DIRITTO/appunti_moduloD6_contratto_sviluppo_software.md`
 
 #### Modulo D7 — La Proprietà Industriale
 **Corso**: Diritto dell'Informatica T  
 **PDF**: `07_DirInfo_2026_ProprietàIndustriale.pdf`  
 **Normativa di riferimento**: `decreto-legislativo-10-02-2005-n-30.pdf` (Codice della Proprietà Industriale)  
 **Concetti chiave**: brevetti, marchi, segreti industriali, tutela dell'invenzione software, differenza brevetto vs diritto d'autore  
-**Stato**: ⬜ Da fare
+**Stato**: ✅ Completato (Sessione 25 — 2026-05-21) — `claudeAppunti/APPUNTI DIRITTO/appunti_moduloD7_proprieta_industriale.md`
 
 #### Modulo D8 — Privacy e Protezione dei Dati Personali
 **Corso**: Diritto dell'Informatica T  
@@ -442,6 +442,43 @@ I titoli di Virtuale e i nomi file effettivi divergono. Tabella di riferimento p
 ---
 
 ## Log di Sessione
+
+### Sessione 25 — 2026-05-21 (in corso)
+**Focus**: Diritto D7 — Appunti definitivi Proprietà Industriale
+
+**Coperto in sessione**:
+- Appunti modulo D7 elaborati → `claudeAppunti/APPUNTI DIRITTO/appunti_moduloD7_proprieta_industriale.md`
+  - Struttura a domande come titoli (su richiesta di Lorenzo) — ogni sezione risponde a una domanda reale
+  - 20+ domande aperte risolte: indicazioni geografiche/DOP, esaurimento diritti e sue eccezioni, rappresentabilità nel registro, schema comparativo 6 casi di novità marchio, legame caso f) con e), eccezione preutente, esempio marchio che acquista capacità distintiva per uso, volgarizzazione (Domopak vs Cellofan), "in quanto tale" software approfondito con esempi, stato della tecnica e common knowledge, esperto del ramo e attività inventiva, finzione di invenzione durante il rapporto, effetti brevetto di procedimento e casi di presunzione, schema tempistiche mantenimento brevetto, tabella 3 casi invenzione dipendenti schematizzata, correttezza professionale nelle limitazioni al marchio con esempi (nome proprio, indicazioni descrittive, accessori/ricambi), unitarietà dei segni in cosa è unica rispetto alle regole già viste, trasferimento parziale del marchio spiegato
+  - Domanda di autoverifica 1 completa (non era negli appunti grezzi)
+  - Domande 2-5 corrette e integrate con precisazioni
+  - Sezioni integrate dalla lezione: §2.14 nomi a dominio, §3.3 divulgazioni non opponibili, §3.4 priorità, §3.8 rivendicazioni, riepilogo comparativo marchio/brevetto
+
+**Prossima sessione — da dove partire**:
+→ **Diritto D8** — Privacy e GDPR (`08_DirInfo_2026_Privacy_DEF.pdf` presente)
+→ **SysAdmin 3D Es. 2–6** — invariato
+→ **Security S1 LAB** — invariato
+
+---
+
+### Sessione 24 — 2026-05-20 (completata)
+**Focus**: Diritto D6 — Autoverifica (5 domande in modalità interrogazione)
+
+**Coperto in sessione**:
+- Autoverifica D6 completata: 5 domande una alla volta in modalità interrogazione
+- Punti forti: distinzione opera intellettuale/appalto, art. 2231 (non iscrizione + cancellazione), differenza variazioni richieste/necessarie, cessione vs licenza
+- Punti da ripassare: art. 2224 (variazioni necessarie — nome articolo non ricordato), meccanica art. 1457 (termine essenziale), effetto retroattivo art. 1458 e sua eccezione per esecuzione continuata
+
+**Non coperto / da riprendere**:
+- SysAdmin 3D Es. 2–6 — invariato
+- Security S1 LAB — invariato
+
+**Prossima sessione — da dove partire**:
+→ **Diritto D7** — Proprietà Industriale (`07_DirInfo_2026_ProprietàIndustriale.pdf`) — eseguire `/lezione D7`
+→ **SysAdmin 3D Es. 2–6** — avviare VM, eseguire: `ping`, `ss -tlnp`, `/etc/hosts`, `dig`, `tcpdump`. Poi `/appunti 3D`
+→ **Security S1 LAB** — lezione pronta, eseguire le 6 sezioni sulla VM Kali
+
+---
 
 ### Sessione 23 — 2026-05-15 (completata)
 **Focus**: Diritto D6 — Contratto di sviluppo software
@@ -869,9 +906,9 @@ Concetto da chiarire: **la stringa di permessi** (`drwxr-xr-x`) — la spiegazio
 ```
 SysAdmin  ████████░░  77%   (10/13 moduli ✅)
 Security  ░░░░░░░░░░   0%   (0/12 moduli ✅)
-Diritto   █████░░░░░  45%   (5/11 moduli ✅)
+Diritto   ███████░░░  64%   (7/11 moduli ✅)
 ```
 
 *SysAdmin (13): 0A 0B 1A 1B 2A 2B 2C 3A 3B 3C ✅ | 3D 🔄 | 3E 3F ⬜*
 *Security (12): S1 🔄 | S2–S12 ⬜*
-*Diritto (11):  D1 ✅ D2 ✅ D3 ✅ D4 ✅ D5 ✅ | D6 🔄 | D7–D11 ⬜*
+*Diritto (11):  D1 ✅ D2 ✅ D3 ✅ D4 ✅ D5 ✅ D6 ✅ D7 ✅ | D8–D11 ⬜*

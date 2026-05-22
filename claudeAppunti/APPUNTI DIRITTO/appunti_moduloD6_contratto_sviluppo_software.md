@@ -53,6 +53,12 @@ Se deve essere adattato un software già esistente, occorre specificare a quale 
 
 ### 2.3 Natura del contratto — Le tre norme
 
+> ⚠️ **Attenzione al titolo**: "Natura del contratto" ha due significati distinti che il PDF sovrappone.
+>
+> **Livello 1 — natura in senso teorico-generale** (già trattato nella sezione 1): classificazione giuridica del contratto — cos'è, qual è la sua causa, come si inserisce nella tassonomia del codice civile. Risposta già data: è un contratto d'opera intellettuale (artt. 2222 e 2230 c.c.).
+>
+> **Livello 2 — natura in senso soggettivo** (quello di questa sezione 2.3): i requisiti del *professionista* che rendono quel contratto valido e azionabile. Gli artt. 2229–2231 non definiscono cos'è il contratto, ma stabiliscono chi può stipularlo con effetti giuridici pieni. I due livelli sono connessi: affermare che questo è un contratto d'opera intellettuale implica già che il prestatore abbia il profilo soggettivo richiesto dall'art. 2229. Senza quel requisito, la classificazione regge ma il contratto produce effetti mutilati (art. 2231).
+
 > **Q: Non capisco cosa comportino le tre norme incluse nella sezione "natura".**
 >
 > Le tre norme (artt. 2229, 2230, 2231 c.c.) servono a chiarire **chi può fare questo lavoro** e **con quali conseguenze** se non ne ha il titolo.
@@ -123,8 +129,10 @@ I **criteri di verifica** delle varie fasi sono molto importanti: in base ad ess
 
 > **Q: "Classifichiamo chiaramente cosa sono le difformità e cosa sono i vizi."**
 >
-> - **Difformità**: il risultato ottenuto *non corrisponde* a quanto pattuito nelle specifiche. Es.: il contratto prevedeva che il sistema gestisse 10.000 utenti concorrenti, ma ne gestisce solo 1.000. La funzionalità è presente ma non rispetta le specifiche.
-> - **Vizi**: difetti *intrinseci* dell'opera che la rendono inidonea all'uso o ne diminuiscono il valore. Es.: il software ha un bug ricorrente che causa crash non prevedibili; presenza di file nocivi. Il vizio può essere *palese* (visibile a un esame ordinario) o *occulto* (non rilevabile se non con un esame approfondito o dopo un certo utilizzo).
+> - **Difformità**: il risultato ottenuto *non corrisponde* a quanto pattuito nelle specifiche. Il difetto sta nel confronto con il contratto, non nell'opera in sé — il software può funzionare correttamente e restare utilizzabile, ma non rispetta i parametri concordati. Es.: il contratto prevedeva che il sistema gestisse 10.000 utenti concorrenti, ma ne gestisce solo 1.000. Il sistema è stabile e non ha bug, ma non rispetta le specifiche — si può usare con 1.000 utenti, non è inutilizzabile.
+> - **Vizi**: difetti *intrinseci* dell'opera che la rendono instabile o inadatta indipendentemente da quanto dicevano le specifiche. Il difetto sarebbe un problema anche se le specifiche non avessero mai menzionato quel comportamento. Es.: il software ha un bug ricorrente che causa crash non prevedibili; produce risultati errati; ha un memory leak. Il vizio può essere *palese* (visibile a un esame ordinario) o *occulto* (non rilevabile se non con un esame approfondito o dopo un certo utilizzo).
+>
+> **La distinzione chiave**: difformità = scarto rispetto al contratto (l'opera funziona, ma non è quella pattuita); vizio = difetto interno all'opera (l'opera è rotta). L'inutilizzabilità può essere conseguenza di un vizio grave, ma non è la definizione di vizio — e non caratterizza mai la difformità.
 
 > **Q: "Non capisco grammaticalmente la frase dell'art. 2226, non capisco proprio cosa dica."**
 >
@@ -306,20 +314,59 @@ Occorre indicare:
 
 **Recesso**: in caso di prestazione d'opera, il committente può recedere rimborsando all'ingegnere le spese sostenute, il compenso per l'opera svolta e un **indennizzo per il mancato guadagno**. Occorre indicare le modalità di comunicazione (es. in forma scritta).
 
-### Risoluzione del contratto — Tabella riepilogativa
+### Risoluzione del contratto
 
-> **Q: "Questi articoli regolamentano la risoluzione, schematizzali e inserisci una tabella."**
+#### I tre modi di risoluzione (codice civile)
 
-| Articolo | Nome | Meccanismo | Effetto |
-|----------|------|-----------|---------|
-| **Art. 1456 c.c.** | Clausola risolutiva espressa | Le parti inseriscono nel contratto che esso si risolve automaticamente se una determinata obbligazione non viene adempiuta | La risoluzione opera di **diritto** quando la parte interessata *dichiara* all'altra di volersi avvalere della clausola. Nessun intervento del giudice necessario. |
-| **Art. 1457 c.c.** | Termine essenziale | Il contratto fissa un termine la cui scadenza è essenziale per una parte (es. "il software deve essere consegnato entro il 31 marzo, termine essenziale") | Se la parte che si avvantaggia del termine essenziale vuole comunque l'esecuzione nonostante la scadenza, deve comunicarlo all'altra entro **3 giorni**. In mancanza, il contratto si intende **risoluto di diritto**. |
-| **Art. 1458 c.c.** | Effetti della risoluzione | La risoluzione per inadempimento | Ha effetto **retroattivo** tra le parti (come se il contratto non fosse mai esistito), *salvo* per i contratti a esecuzione continuata o periodica: per questi, l'effetto della risoluzione non si estende alle prestazioni già eseguite. La risoluzione non pregiudica i diritti dei terzi. |
+| Modo | Articolo | Causa | Effetto |
+|------|----------|-------|---------|
+| **Per inadempimento** | Art. 1453 | Una parte non esegue la prestazione dovuta | La parte lesa può scegliere tra esigere l'adempimento o chiedere la risoluzione, in entrambi i casi con risarcimento del danno. Una volta chiesta la risoluzione non si può tornare a chiedere l'adempimento. |
+| **Per impossibilità sopravvenuta** | Art. 1463 | La prestazione diventa impossibile per causa non imputabile a nessuna delle parti (es. forza maggiore, evento imprevedibile) | Il contratto si scioglie; la parte liberata non può chiedere la controprestazione e deve restituire quanto già ricevuto. Nessun risarcimento perché nessuno è in colpa. |
+| **Per eccessiva onerosità sopravvenuta** | Art. 1467 | Events straordinari e imprevedibili rendono la prestazione di una parte eccessivamente onerosa rispetto all'altra | La parte gravata può chiedere la risoluzione; la controparte può evitarla offrendo di ricondurre il contratto a equità. |
 
-> Come si collegano nel contratto di sviluppo software:
-> - **Art. 1456**: si usa per inserire clausole del tipo "il mancato pagamento dell'acconto entro X giorni risolve il contratto di diritto". Tutela principalmente l'ingegnere.
-> - **Art. 1457**: si usa per dichiarare "essenziale" la data di consegna: se l'ingegnere non consegna entro quella data, il contratto si risolve di diritto (salvo che il committente non comunichi entro 3 giorni di voler comunque il software).
-> - **Art. 1458**: stabilisce le *conseguenze* della risoluzione: si torna alla situazione ante-contratto. Problema: se il software è già stato in parte consegnato e usato (contratto a esecuzione continuata), la risoluzione non travolge le prestazioni già eseguite.
+#### Strumenti contrattuali che operano all'interno della risoluzione per inadempimento
+
+Artt. 1456 e 1457 non sono modi autonomi di risoluzione: sono **clausole inseribili nel contratto** che rendono automatica la risoluzione per inadempimento, eliminando la necessità di ricorrere al giudice.
+
+| Articolo | Nome | Come funziona | Applicazione nel contratto di sviluppo software |
+|----------|------|---------------|------------------------------------------------|
+| **Art. 1456** | Clausola risolutiva espressa | Le parti stabiliscono nel contratto che l'inadempimento di una specifica obbligazione risolve il contratto di diritto. La risoluzione non è automatica: opera quando la parte interessata *dichiara* all'altra di volersi avvalere della clausola. | Es.: "Il mancato pagamento dell'acconto entro X giorni risolve il contratto di diritto." Tutela principalmente l'ingegnere contro il committente che non paga. |
+| **Art. 1457** | Termine essenziale | Le parti dichiarano nel contratto che un certo termine è "essenziale": se scade senza adempimento, il contratto si risolve di diritto. La parte che vorrebbe comunque l'esecuzione deve comunicarlo entro **3 giorni** dalla scadenza, altrimenti perde il diritto. | Es.: "La consegna entro il 31 marzo è termine essenziale." Se l'ingegnere non consegna, il committente non deve fare nulla — il contratto è già risolto, salvo che comunichi entro 3 giorni di voler comunque il software. |
+
+#### Effetti della risoluzione (art. 1458)
+
+Art. 1458 non è un modo di risoluzione ma la norma che descrive cosa succede *dopo* che la risoluzione si è verificata per qualunque causa.
+
+**1. Effetto retroattivo tra le parti**
+
+La risoluzione cancella il contratto come se non fosse mai esistito: chi ha pagato riavuto i soldi, chi ha consegnato riavuto l'oggetto. La retroattività opera però solo tra le parti contraenti.
+
+**2. Eccezione: contratti a esecuzione continuata o periodica**
+
+Per le prestazioni già eseguite e consumate la restituzione non ha senso — non si "restituisce" un servizio già fruito.
+
+- **Esecuzione continuata**: la prestazione si svolge ininterrottamente nel tempo. Es.: contratto di hosting — il server è attivo ogni secondo.
+- **Esecuzione periodica**: la prestazione si ripete a scadenze discrete. Es.: contratto di manutenzione mensile del software.
+
+Per questi contratti la risoluzione opera solo dal momento in cui viene dichiarata, non a ritroso: il compenso già incassato per i periodi precedenti resta all'ingegnere, il committente tiene il beneficio già ricevuto.
+
+Una **licenza a tempo indeterminato** rientra nell'esecuzione continuata: l'obbligazione del licenziante non è "consegnare il software" (atto istantaneo) ma mantenere il diritto d'uso in capo al licenziatario per tutta la durata del contratto — prestazione che si protrae ininterrottamente. Se la licenza viene risolta, il licenziatario non deve "restituire" l'uso già fruito e il licenziante tiene i canoni già incassati.
+
+Nel contratto di sviluppo a fasi: se le prime due fasi sono state consegnate, verificate, accettate e pagate, una risoluzione sulla fase 3 non travolge le prime due.
+
+**3. La risoluzione non pregiudica i diritti dei terzi**
+
+La retroattività opera solo tra le parti — non può essere opposta a chi ha acquisito diritti da quel contratto in buona fede.
+
+Esempio: l'ingegnere sviluppa software per Committente A, che ne acquisisce la licenza d'uso. A sublicenzia il software ad Azienda B. Sorge una controversia tra ingegnere e A → contratto risolto per inadempimento di A. La risoluzione cancella i diritti di A, ma non travolge la sublicenza di B: B aveva acquisito quel diritto in buona fede durante la vigenza del contratto, senza essere responsabile della controversia.
+
+Si crea così il paradosso apparente per cui B ha un diritto che A non ha più. Non è un paradosso: B lo aveva acquisito *mentre A lo aveva legittimamente*, e quella finestra temporale è sufficiente a consolidare il diritto di B indipendentemente da cosa succede dopo.
+
+A potrebbe teoricamente riacquistare i diritti da B, ma si tratterebbe di un'operazione nuova e autonoma — trattando con B come con qualsiasi terzo, al prezzo che B decide. L'ingegnere non può impedirlo: i diritti di B sono consolidati e B è libero di disporne, incluso rivenderli ad A.
+
+L'unica tutela dell'ingegnere è contrattuale: inserire nel contratto originario con A una clausola che limiti o vieti la sublicenza, oppure che preveda che in caso di risoluzione i diritti concessi a terzi tornino automaticamente all'ingegnere. Senza quella clausola il codice civile non offre strumenti per bloccare questo scenario.
+
+Il limite della tutela dei terzi: opera solo se il terzo ha acquisito i diritti **in buona fede** — senza sapere dell'inadempimento o della controversia in corso. Chi acquisisce diritti sapendo che il contratto originario è già in discussione non è protetto.
 
 **Modifiche del contratto**: indicare come dovranno essere stabilite e formalizzate (es. solo per iscritto, raccomandata A/R, PEC).
 
