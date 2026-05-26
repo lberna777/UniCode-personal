@@ -1,5 +1,5 @@
 # Master Map — Studio Attivo Universitario
-**Aggiornato**: 2026-05-25 | **Sessione**: 25
+**Aggiornato**: 2026-05-26 | **Sessione**: 26
 
 > **Istruzione per l'AI**: Leggere questo file all'inizio di ogni sessione per riprendere il filo. Non assumere mai che i moduli "verificati" negli appunti GitHub siano stati interiorizzati, a meno che non compaiano come ✅ nel log di sessione qui sotto.
 
@@ -422,13 +422,13 @@ I titoli di Virtuale e i nomi file effettivi divergono. Tabella di riferimento p
 **PDF**: `08_DirInfo_2026_Privacy_DEF.pdf`  
 **Normative di riferimento**: GDPR (Reg. UE 2016/679), Codice Privacy (D.Lgs. 196/2003 s.m.i.)  
 **Concetti chiave**: principi del trattamento (art. 5 GDPR), basi giuridiche (art. 6), diritti degli interessati (artt. 15-22), titolare/responsabile, DPO, DPIA, notifica violazioni, adattamento italiano  
-**Stato**: 🔄 Appunti elaborati (`claudeAppunti/APPUNTI DIRITTO/appunti_moduloD8_privacy_gdpr.md`) — domande di autoverifica da rispondere in autonomia
+**Stato**: ✅ Completato (Sessione 26 — 2026-05-26) — `claudeAppunti/APPUNTI DIRITTO/appunti_moduloD8_privacy_gdpr.md`
 
 #### Modulo D9 — Firme Elettroniche
 **Corso**: Diritto dell'Informatica T  
 **PDF**: `09_DirInfo_2026_FirmeElettr_DEF.pdf`  
 **Concetti chiave**: firma elettronica semplice/avanzata/qualificata, firma digitale, eIDAS (Reg. UE 910/2014), valore probatorio, certificati qualificati, TSP  
-**Stato**: ⬜ Da fare
+**Stato**: 🔄 Appunti elaborati (`claudeAppunti/APPUNTI DIRITTO/appunti_moduloD9_firme_elettroniche.md`) — rispondere alle 5 domande di autoverifica, poi portare a ✅
 
 #### Modulo D10 — Commercio Elettronico
 **Corso**: Diritto dell'Informatica T  
@@ -459,6 +459,33 @@ I titoli di Virtuale e i nomi file effettivi divergono. Tabella di riferimento p
 ---
 
 ## Log di Sessione
+
+### Sessione 26 — 2026-05-26 (completata)
+**Focus**: Diritto D8 — Autoverifica + Diritto D9 — Appunti elaborati
+
+**Coperto in sessione**:
+- Autoverifica D8 completata: 5 domande una alla volta in modalità interrogazione
+- Punti forti: procedura data breach (chi/cosa/entro quando), basi giuridiche marketing (consenso art. 6), quando è obbligatorio il DPO, caratteristiche del DPO, privacy by design vs by default con esempi
+- Punti corretti: definizione di dato sensibile (non è legato alla capacità identificativa ma alla natura dell'informazione); doppia base art. 6 + art. 9 per dati sanitari; interesse vitale (art. 9 lett. C) non è alternativo al consenso per il marketing ma vale solo per persone incapaci; compiti minimi DPO non erano stati elencati
+- D8 portato a ✅
+- Appunti modulo D9 elaborati → `claudeAppunti/APPUNTI DIRITTO/appunti_moduloD9_firme_elettroniche.md`
+  - 3 domande aperte risolte: schema tipologie firme (inserito), integrazione firma automatica/remota/autenticata nella tabella, spiegazione semplificata revoca/sospensione certificato qualificato (con 4 cause, regola di pubblicità, effetto dalla pubblicazione)
+  - 1 imprecisione corretta: firma elettronica qualificata era definita genericamente — corretta con i due elementi costitutivi precisi (dispositivo qualificato + certificato qualificato)
+  - 1 imprecisione minore: "si può dubitare" sulle copie per immagine — chiarito che il disconoscimento espresso è l'unico meccanismo previsto
+  - 3 sezioni integrate: §1 (quadro normativo: Legge Bassanini, CAD, eIDAS, regole tecniche), §11 (firma automatica, remota, autenticata), §18 (tabella riepilogo normativo)
+  - 5 domande di autoverifica da rispondere in autonomia
+
+**Non coperto / da riprendere**:
+- SysAdmin 3D Es. 2–6 — invariato
+- Security S1 LAB — invariato
+
+**Prossima sessione — da dove partire**:
+→ **Diritto D9** — rispondere alle 5 domande di autoverifica in autonomia; poi portare a ✅
+→ **Diritto D10** — Commercio Elettronico (`10_DirInfo_2026_CommercioElettronico_DEF.pdf`) — eseguire `/lezione D10`
+→ **SysAdmin 3D Es. 2–6** — avviare VM, eseguire: `ping`, `ss -tlnp`, `/etc/hosts`, `dig`, `tcpdump`. Poi `/appunti 3D`
+→ **Security S1 LAB** — lezione pronta, eseguire le 6 sezioni sulla VM Kali
+
+---
 
 ### Sessione 25 — 2026-05-21 / 2026-05-25 (completata)
 **Focus**: Diritto D7 (appunti) + Diritto D8 (lezione + appunti grezzi)
@@ -936,9 +963,9 @@ Concetto da chiarire: **la stringa di permessi** (`drwxr-xr-x`) — la spiegazio
 ```
 SysAdmin  ████████░░  77%   (10/13 moduli ✅)
 Security  ░░░░░░░░░░   0%   (0/12 moduli ✅)
-Diritto   █████░░░░░  54%   (7/13 moduli ✅)
+Diritto   ██████░░░░  62%   (8/13 moduli ✅)
 ```
 
 *SysAdmin (13): 0A 0B 1A 1B 2A 2B 2C 3A 3B 3C ✅ | 3D 🔄 | 3E 3F ⬜*
 *Security (12): S1 🔄 | S2–S12 ⬜*
-*Diritto (13):  D1 ✅ D2 ✅ D3 ✅ D4 ✅ D5 ✅ D6 ✅ D7 ✅ | D8 🔄 | D9–D13 ⬜*
+*Diritto (13):  D1 ✅ D2 ✅ D3 ✅ D4 ✅ D5 ✅ D6 ✅ D7 ✅ D8 ✅ | D9 🔄 | D10–D13 ⬜*
