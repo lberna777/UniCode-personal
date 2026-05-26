@@ -1,5 +1,5 @@
 # Master Map — Studio Attivo Universitario
-**Aggiornato**: 2026-05-20 | **Sessione**: 24
+**Aggiornato**: 2026-05-25 | **Sessione**: 25
 
 > **Istruzione per l'AI**: Leggere questo file all'inizio di ogni sessione per riprendere il filo. Non assumere mai che i moduli "verificati" negli appunti GitHub siano stati interiorizzati, a meno che non compaiano come ✅ nel log di sessione qui sotto.
 
@@ -367,9 +367,12 @@ I titoli di Virtuale e i nomi file effettivi divergono. Tabella di riferimento p
 ### ── BLOCCO 9: Diritto dell'Informatica T ──
 *Indipendente dagli altri corsi. Può essere parallelizzato in qualsiasi momento.*  
 *Metodologia: lettura PDF → lezione strutturata → sintesi scritta. Nessuna VM richiesta.*  
-*Normative di riferimento in `SLIDE TEORIA/DIRITTO INFORMATICO/NORMATIVE/` — citate inline nelle lezioni, non studiate come moduli autonomi.*
+*Normative di riferimento in `SLIDE TEORIA/DIRITTO INFORMATICO/NORMATIVE/` — citate inline nelle lezioni, non studiate come moduli autonomi.*  
+*Schemi di ripasso sintetici per tutti i moduli in `SLIDE TEORIA/DIRITTO INFORMATICO/Schemi utili per ripasso-20260521 (1)/` — utili per autoverifica finale.*
 
 **Livello reale accertato (2026-04-23)**: materiale visto parzialmente tramite appunti Gemini (PDF 01–03, 07 probabilmente). Nessun modulo validato in sessione — tutti partono da ⬜.
+
+**Totale moduli**: 13 (D1–D13). Aggiunti D12 (AI Act) e D13 (DSA/DMA/Data Act) il 2026-05-22.
 
 #### Modulo D1 — Concetti Giuridici di Base
 **Corso**: Diritto dell'Informatica T  
@@ -412,14 +415,14 @@ I titoli di Virtuale e i nomi file effettivi divergono. Tabella di riferimento p
 **PDF**: `07_DirInfo_2026_ProprietàIndustriale.pdf`  
 **Normativa di riferimento**: `decreto-legislativo-10-02-2005-n-30.pdf` (Codice della Proprietà Industriale)  
 **Concetti chiave**: brevetti, marchi, segreti industriali, tutela dell'invenzione software, differenza brevetto vs diritto d'autore  
-**Stato**: ✅ Completato (Sessione 25 — 2026-05-21) — `claudeAppunti/APPUNTI DIRITTO/appunti_moduloD7_proprieta_industriale.md`
+**Stato**: ✅ Completato (Sessione 25 — 2026-05-22)
 
 #### Modulo D8 — Privacy e Protezione dei Dati Personali
 **Corso**: Diritto dell'Informatica T  
 **PDF**: `08_DirInfo_2026_Privacy_DEF.pdf`  
 **Normative di riferimento**: GDPR (Reg. UE 2016/679), Codice Privacy (D.Lgs. 196/2003 s.m.i.)  
 **Concetti chiave**: principi del trattamento (art. 5 GDPR), basi giuridiche (art. 6), diritti degli interessati (artt. 15-22), titolare/responsabile, DPO, DPIA, notifica violazioni, adattamento italiano  
-**Stato**: ⬜ Da fare
+**Stato**: 🔄 Appunti elaborati (`claudeAppunti/APPUNTI DIRITTO/appunti_moduloD8_privacy_gdpr.md`) — domande di autoverifica da rispondere in autonomia
 
 #### Modulo D9 — Firme Elettroniche
 **Corso**: Diritto dell'Informatica T  
@@ -439,25 +442,51 @@ I titoli di Virtuale e i nomi file effettivi divergono. Tabella di riferimento p
 **Concetti chiave**: accesso abusivo a sistema informatico (art. 615-ter c.p.), danneggiamento informatico, frode informatica, intercettazione illecita, Convenzione di Budapest, responsabilità penale  
 **Stato**: ⬜ Da fare
 
+#### Modulo D12 — AI Act
+**Corso**: Diritto dell'Informatica T  
+**PDF**: `12_DirInfo_2026_AI_Act_DEF.pdf`  
+**Schema ripasso**: `Schemi utili per ripasso-20260521 (1)/12_AIAct.pdf`  
+**Concetti chiave**: Reg. UE 2024/1689, classificazione sistemi AI per rischio (inaccettabile/alto/limitato/minimo), obblighi per provider e deployer, autorità di vigilanza, sandboxing normativo, AI ad uso generale (GPAI)  
+**Stato**: ⬜ Da fare
+
+#### Modulo D13 — Pacchetto Digitale Europeo (DSA, DMA, Data Act)
+**Corso**: Diritto dell'Informatica T  
+**PDF**: `13_DirInfo_2026_DSA_DMA_DataAct.pdf`  
+**Schema ripasso**: `Schemi utili per ripasso-20260521 (1)/13_PacchettoDigitaleEuropeo.pdf`  
+**Concetti chiave**: Digital Services Act (Reg. UE 2022/2065) — responsabilità intermediari, VLOP/VLOSE; Digital Markets Act (Reg. UE 2022/1925) — gatekeeper, obblighi/divieti; Data Act (Reg. UE 2023/2854) — accesso ai dati, portabilità, cloud switching  
+**Stato**: ⬜ Da fare
+
 ---
 
 ## Log di Sessione
 
-### Sessione 25 — 2026-05-21 (in corso)
-**Focus**: Diritto D7 — Appunti definitivi Proprietà Industriale
+### Sessione 25 — 2026-05-21 / 2026-05-25 (completata)
+**Focus**: Diritto D7 (appunti) + Diritto D8 (lezione + appunti grezzi)
 
 **Coperto in sessione**:
 - Appunti modulo D7 elaborati → `claudeAppunti/APPUNTI DIRITTO/appunti_moduloD7_proprieta_industriale.md`
   - Struttura a domande come titoli (su richiesta di Lorenzo) — ogni sezione risponde a una domanda reale
   - 20+ domande aperte risolte: indicazioni geografiche/DOP, esaurimento diritti e sue eccezioni, rappresentabilità nel registro, schema comparativo 6 casi di novità marchio, legame caso f) con e), eccezione preutente, esempio marchio che acquista capacità distintiva per uso, volgarizzazione (Domopak vs Cellofan), "in quanto tale" software approfondito con esempi, stato della tecnica e common knowledge, esperto del ramo e attività inventiva, finzione di invenzione durante il rapporto, effetti brevetto di procedimento e casi di presunzione, schema tempistiche mantenimento brevetto, tabella 3 casi invenzione dipendenti schematizzata, correttezza professionale nelle limitazioni al marchio con esempi (nome proprio, indicazioni descrittive, accessori/ricambi), unitarietà dei segni in cosa è unica rispetto alle regole già viste, trasferimento parziale del marchio spiegato
-  - Domanda di autoverifica 1 completa (non era negli appunti grezzi)
-  - Domande 2-5 corrette e integrate con precisazioni
+  - Domanda di autoverifica 1 completa (non era negli appunti grezzi); domande 2-5 corrette e integrate
   - Sezioni integrate dalla lezione: §2.14 nomi a dominio, §3.3 divulgazioni non opponibili, §3.4 priorità, §3.8 rivendicazioni, riepilogo comparativo marchio/brevetto
+- Lezione D8 creata → `claudeLezioni/LEZIONI DIRITTO/lezione_moduloD8_privacy_gdpr.md`
+  - 63 slide coperte, 23 sezioni: ambito applicazione GDPR/Codice Privacy, dato personale, trattamento, soggetti (titolare/responsabile/interessato/DPO), principi art. 5, basi giuridiche art. 6, dati sensibili art. 9, informativa artt. 12-14, diritti interessato artt. 15-22, privacy by design/default art. 25, registri art. 30, misure sicurezza art. 32, data breach artt. 33-34, DPIA art. 35, DPO artt. 37-39, codici di condotta, certificazioni, trasferimenti extra UE, trasferimenti UE-USA (Safe Harbor → Schrems I → Privacy Shield → Schrems II → Data Privacy Framework), sanzioni GDPR/Codice Privacy, il Garante
+  - 5 domande di autoverifica
+- Appunti grezzi D8 scritti da Lorenzo in autonomia
+
+**Non coperto / da riprendere**:
+- Appunti grezzi D8 da ripulire con `/appunti D8` → ✅ completato in questa sessione
+- SysAdmin 3D Es. 2–6 — invariato
+- Security S1 LAB — invariato
+
+**Aggiornamento**:
+- Appunti modulo D8 elaborati → `claudeAppunti/APPUNTI DIRITTO/appunti_moduloD8_privacy_gdpr.md`
 
 **Prossima sessione — da dove partire**:
-→ **Diritto D8** — Privacy e GDPR (`08_DirInfo_2026_Privacy_DEF.pdf` presente)
-→ **SysAdmin 3D Es. 2–6** — invariato
-→ **Security S1 LAB** — invariato
+→ **Diritto D8** — rispondere alle 5 domande di autoverifica in autonomia; poi `/chiudi D8` per portare a ✅
+→ **Diritto D9** — Firme Elettroniche (`09_DirInfo_2026_FirmeElettr_DEF.pdf`) — eseguire `/lezione D9`
+→ **SysAdmin 3D Es. 2–6** — avviare VM, eseguire: `ping`, `ss -tlnp`, `/etc/hosts`, `dig`, `tcpdump`. Poi `/appunti 3D`
+→ **Security S1 LAB** — lezione pronta, eseguire le 6 sezioni sulla VM Kali
 
 ---
 
@@ -889,6 +918,7 @@ Poi spiegare `chmod` in notazione ottale (000, 644, 755, 700) e fare esercizi su
 - File `/etc/debian_version` e `/etc/hostname` — letti
 - Contenuto `/var/log` — esplorato (auth.log, btmp, syslog)
 - Output `ls -la` — spiegato il formato (permessi, proprietario, gruppo)
+- Appunti modulo D7 letti e aggiornati. Nuovi PDF aggiunti per Diritto e SysAdmin.
 
 **⚠️ PUNTO DI PAUSA — da riprendere qui**:
 Comando eseguito: `ls -la ~`
@@ -906,9 +936,9 @@ Concetto da chiarire: **la stringa di permessi** (`drwxr-xr-x`) — la spiegazio
 ```
 SysAdmin  ████████░░  77%   (10/13 moduli ✅)
 Security  ░░░░░░░░░░   0%   (0/12 moduli ✅)
-Diritto   ███████░░░  64%   (7/11 moduli ✅)
+Diritto   █████░░░░░  54%   (7/13 moduli ✅)
 ```
 
 *SysAdmin (13): 0A 0B 1A 1B 2A 2B 2C 3A 3B 3C ✅ | 3D 🔄 | 3E 3F ⬜*
 *Security (12): S1 🔄 | S2–S12 ⬜*
-*Diritto (11):  D1 ✅ D2 ✅ D3 ✅ D4 ✅ D5 ✅ D6 ✅ D7 ✅ | D8–D11 ⬜*
+*Diritto (13):  D1 ✅ D2 ✅ D3 ✅ D4 ✅ D5 ✅ D6 ✅ D7 ✅ | D8 🔄 | D9–D13 ⬜*
