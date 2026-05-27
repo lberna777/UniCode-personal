@@ -20,7 +20,9 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 
 **banca dati (ai fini giuridici)** — raccolta di opere, dati o altri elementi indipendenti sistematicamente o metodicamente disposti ed individualmente accessibili mediante mezzi elettronici o in altro modo (definizione della legge sul diritto d'autore). Distinta dalla definizione informatica (DBMS): qui rileva la struttura e l'accessibilità dei contenuti.
 
-**base giuridica** — fondamento normativo che legittima un'azione o un trattamento. In D1: la norma (legge, contratto, interesse legittimo, ecc.) che giustifica un'obbligazione o un diritto. In privacy (D8): una delle condizioni dell'art. 6 GDPR che rende lecito il trattamento di dati personali.
+**base giuridica** — fondamento normativo che legittima un'azione o un trattamento. In D1: la norma (legge, contratto, interesse legittimo, ecc.) che giustifica un'obbligazione o un diritto. In privacy (D8): una delle condizioni dell'art. 6 GDPR che rende lecito il trattamento di dati personali. Le sei basi: consenso, esecuzione di contratto, obbligo legale, interessi vitali, interesse pubblico/pubblici poteri, legittimo interesse.
+
+**categorie particolari di dati** (*dati sensibili*, art. 9 GDPR) — dati personali che rivelano origine razziale/etnica, opinioni politiche, convinzioni religiose/filosofiche, appartenenza sindacale; dati genetici; dati biometrici *intesi a identificare univocamente* una persona; dati relativi a salute, vita sessuale, orientamento sessuale. Il trattamento è vietato salvo eccezioni tassative (lettere A–J). Distinti dai dati "comuni" non per la capacità identificativa, ma per la **natura intrinsecamente delicata** dell'informazione.
 
 ## C
 
@@ -47,6 +49,14 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 **capacità giuridica** — idoneità di un soggetto ad essere titolare di diritti e obblighi. Acquisita dalla persona fisica alla nascita; per le persone giuridiche, al momento della loro costituzione.
 
 **capacità di agire** — idoneità di un soggetto a compiere atti giuridici validi in prima persona. Si acquista con la maggiore età (18 anni). Distinta dalla capacità giuridica.
+
+**dato personale** (art. 4 GDPR) — qualsiasi informazione riguardante una persona fisica **identificata o identificabile**. Comprende nome, indirizzo, e-mail, IP, dati di localizzazione, identificativi online, ma anche qualsiasi altro elemento che consenta di risalire a una persona specifica. I dati anonimi (da cui è effettivamente impossibile risalire all'individuo) non sono dati personali e non rientrano nel GDPR.
+
+**data breach** (violazione dei dati personali) — violazione della sicurezza che comporta accidentalmente o in modo illecito la distruzione, perdita, modifica, divulgazione non autorizzata o accesso ai dati personali (artt. 33–34 GDPR). Obblighi: il responsabile avvisa il titolare senza ritardo; il titolare notifica al Garante entro 72h se c'è rischio per i diritti degli interessati; comunica agli interessati se il rischio è **elevato**, salvo eccezioni (dati cifrati, misure adottate, comunicazione impossibile → comunicazione pubblica).
+
+**DPIA** (*Data Protection Impact Assessment* — Valutazione d'Impatto sulla Protezione dei Dati, art. 35 GDPR) — valutazione preventiva obbligatoria quando il trattamento può presentare un **rischio elevato**. Casi tipici: profilazione con effetti giuridici, trattamento su larga scala di categorie particolari, sorveglianza sistematica di zone pubbliche. Contenuto: descrizione del trattamento, valutazione di necessità e proporzionalità, analisi dei rischi, misure previste.
+
+**DPO** (*Data Protection Officer* — Responsabile della Protezione dei Dati, artt. 37–39 GDPR) — figura obbligatoria per autorità pubbliche, per chi monitora sistematicamente interessati su larga scala, e per chi tratta su larga scala categorie particolari o dati su condanne penali. Deve essere esperto di normativa privacy, indipendente (non riceve istruzioni), senza conflitti di interesse, i suoi dati di contatto devono essere pubblici e comunicati al Garante. **Non** confondere con il "Responsabile del trattamento" (*data processor*).
 
 ## D
 
@@ -128,6 +138,14 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 
 **ordinanza** — provvedimento emanato dal giudice durante il processo per regolarne lo svolgimento e per risolvere le questioni processuali insorte tra le parti (es. ammissione di prove o di testimoni). Distinta dalla sentenza.
 
+**privacy by default** (art. 25 GDPR) — obbligo del titolare di garantire che, **senza intervento dell'utente**, vengano trattati solo i dati strettamente necessari per ogni finalità. Le impostazioni predefinite devono essere le più restrittive: l'utente deve attivamente scegliere di condividere di più. Dimensioni: quantità dati, portata del trattamento, periodo di conservazione, accessibilità. Esempio di violazione: profilo social impostato "pubblico" di default.
+
+**privacy by design** (art. 25 GDPR) — obbligo del titolare di incorporare misure tecniche e organizzative di protezione dei dati **fin dalla progettazione** del sistema (e non aggiunte in seguito), e di mantenerle durante l'operatività. Si applica in due momenti: (1) quando si determinano i mezzi del trattamento; (2) all'atto del trattamento. Esempio: app che non conserva metadati delle conversazioni per architettura, non per configurazione.
+
+**profilazione** (art. 4 GDPR) — qualsiasi forma di trattamento automatizzato di dati personali per valutare aspetti personali di una persona fisica (comportamento, preferenze, salute, ubicazione, ecc.) o per effettuare previsioni. Il titolare deve indicarla nell'informativa (art. 13-14) e l'interessato ha diritto di opporsi (art. 21).
+
+**pseudonimizzazione** (art. 4 GDPR) — trattamento dei dati in modo tale che non possano più essere attribuiti a un interessato specifico senza l'uso di informazioni aggiuntive, conservate separatamente. Il dato pseudonimizzato rimane un **dato personale** soggetto al GDPR (a differenza del dato anonimo). Riduce il rischio di identificazione ma non lo elimina.
+
 ## P
 
 **persona giuridica** — ente (società, associazione, fondazione, ecc.) a cui l'ordinamento riconosce soggettività giuridica distinta da quella delle persone fisiche che la compongono. Ha capacità giuridica propria.
@@ -146,6 +164,8 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 
 **rubrica** — titolo breve o descrittivo assegnato a un atto normativo per identificarlo rapidamente. Può coincidere con il titolo ufficiale o essere un'etichetta convenzionale (es. "Codice Privacy", "Legge Madia"). È il quarto elemento della formalizzazione normativa insieme a natura, numero e data.
 
+**responsabile del trattamento** (*data processor*, art. 4 GDPR) — persona fisica o giuridica che tratta dati personali **per conto del titolare**, seguendone le istruzioni. Non decide autonomamente finalità e mezzi. Deve essere nominato con contratto scritto. Può nominare sub-responsabili solo con autorizzazione scritta del titolare. **Non** confondere con il DPO (*Data Protection Officer*).
+
 **responsabilità civile** — obbligo di risarcire il danno causato a un altro soggetto. Può essere contrattuale (violazione di un contratto) o extracontrattuale/aquiliana (fatto illecito ex art. 2043 c.c.).
 
 **responsabilità penale** — conseguenza giuridica di un reato: sanzione penale (pena detentiva, multa). Personale e non trasmissibile ad altri.
@@ -161,6 +181,10 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 **sentenza** — provvedimento con cui l'autorità giudiziaria prende una decisione, definendo o meno il giudizio, sulle domande ed eccezioni proposte dalle parti, o su qualsiasi altra questione sorta nel corso del processo.
 
 **soggetto giuridico** — entità (persona fisica o giuridica) titolare di diritti e obblighi nell'ordinamento. Presupposto per essere parte di un rapporto giuridico.
+
+**titolare del trattamento** (*data controller*, art. 4 GDPR) — persona fisica o giuridica, autorità pubblica, servizio o organismo che determina **finalità e mezzi** del trattamento dei dati personali. È il soggetto responsabile in primo luogo della conformità al GDPR (*accountability*). Distinto dal responsabile del trattamento (*data processor*) che agisce per suo conto.
+
+**trattamento** (dei dati personali, art. 4 GDPR) — qualsiasi operazione applicata a dati personali: raccolta, registrazione, organizzazione, strutturazione, conservazione, modifica, estrazione, consultazione, uso, comunicazione, diffusione, raffronto, cancellazione. Qualsiasi operazione su dati personali è un trattamento.
 
 ## T
 
