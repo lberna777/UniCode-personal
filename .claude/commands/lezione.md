@@ -1,6 +1,6 @@
 ---
 description: "Crea la lezione strutturata per un modulo dai PDF Virtuale. Uso: /lezione <ID>  (es. /lezione 3A, /lezione D1, /lezione S4)"
-argument-hint: "ID modulo — SysAdmin: 0A-3F | Security: S1-S12 | Diritto: D1-D8"
+argument-hint: "ID modulo — SysAdmin: 0A-3F | Security: S1-S12 | Diritto: D1-D13"
 ---
 
 Il modulo richiesto è: $ARGUMENTS
@@ -13,32 +13,46 @@ Il modulo richiesto è: $ARGUMENTS
 
 ---
 
-**1. Leggi la master map**
-Leggi `/home/lorenzo/UniCode/master_map_studio.md` e individua il modulo `$ARGUMENTS`.
-Estrai: nome completo, corso, PDF richiesti, concetti chiave.
-Se il modulo non esiste nella master map, comunicalo e fermati.
+**1. Carica il contesto necessario**
+
+Leggi questi file in parallelo:
+- `stato/corrente.md` — verifica che il modulo esista e il suo stato attuale
+- `stato/percorso.md` — recupera: nome completo, corso, materiale Virtuale richiesto, concetti chiave, esercizio attivo, connessioni
+- `stato/errori_frequenti.md` — identifica pattern di errore ricorrenti di Lorenzo rilevanti per questo modulo (es. se sta facendo un modulo bash e ha pattern di errori di sintassi, enfatizzare quei punti)
+
+Se il modulo non esiste nel percorso, comunicalo e fermati.
 
 ---
 
 **2. Verifica i PDF**
 
-- Moduli SysAdmin: cerca in `/home/lorenzo/UniCode/SLIDE TEORIA/SysAdmin/` e `/home/lorenzo/UniCode/SLIDE LAB/`
-- Moduli Security: cerca in `/home/lorenzo/UniCode/SLIDE TEORIA/SysAdmin/` e `/home/lorenzo/UniCode/SLIDE LAB/`
-- Moduli Diritto: cerca in `/home/lorenzo/UniCode/SLIDE TEORIA/DIRITTO INFORMATICO/`
+Cerca i PDF in base al tipo di modulo:
+- SysAdmin: `SLIDE TEORIA/SYSADM/` e `SLIDE LAB/SYSADM/`
+- Security: `SLIDE TEORIA/SICINF/` e `SLIDE LAB/` (se esistono)
+- Diritto: `SLIDE TEORIA/DIRITTO INFORMATICO/`
 
-Se uno o più PDF richiesti dal modulo mancano: **fermati qui**, elenca i nomi esatti e chiedi a Lorenzo di caricarli. Non creare contenuto didattico senza il PDF corrispondente.
+Se uno o più PDF richiesti mancano: **fermati**, elenca i nomi esatti da caricare e chiedi a Lorenzo. Non creare contenuto senza il PDF corrispondente.
 
 ---
 
 **3. Leggi i PDF**
-Leggi integralmente tutti i PDF rilevanti trovati al passo precedente.
+
+Leggi integralmente tutti i PDF rilevanti. Per PDF molto lunghi (>50 pagine), leggi per sezioni e identifica le parti pertinenti al modulo.
+
+> **REGOLA CRITICA**: il contenuto della lezione deve venire SOLO dai PDF letti in questo passo. I "concetti chiave" in percorso.md sono un indice per sapere quali PDF cercare — NON sono una fonte da cui generare contenuto. Se non hai letto il PDF, non puoi creare la lezione. Contenuto generato senza leggere il PDF è superficiale e inaccettabile.
 
 ---
 
 **4. Crea il file lezione**
 
-Path: `/home/lorenzo/UniCode/claudeLezioni/lezione_modulo$ARGUMENTS_<nome_breve>.md`
-`<nome_breve>` = identificatore conciso del contenuto (es. `systemd_servizi`, `diritto_autore`, `web_security`).
+Path: `/home/lorenzo/UniCode/claudeLezioni/<SOTTOCARTELLA>/lezione_modulo$ARGUMENTS_<nome_breve>.md`
+
+Sottocartelle:
+- SysAdmin → `LEZIONI SYSADM/`
+- Security → `LEZIONI SECURITY/`
+- Diritto → `LEZIONI DIRITTO/`
+
+`<nome_breve>` = identificatore conciso del contenuto (es. `systemd_servizi`, `diritto_autore`).
 
 ---
 
@@ -48,31 +62,35 @@ Path: `/home/lorenzo/UniCode/claudeLezioni/lezione_modulo$ARGUMENTS_<nome_breve>
 # Lezione — Modulo $ARGUMENTS: <Nome Completo>
 **Corso**: Lab Amministrazione di Sistemi T
 **Materiale**: <titoli PDF usati>
-**Prerequisiti**: <moduli precedenti rilevanti>
+**Prerequisiti**: <moduli precedenti rilevanti — verificare che siano ✅ in corrente.md>
 
 ---
 
 ## Obiettivo
-Una frase: cosa Lorenzo deve saper fare sulla VM al termine di questa lezione.
+Una frase: cosa Lorenzo deve saper fare sulla VM al termine.
 
 ## Concetti Chiave
-Per ogni concetto: definizione, perché esiste, come si usa in pratica su Debian.
+Per ogni concetto:
+- **Definizione**: cos'è
+- **Perché esiste**: quale problema risolve
+- **Come si usa**: sintassi e contesto pratico su Debian
 
 ## Comandi di Riferimento
 | Comando | Sintassi | Descrizione | Output atteso |
 |---------|----------|-------------|---------------|
 
 ## Esercizi Guidati
-Sequenza numerata di comandi da eseguire sulla VM, con output atteso dopo ogni comando significativo.
+Sequenza numerata di comandi da eseguire sulla VM.
+- Ogni comando significativo ha l'output atteso
+- Progressione: facile → difficile
+- Se Lorenzo ha errori ricorrenti su concetti in questo modulo (da errori_frequenti.md): aggiungere un esercizio specifico che forza la comprensione corretta
 
 ## Connessioni
-- Con il modulo precedente: ...
-- Con Security: quale superficie d'attacco introduce ...
+- Con il modulo precedente: [connessione SPECIFICA, non generica]
+- Con Security: [quale superficie d'attacco introduce — essere precisi]
 
 ## Riepilogo
-- Concetto 1
-- Concetto 2
-- Concetto 3
+3 concetti chiave in forma di domanda-risposta (non lista passiva)
 ```
 
 ---
@@ -83,7 +101,7 @@ Sequenza numerata di comandi da eseguire sulla VM, con output atteso dopo ogni c
 # Lezione — Modulo $ARGUMENTS: <Nome Completo>
 **Corso**: Lab Sicurezza Informatica T
 **Materiale**: <titoli PDF usati>
-**Prerequisiti**: <moduli SysAdmin e Security rilevanti>
+**Prerequisiti**: <moduli SysAdmin e Security rilevanti — verificare che siano ✅>
 
 ---
 
@@ -91,10 +109,12 @@ Sequenza numerata di comandi da eseguire sulla VM, con output atteso dopo ogni c
 Una frase: cosa Lorenzo deve saper fare/riconoscere al termine.
 
 ## Contesto e Threat Model
-Perché questo attacco o difesa esiste. Dal punto di vista dell'attaccante e del difensore.
+- **Prospettiva attaccante**: perché questo attacco funziona, cosa cerca
+- **Prospettiva difensore**: come si rileva, come si mitiga
+- Scenario reale documentato (se presente nel PDF)
 
 ## Concetti Chiave
-Per ogni concetto: definizione tecnica, come si manifesta, esempio reale documentato.
+Per ogni concetto: definizione tecnica, come si manifesta, esempio reale.
 
 ## Tool e Comandi
 | Tool | Comando | Scopo | Output tipico |
@@ -105,47 +125,50 @@ Sequenza su Kali Linux.
 > ⚠️ Esegui uno snapshot della VM prima di iniziare.
 
 ## Connessioni
-- Con SysAdmin: quale configurazione errata viene sfruttata
-- Con moduli Security precedenti/successivi: ...
+- Con SysAdmin: [quale configurazione errata viene sfruttata — SPECIFICO]
+- Con moduli Security precedenti/successivi: [catena logica]
 
 ## Riepilogo
-- Concetto 1
-- Concetto 2
-- Concetto 3
+3 concetti in forma domanda-risposta
 ```
 
 ---
 
 ### Template Diritto (prefisso D)
 
-> **Regola vincolante per i moduli Diritto**: l'esame verte strettamente sugli argomenti e sulle spiegazioni contenute nei PDF della professoressa. Le definizioni, le classificazioni e le formulazioni devono rispecchiare fedelmente il linguaggio usato nel PDF — non riformulare, non parafrasare, non integrare con fonti esterne. Se la professoressa definisce un istituto in un certo modo, quella è la definizione da usare. Segnala esplicitamente con `[fonte: PDF]` ogni affermazione tratta direttamente dalle slide. Il registro è accademico-giuridico: preferire paragrafi discorsivi alle liste dove il PDF lo fa, e usare la terminologia tecnica esatta del testo.
+> **Regola vincolante**: l'esame verte sugli argomenti e spiegazioni del PDF della professoressa. Le definizioni devono rispecchiare il linguaggio del PDF — non riformulare, non parafrasare, non integrare con fonti esterne. Segnalare con `[fonte: PDF]` ogni affermazione tratta dalle slide. Registro accademico-giuridico. Usare paragrafi discorsivi dove il PDF lo fa.
 
 ```
 # Lezione — Modulo $ARGUMENTS: <Nome Completo>
 **Corso**: Diritto dell'Informatica T
 **Materiale**: <titolo PDF usato>
-**Normative di riferimento**: <leggi e decreti citati nel PDF>
+**Normative di riferimento**: <leggi e decreti citati nel PDF, con estremi completi>
 
 ---
 
 ## Obiettivo
-Una frase: quale istituto giuridico Lorenzo deve saper spiegare al termine, nelle parole usate dalla professoressa.
+Una frase: quale istituto giuridico Lorenzo deve saper spiegare, nelle parole della professoressa.
 
 ## Quadro Normativo
-Norme di riferimento citate nel PDF, con estremi completi (es. L. 633/1941, D.Lgs. 70/2003, Reg. UE 2016/679). Solo quelle presenti nel materiale.
+Norme di riferimento con estremi completi. Solo quelle presenti nel materiale.
 
 ## Concetti Chiave
-Per ogni concetto: definizione ripresa fedelmente dal PDF, ratio legis se spiegata dalla professoressa, esempi usati nelle slide. Non aggiungere contenuto non presente nel PDF.
+Per ogni concetto:
+- Definizione ripresa fedelmente dal PDF [fonte: PDF]
+- Ratio legis se spiegata dalla professoressa
+- Esempi usati nelle slide
+- Se Lorenzo ha pattern di errore su questo tipo di concetto (da errori_frequenti.md): aggiungere nota esplicita "⚠️ Attenzione: in passato hai confuso X con Y"
 
 ## Riferimenti Normativi
 | Articolo / Norma | Contenuto (come descritto nel PDF) | Rilevanza per il corso |
 |------------------|------------------------------------|------------------------|
 
 ## Casi e Scenari
-Situazioni concrete usate dalla professoressa nelle slide per illustrare i concetti. Se non presenti nel PDF, omettere questa sezione.
+Situazioni concrete dalla professoressa. Se non presenti nel PDF, omettere.
 
 ## Domande di Autoverifica
-Cinque domande aperte formulate sugli argomenti del PDF, del tipo che potrebbe fare la professoressa all'esame.
+Cinque domande aperte del tipo che la professoressa potrebbe fare all'esame.
+Almeno una domanda deve testare le distinzioni che Lorenzo tende a fondere (pattern da errori_frequenti.md).
 1. ...
 2. ...
 3. ...
@@ -153,18 +176,34 @@ Cinque domande aperte formulate sugli argomenti del PDF, del tipo che potrebbe f
 5. ...
 
 ## Riepilogo
-Tre concetti normativi centrali del modulo, formulati come li ha presentati il PDF.
-- ...
-- ...
-- ...
+Tre concetti normativi centrali, formulati come nel PDF.
 ```
 
 ---
 
-**5. Aggiorna la master map**
-Segna il modulo `$ARGUMENTS` come 🔄 se era ⬜.
+**5. Verifica qualità (checklist interna)**
 
-**6. Comunica il risultato**
+Prima di comunicare il risultato, verifica:
+- [ ] Ogni concetto nel PDF è stato coperto nella lezione
+- [ ] SysAdmin: ogni comando ha output atteso
+- [ ] Diritto: ogni definizione usa la terminologia esatta del PDF
+- [ ] Gli esercizi sono progressivi e hanno output atteso
+- [ ] Le connessioni sono specifiche (citano moduli e concetti precisi)
+- [ ] Pattern di errore di Lorenzo sono stati integrati come avvertimenti
+
+Se una checklist non è soddisfatta, correggi prima di procedere.
+
+---
+
+**6. Aggiorna lo stato**
+
+In `stato/corrente.md`: segna il modulo come 🔄 se era ⬜.
+
+---
+
+**7. Comunica il risultato**
+
 - Path del file creato
 - Per SysAdmin/Security: indica di avviare la VM e seguire gli esercizi guidati
 - Per Diritto: indica di leggere la lezione e rispondere alle domande di autoverifica prima di scrivere gli appunti grezzi
+- Se sono stati integrati avvertimenti da errori_frequenti.md, menzionarlo brevemente

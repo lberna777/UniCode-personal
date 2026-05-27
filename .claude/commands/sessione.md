@@ -10,87 +10,68 @@ Il parametro passato è: "$ARGUMENTS"
 - contiene "dir" → focus **Diritto**
 - contiene "sys" → focus **SysAdmin**
 - contiene "sec" → focus **Security**
-- altro → avvisa che il parametro non è riconosciuto, mostra le opzioni valide (`sysadmin`, `diritto`, `security`) e fermati
+- altro → avvisa parametro non riconosciuto, mostra opzioni valide, fermati
 
 **Rileva se la sessione è già in corso:**
-Controlla se la master map è già stata letta in questa conversazione. Se sì, non rilегgerla — usa i dati già in contesto e segnala a Lorenzo che stai cambiando focus senza ricaricare tutto.
+Controlla se `stato/corrente.md` è già stato letto in questa conversazione. Se sì, usa i dati già in contesto e segnala a Lorenzo che stai cambiando focus senza ricaricare.
 
 ---
 
-**1. Leggi la master map** *(solo se non già letta in questa conversazione)*
-Leggi `/home/lorenzo/UniCode/master_map_studio.md` integralmente.
+**1. Leggi lo stato** *(solo se non già letto)*
+Leggi `stato/corrente.md` integralmente.
 
 ---
 
 **2. Mostra lo stato dei moduli**
 
-*Focus generale* — tabella raggruppata per corso:
+*Focus generale* — tabella raggruppata per corso (SysAdmin, Security, Diritto) con stato ✅/🔄/⬜.
 
-```
-## SysAdmin — Lab Amministrazione di Sistemi T
-| Modulo | Nome | Stato |
-|--------|------|-------|
-| ...    | ...  | ✅/🔄/⬜ |
-
-## Security — Lab Sicurezza Informatica T
-| Modulo | Nome | Stato |
-
-## Diritto — Diritto dell'Informatica T
-| Modulo | Nome | Stato |
-```
-
-*Focus specifico* — mostra solo i moduli di quella materia, con più dettaglio: se un modulo è 🔄, elenca lo stato interno degli esercizi (Es. 1 ✅, Es. 2 🔄, ecc.) se presente nella master map.
+*Focus specifico* — mostra solo i moduli di quella materia, con più dettaglio: se un modulo è 🔄, elenca lo stato interno degli esercizi.
 
 ---
 
 **3. Identifica il punto di ripresa**
 
-*Focus generale*: mostra il punto di ripresa di ogni materia con moduli attivi (🔄), una riga per materia.
+Dalla sezione "Prossimi Passi" di corrente.md.
 
-*Focus specifico*: mostra solo il punto di ripresa di quella materia, in evidenza.
+*Focus generale*: una riga per materia.
+*Focus specifico*: solo la materia richiesta, in evidenza.
 
 ---
 
 **4. Proponi il piano per questa sessione**
 
-Sulla base del focus e del punto di ripresa indica:
-- Il modulo da affrontare (ID, nome)
-- L'obiettivo concreto della sessione
+Sulla base del focus e del punto di ripresa:
+- Modulo da affrontare (ID, nome)
+- Obiettivo concreto
 
-*Per SysAdmin e Security*:
-- Sequenza di esercizi/comandi da eseguire sulla VM
-- Se il modulo è nuovo: ricorda di eseguire `/lezione <ID>` prima di avviare la VM
+*Per SysAdmin/Security*:
+- Sequenza esercizi/comandi
+- Se modulo nuovo: ricorda `/lezione <ID>` prima della VM
 
 *Per Diritto*:
 - Concetti da consolidare
-- Se il modulo è nuovo: ricorda di eseguire `/lezione <ID>` e rispondere alle domande di autoverifica
-- Se il modulo è in corso: indica da quale concetto riprendere
+- Se modulo nuovo: ricorda `/lezione <ID>` + autoverifica
+- Se modulo in corso: da quale concetto riprendere
 
 ---
 
 **5. Verifica PDF** *(solo per il modulo da affrontare oggi)*
 
-- SysAdmin: `/home/lorenzo/UniCode/SLIDE TEORIA/SysAdmin/` e `SLIDE LAB/`
-- Security: stesse cartelle SysAdmin + eventuale materiale Security
-- Diritto: `/home/lorenzo/UniCode/SLIDE TEORIA/DIRITTO INFORMATICO/`
-
-Se il PDF del modulo manca, fermati e comunicane il titolo esatto prima di procedere.
+Controlla che il PDF necessario sia presente nella cartella corretta. Se manca, fermati e comunicane il titolo.
 
 ---
 
-**6. Piano del giorno** *(sempre — sia focus generale che specifico)*
+**6. Piano del giorno**
 
-Leggi `/home/lorenzo/UniCode/ESAMI SCELTI.md`. Calcola i giorni mancanti a ciascun esame dalla data odierna (disponibile nel contesto):
-- Diritto: 16/06/2026
-- SysAdmin: 22/06/2026
-- Security: 17/07/2026
+Leggi `ESAMI SCELTI.md`. Calcola i giorni mancanti a ciascun esame dalla data odierna.
 
-Determina la fase corrente del piano settimanale in base alla data odierna e mostra:
+Determina la fase corrente del piano settimanale e mostra:
 
 ```
 **Piano del giorno — [DATA]**
 Scadenze: Diritto tra X gg · SysAdmin tra X gg · Security tra X gg
-Fase: [es. "29/04–11/05 · 2h SysAdmin + 2h Diritto + 2h Security"]
+Fase: [es. "26/05–15/06 · 1.5h SysAdmin + 1.5h Diritto + 3h Security"]
 
 Blocco 1 — [Materia] · ~Xh
 [Modulo ID] — [azione concreta]
@@ -102,6 +83,15 @@ Blocco 3 — [Materia] · ~Xh
 [Modulo ID] — [azione concreta]
 ```
 
-In modalità *focus specifico*: il blocco della materia richiesta è Blocco 1; gli altri due blocchi mostrano comunque cosa fare nelle altre materie, perché lo studio è miscelato.
+In focus specifico: il blocco della materia richiesta è Blocco 1.
 
-Se per Security non è ancora disponibile il PDF necessario, il blocco Security diventa: "Richiedere PDF [nome modulo] da Virtuale prima di procedere".
+**Segnali di rischio** (solo se presenti):
+- Moduli in ritardo rispetto alla fase
+- Ripasso scaduto (da `stato/tracker_ripasso.md` — leggerlo qui)
+- Scadenze vicine con troppi moduli aperti
+
+---
+
+**7. Esclusione moduli già fatti oggi**
+
+Se la sessione è già in corso e Lorenzo sta cambiando focus, non riproporre moduli/esercizi già completati in questa conversazione.

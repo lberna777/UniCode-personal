@@ -1,21 +1,32 @@
 {
   "permissions": {
     "allow": [
-      "Read(//home/lorenzo/**)",
-      "Bash(pdfinfo \"/home/lorenzo/UniCode/SLIDE TEORIA/SYSADM/net-config.pdf\")",
-      "Bash(pdftotext \"/home/lorenzo/UniCode/SLIDE TEORIA/SYSADM/net-config.pdf\" -)",
-      "Bash(pdfinfo \"/home/lorenzo/UniCode/SLIDE TEORIA/SYSADM/servizi_base_rete.pdf\")",
-      "Bash(pdftotext \"/home/lorenzo/UniCode/SLIDE TEORIA/SYSADM/servizi_base_rete.pdf\" -)",
-      "Bash(git add *)",
-      "Bash(git commit *)",
-      "Bash(git push *)",
-      "Bash(pandoc --version)",
-      "Bash(pandoc '/home/lorenzo/UniCode/claudeAppunti/APPUNTI DIRITTO/appunti_moduloD4_banche_dati_siti_web.md' -o '/home/lorenzo/UniCode/claudeAppunti_PDF/APPUNTI DIRITTO/appunti_moduloD4_banche_dati_siti_web.pdf' --pdf-engine=xelatex -V geometry:margin=2.5cm -V fontsize=11pt -V lang=it)",
-      "Bash(pdfinfo \"/home/lorenzo/UniCode/SLIDE TEORIA/DIRITTO INFORMATICO/05_DirInfo_2026_ContrInformatici_DEF.pdf\")",
-      "Bash(pdftotext \"/home/lorenzo/UniCode/SLIDE TEORIA/DIRITTO INFORMATICO/05_DirInfo_2026_ContrInformatici_DEF.pdf\" -)",
-      "Bash(awk 'NR>1')",
+      "Read(/home/lorenzo/**)",
+      "Bash(pdfinfo /home/lorenzo/UniCode/**)",
+      "Bash(pdftotext /home/lorenzo/UniCode/**)",
       "Bash(pandoc:*)",
-      "Bash(git mv:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git mv:*)",
+      "Bash(git status)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(ls /home/lorenzo/UniCode/**)",
+      "Bash(awk:*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'cd /home/lorenzo/UniCode && git add -A && git commit -m \"auto: $(date +%Y-%m-%d_%H:%M)\" 2>/dev/null || true'"
+          }
+        ]
+      }
     ]
   }
 }

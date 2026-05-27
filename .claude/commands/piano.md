@@ -1,19 +1,20 @@
 ---
-description: "Genera il piano di studio per oggi basandosi sullo stato dei moduli, le scadenze degli esami e la fase corrente del piano settimanale."
+description: "Genera il piano di studio per oggi basandosi sullo stato, le scadenze e la fase corrente."
 ---
 
-Leggi entrambi i file:
-- `/home/lorenzo/UniCode/master_map_studio.md`
-- `/home/lorenzo/UniCode/ESAMI SCELTI.md`
+Leggi in parallelo:
+- `stato/corrente.md`
+- `ESAMI SCELTI.md`
+- `stato/tracker_ripasso.md`
 
-La data di oggi è disponibile nel contesto di sessione. Calcola i giorni mancanti a ciascun esame:
+La data di oggi è disponibile nel contesto. Calcola i giorni mancanti a ciascun esame:
 - Diritto: 16/06/2026
 - SysAdmin: 22/06/2026
 - Security: 17/07/2026
 
-Determina la fase corrente del piano settimanale (da ESAMI SCELTI.md) in base alla data odierna, e identifica il prossimo modulo da fare per ciascuna materia dalla master map.
+Determina la fase corrente del piano settimanale e identifica il prossimo modulo per ciascuna materia.
 
-Produci esclusivamente questo output:
+Produci esclusivamente:
 
 ---
 
@@ -21,12 +22,12 @@ Produci esclusivamente questo output:
 
 **Scadenze**: Diritto tra X gg (16/06) · SysAdmin tra X gg (22/06) · Security tra X gg (17/07)
 
-**Fase corrente**: [descrizione della fase dal piano settimanale, es. "29/04–11/05 · 2h SysAdmin + 2h Diritto + 2h Security"]
+**Fase corrente**: [descrizione fase]
 
 ---
 
 **Blocco 1 — [Materia] · ~Xh**
-[Modulo ID] — [azione concreta: cosa fare, quale esercizio, quale file leggere o creare]
+[Modulo ID] — [azione concreta: cosa fare, quale esercizio, quale file]
 
 **Blocco 2 — [Materia] · ~Xh**
 [Modulo ID] — [azione concreta]
@@ -37,13 +38,18 @@ Produci esclusivamente questo output:
 ---
 
 **Segnali di rischio** (solo se presenti):
-- [eventuali moduli in ritardo rispetto alla fase, materiale mancante, scadenze vicine]
+- Moduli in ritardo rispetto alla fase
+- Materie con troppi moduli aperti rispetto alla scadenza
+- A questo ritmo: [stima se ci si arriva o no, basata su moduli rimasti / giorni rimasti / ore per modulo da ESAMI SCELTI.md]
+
+**Ripasso consigliato** (solo se presente):
+- [moduli con ripasso scaduto da tracker_ripasso.md — suggerire 15-20 min a inizio giornata]
 
 ---
 
 Regole:
-- I tre blocchi seguono l'allocazione oraria della fase corrente (es. 2+2+2 nella fase 1).
-- La materia più a rischio rispetto alla scadenza va nel Blocco 1.
-- Se un modulo ha la lezione già pronta ma la pratica VM non fatta, segnalarlo esplicitamente nell'azione.
-- Se per Security non è ancora disponibile il PDF necessario, il blocco Security diventa "Richiedere PDF [nome modulo] da Virtuale prima di procedere".
-- Non aggiungere testo libero oltre a questi elementi.
+- I tre blocchi seguono l'allocazione oraria della fase corrente
+- La materia più a rischio rispetto alla scadenza va nel Blocco 1
+- Se un modulo ha lezione pronta ma pratica non fatta, segnalarlo
+- Se per Security manca il PDF: blocco = "Richiedere PDF da Virtuale"
+- Non aggiungere testo libero

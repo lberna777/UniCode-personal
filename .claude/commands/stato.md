@@ -1,16 +1,15 @@
 ---
-description: "Mostra il riepilogo rapido dello stato di tutti i moduli per corso e il prossimo step prioritario per ciascuno."
+description: "Mostra il riepilogo rapido dello stato di tutti i moduli e il prossimo step per ciascun corso."
 ---
 
-Leggi `/home/lorenzo/UniCode/master_map_studio.md` e produci esclusivamente:
+Leggi `stato/corrente.md` e produci esclusivamente:
 
 ---
 
 **1. Tabelle di stato per corso**
 
-Una tabella separata per ciascun corso, nell'ordine: SysAdmin → Security → Diritto.
+Una tabella per corso nell'ordine: SysAdmin → Security → Diritto.
 
-Formato:
 ```
 ### SysAdmin — Lab Amministrazione di Sistemi T
 | Modulo | Nome | Stato |
@@ -23,34 +22,39 @@ Formato:
 | Modulo | Nome | Stato |
 ```
 
-Usa ✅ completato, 🔄 in corso, ⬜ da fare. Per i moduli 🔄 aggiungi tra parentesi lo stato interno se presente (es. "Es. 1-2 ✅, Es. 3-7 ⬜").
+Per i moduli 🔄: stato interno tra parentesi.
 
 ---
 
 **2. Avanzamento per corso**
 
-Tre barre separate (non una per blocco), nel formato:
-
 ```
-SysAdmin  ████████░░ 80%   (N/M moduli completati)
-Security  ░░░░░░░░░░  0%   (0/12 moduli completati)
-Diritto   ░░░░░░░░░░  0%   (0/8 moduli completati)
+SysAdmin  ████████░░ 77%  (10/13 moduli ✅)
+Security  ░░░░░░░░░░  0%  (0/12 moduli ✅)
+Diritto   ██████░░░░ 62%  (8/13 moduli ✅)
 ```
 
-Calcola la percentuale sul totale dei moduli di ciascun corso.
+Calcola percentuali dal file.
 
 ---
 
 **3. Prossimo step per corso**
 
-Una riga per ogni corso con moduli non completati:
-
 ```
-SysAdmin  → [ID modulo] — [azione concreta immediata]
-Security  → [ID modulo] — [azione concreta immediata]
-Diritto   → [ID modulo] — [azione concreta immediata]
+SysAdmin  → [ID] — [azione concreta]
+Security  → [ID] — [azione concreta]
+Diritto   → [ID] — [azione concreta]
 ```
 
 ---
 
-Non aggiungere spiegazioni, commenti o testo libero oltre a questi tre elementi.
+**4. Alert ripasso** *(solo se presenti)*
+
+Leggi `stato/tracker_ripasso.md`. Se ci sono moduli con ripasso scaduto:
+```
+⚠️ Ripasso scaduto: [lista moduli con data scadenza]
+```
+
+---
+
+Non aggiungere spiegazioni, commenti o testo libero oltre a questi elementi.

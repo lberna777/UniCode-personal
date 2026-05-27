@@ -1,10 +1,29 @@
-# Claude Code — impostazioni locali (permessi macchina-specifici)
-.claude/settings.local.json
+# =============================================================
+# UniCode — .gitignore
+# =============================================================
+# Questo repo contiene il SISTEMA (comandi, configurazione,
+# template, documentazione). I contenuti personali e il
+# materiale copyrightato del corso NON sono inclusi.
+# =============================================================
 
-# Obsidian — stato UI (non utile nel repo)
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
+# ─── Materiale universitario (copyright del corso) ───────────
+SLIDE TEORIA/
+SLIDE LAB/
+SIMULAZIONI ESAMI/
 
-# File di sistema
+# ─── PDF generati (derivati da slide copyrightate) ───────────
+claudeAppunti_PDF/
+
+# ─── Pianificazione esami personale ──────────────────────────
+ESAMI.md
+ESAMI SCELTI.md
+
+# ─── File legacy (sostituito da stato/) ──────────────────────
+master_map_studio.md
+
+# ─── OS / editor ─────────────────────────────────────────────
 .DS_Store
 Thumbs.db
+*.swp
+*.swo
+.vscode/

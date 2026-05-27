@@ -1,13 +1,13 @@
 ---
-description: "Chiude la sessione di studio. Aggiorna log, stati dei moduli e punto di ripresa nella master map."
+description: "Chiude la sessione di studio. Aggiorna log, stati, tracker ripasso e punto di ripresa."
 ---
 
 Esegui i seguenti passi in ordine.
 
 ---
 
-**1. Leggi la master map** *(solo se non già letta in questa conversazione)*
-Leggi `/home/lorenzo/UniCode/master_map_studio.md` per recuperare: numero di sessione corrente, data, stato dei moduli, punto di ripresa pianificato.
+**1. Leggi lo stato corrente** *(solo se non già letto in questa conversazione)*
+Leggi `stato/corrente.md` per recuperare: numero di sessione, data, stato dei moduli.
 
 ---
 
@@ -32,15 +32,20 @@ Attendi la risposta prima di procedere.
 
 ---
 
-**3. Aggiorna la master map**
+**3. Aggiorna stato/corrente.md**
 
-Modifica `/home/lorenzo/UniCode/master_map_studio.md`:
-
-- **Intestazione**: incrementa il numero di sessione di 1, aggiorna la data "Aggiornato".
-- **Stato moduli**: aggiorna ⬜/🔄/✅ per ogni modulo toccato.
+- **Intestazione**: incrementa il numero di sessione di 1, aggiorna la data "Aggiornato"
+- **Stato moduli**: aggiorna ⬜/🔄/✅ per ogni modulo toccato
   - SysAdmin/Security → ✅ solo se Lorenzo ha eseguito gli esercizi sulla VM in prima persona
   - Diritto → ✅ solo se ha letto la lezione, risposto alle domande di autoverifica e scritto appunti grezzi
-- **Log di sessione**: aggiungi una nuova voce in cima alla sezione (ordine cronologico inverso):
+- **Avanzamento**: ricalcola le barre di progresso e le percentuali
+- **Prossimi Passi**: aggiorna con il punto esatto da cui iniziare per ogni materia attiva
+
+---
+
+**4. Aggiorna stato/log_sessioni.md**
+
+Aggiungi una nuova voce **in cima** alla sezione (ordine cronologico inverso):
 
 ```
 ### Sessione N — YYYY-MM-DD (completata)
@@ -53,25 +58,43 @@ Modifica `/home/lorenzo/UniCode/master_map_studio.md`:
 → ...
 ```
 
-- **Avanzamento**: aggiorna le barre di avanzamento per corso (SysAdmin, Security, Diritto).
+---
+
+**5. Aggiorna stato/tracker_ripasso.md**
+
+Per ogni modulo portato a ✅ in questa sessione:
+- Aggiungi una riga nella tabella del corso corrispondente
+- "Completato" = data odierna
+- "Ultimo ripasso" = mai
+- "Prossimo ripasso" = data odierna + 3 giorni
+- "Priorità" = 🟢
+
+Per ogni modulo ripassato in questa sessione:
+- Aggiorna "Ultimo ripasso" = data odierna
+- Calcola "Prossimo ripasso" con intervallo crescente: 3gg → 7gg → 14gg → 30gg
+- Aggiorna "Priorità"
 
 ---
 
-**4. Aggiorna il glossario** *(se necessario)*
+**6. Aggiorna il glossario** *(se necessario)*
 
-Se sono emersi termini tecnici o giuridici nuovi non ancora in `/home/lorenzo/UniCode/glossario.md`, aggiungili con definizione concisa in ordine alfabetico.
+Se sono emersi termini tecnici o giuridici nuovi:
+- SysAdmin/Security → `glossario_sysadm.md`
+- Diritto → `glossario_diritto.md`
 
----
-
-**5. Aggiorna il troubleshooting** *(solo per sessioni lab con VM)*
-
-Se sono stati risolti problemi tecnici nuovi, aggiungili a `/home/lorenzo/UniCode/troubleshooting_vm.md` con: sintomo, causa, soluzione.
-Per sessioni Diritto, salta questo passo.
+Aggiungi con definizione concisa in ordine alfabetico.
 
 ---
 
-**6. Conferma finale**
+**7. Aggiorna il troubleshooting** *(solo per sessioni lab con VM)*
+
+Se sono stati risolti problemi tecnici nuovi, aggiungili a `troubleshooting_vm.md` con: sintomo, causa, soluzione.
+
+---
+
+**8. Conferma finale**
 
 Mostra a Lorenzo:
 - Numero della sessione chiusa e materie/moduli aggiornati
 - Punto esatto da cui partirà la prossima sessione per ogni materia attiva
+- Se ci sono moduli con ripasso scaduto (da tracker_ripasso.md), segnalarli: "⚠️ Ripasso scaduto per: [moduli]"
