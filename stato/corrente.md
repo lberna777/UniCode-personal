@@ -79,6 +79,8 @@ Diritto   ██████░░░░  62%  (8/13 moduli ✅)
 
 ## Prossimi Passi
 
+> 🚨 **Urgenza Diritto**: D9 autoverifica + D10 + D11 + D12 + D13 = **5 step in 20 giorni** (esame 16/06). Ritmo necessario: ~1 modulo ogni 4 giorni a partire da oggi. Nessun margine di ritardo.
+
 **Diritto** → D9: rispondere alle 5 domande di autoverifica → portare a ✅ → poi `/lezione D10`
 **SysAdmin** → 3D Es. 2-6: avviare VM, eseguire ping, ss -tlnp, /etc/hosts, dig, tcpdump → poi `/appunti 3D`
 **Security** → S1 LAB: lezione pronta, eseguire le 6 sezioni su VM Kali → poi `/appunti S1`

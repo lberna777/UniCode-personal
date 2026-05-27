@@ -69,21 +69,25 @@ Sottocartelle:
 ## Obiettivo
 Una frase: cosa Lorenzo deve saper fare sulla VM al termine.
 
-## Concetti Chiave
-Per ogni concetto:
-- **Definizione**: cos'è
-- **Perché esiste**: quale problema risolve
-- **Come si usa**: sintassi e contesto pratico su Debian
-
-## Comandi di Riferimento
-| Comando | Sintassi | Descrizione | Output atteso |
-|---------|----------|-------------|---------------|
-
 ## Esercizi Guidati
-Sequenza numerata di comandi da eseguire sulla VM.
-- Ogni comando significativo ha l'output atteso
-- Progressione: facile → difficile
-- Se Lorenzo ha errori ricorrenti su concetti in questo modulo (da errori_frequenti.md): aggiungere un esercizio specifico che forza la comprensione corretta
+
+Per ogni sezione del lab, struttura fissa — NON separare teoria e pratica in blocchi distinti:
+
+### 1. <Titolo sezione>
+**Concetto**: cos'è e perché esiste — teoria minima necessaria per affrontare questo esercizio.
+*(Se Lorenzo ha errori ricorrenti su questo concetto da errori_frequenti.md: aggiungere ⚠️ qui con il pattern specifico)*
+
+| Comando | Sintassi | Output atteso |
+|---------|----------|---------------|
+
+Passi sulla VM:
+1. ...
+2. ...
+
+### 2. <Titolo sezione>
+... (stessa struttura)
+
+[Progressione: facile → difficile attraverso le sezioni]
 
 ## Connessioni
 - Con il modulo precedente: [connessione SPECIFICA, non generica]
