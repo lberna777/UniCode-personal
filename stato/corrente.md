@@ -59,7 +59,7 @@
 | D6 | Contratto Sviluppo Software | ✅ | Sessione 24 |
 | D7 | Proprietà Industriale | ✅ | Sessione 25 |
 | D8 | Privacy e GDPR | ✅ | Sessione 26 |
-| D9 | Firme Elettroniche | 🔄 | Appunti elaborati + studiati; autoverifica 5 domande mancante |
+| D9 | Firme Elettroniche | ✅ | Sessione 28 — ripasso 2/5 corrette, lacuna su gerarchia firme e opponibilità PEC |
 | D10 | Commercio Elettronico | 🔄 | Lezione pronta |
 | D11 | Reati Informatici | ⬜ | |
 | D12 | AI Act | ⬜ | |

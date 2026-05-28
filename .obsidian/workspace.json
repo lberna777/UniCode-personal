@@ -212,6 +212,9 @@
   },
   "active": "cfc04b8009611faa",
   "lastOpenFiles": [
+    "stato/corrente.md.tmp.118497.1779983807108",
+    "stato/tracker_ripasso.md.tmp.118497.1779983798735",
+    "stato/errori_frequenti.md.tmp.118497.1779983342115",
     "APPUNTI GREZZI/Diritto/Appunti_ModuloD10.md",
     "claudeLezioni/LEZIONI DIRITTO/lezione_moduloD10_commercio_elettronico.md",
     "APPUNTI GREZZI/Diritto/Appunti_moduloD9.md",
@@ -230,8 +233,6 @@
     "claudeLezioni/LEZIONI DIRITTO/lezione_moduloD6_contratto_sviluppo_software.md",
     "glossario_diritto.md.tmp.2888.1778862834588",
     "glossario_diritto.md.tmp.2888.1778862813668",
-    "glossario_diritto.md.tmp.2888.1778862802790",
-    "glossario_diritto.md.tmp.2888.1778862785976",
     "claudeLezioni/LEZIONI DIRITTO/lezione_moduloD3_diritto_autore.md",
     "CLAUDE.md",
     "master_map_studio.md",
@@ -246,7 +247,6 @@
     "glossario_sysadm.md",
     "esercizi/ESERCIZI sysadm.md",
     "esercizi/es_01_conta_estensioni.md",
-    "template_appunti_grezzi.md",
-    "claudeAppunti/APPUNTI SYSADM/appunti_modulo0B_pipe_redirect_filtri.md"
+    "template_appunti_grezzi.md"
   ]
 }
