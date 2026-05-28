@@ -8,6 +8,30 @@
 
 ---
 
+### Sessione 28 — 2026-05-28 (completata)
+**Focus**: Diritto — D9 ripasso + D10 appunti
+
+**Coperto in sessione**:
+- Ripasso D9 (Firme Elettroniche): 5 domande, 2/5 corrette — lacune su gerarchia firme e opponibilità PEC
+  - D9 → ✅; tracker ripasso aggiornato (prossimo: 2026-05-31)
+- Scoperta struttura esame Diritto: 22 quiz scelta multipla, NON richiedono numeri articoli/leggi → rimosso pattern errante da errori_frequenti.md
+- Appunti definitivi D10 (Commercio Elettronico) elaborati → `appunti_moduloD10_commercio_elettronico.md`
+  - 11 domande aperte risolte inline
+  - 5 sezioni integrate con nota ⚠️
+  - D10 → 🔄 (autoverifica mancante)
+
+**Non coperto / da riprendere**:
+- D10: autoverifica 5 domande
+- D11: da zero
+- SysAdmin 3D Es. 2–6 — invariato
+- Security S1 LAB — invariato
+
+**Prossima sessione — da dove partire**:
+→ **Diritto D10** — rispondere alle 5 domande di autoverifica → `/ripassa D10`? → portare a ✅
+→ **Diritto D11** — Reati Informatici: `/lezione D11` + grezzi + appunti
+
+---
+
 ### Sessione 27 — 2026-05-27 (completata)
 **Focus**: Meta — miglioramento sistema UniCode + Diritto D9 (appunti definitivi) + Diritto D10 (lezione generata)
 
