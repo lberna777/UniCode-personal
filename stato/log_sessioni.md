@@ -8,6 +8,31 @@
 
 ---
 
+### Sessione 27 — 2026-05-27 (completata)
+**Focus**: Meta — miglioramento sistema UniCode + Diritto D9 (appunti definitivi) + Diritto D10 (lezione generata)
+
+**Coperto in sessione**:
+- Analisi autocritica del sistema UniCode: 3 interventi prodotti
+  - `stato/corrente.md`: aggiunto blocco urgenza Diritto (5 step in 20 giorni)
+  - `lezione.md` template SysAdmin: ristrutturato per interlacciare teoria+pratica per sezione
+  - Memory cleanup: 4 file ridondanti eliminati (qualita_output, sottocartelle, glossari_separati, sessione_giornata)
+- Appunti definitivi D9 studiati (lettura appunti elaborati)
+- Lezione D10 — Commercio Elettronico generata
+
+**Non coperto / da riprendere**:
+- D9: autoverifica 5 domande ancora mancante
+- D10: appunti grezzi da scrivere + `/appunti D10`
+- SysAdmin 3D Es. 2–6 — invariato
+- Security S1 LAB — invariato
+
+**Prossima sessione — da dove partire**:
+→ **Diritto D9** — rispondere alle 5 domande di autoverifica → portare a ✅
+→ **Diritto D10** — lezione pronta; scrivere appunti grezzi → `/appunti D10`
+→ **SysAdmin 3D Es. 2–6** — VM, eseguire: ping, ss -tlnp, /etc/hosts, dig, tcpdump → `/appunti 3D`
+→ **Security S1 LAB** — lezione pronta, eseguire 6 sezioni su VM Kali
+
+---
+
 ### Sessione 26 — 2026-05-26 (completata)
 **Focus**: Diritto D8 — Autoverifica + Diritto D9 — Appunti elaborati
 

@@ -38,8 +38,8 @@
 
 ### Pattern Ricorrenti Diritto
 - **Tendenza a semplificare le distinzioni**: Lorenzo fonde concetti che il PDF tiene separati (es. variazioni richieste vs necessarie in D6, doppia base art. 6 + art. 9 in D8)
-- **Articoli citati senza numero preciso**: tende a riferirsi a concetti senza citare l'articolo specifico (emerso in D6, D8)
 - **Definizioni parafrasate invece di fedeli al PDF**: il PDF della professoressa usa formulazioni precise che vanno riprodotte, non riformulate
+- ~~Articoli citati senza numero preciso~~ → **NON rilevante**: la prof. ha confermato che numeri di articoli/leggi/date NON vanno memorizzati per l'esame (slide InfoGenerali, p. 8)
 
 ---
 

@@ -1,5 +1,5 @@
 # Stato Corrente — Studio Attivo
-**Sessione**: 26 | **Aggiornato**: 2026-05-26
+**Sessione**: 27 | **Aggiornato**: 2026-05-27
 
 > **Istruzione per Claude**: questo file va letto ALL'INIZIO di ogni sessione. È l'unico file obbligatorio per avere contesto.
 > Per dettagli sui moduli (materiali, concetti, esercizi): `stato/percorso.md`
@@ -59,8 +59,8 @@
 | D6 | Contratto Sviluppo Software | ✅ | Sessione 24 |
 | D7 | Proprietà Industriale | ✅ | Sessione 25 |
 | D8 | Privacy e GDPR | ✅ | Sessione 26 |
-| D9 | Firme Elettroniche | 🔄 | Appunti fatti, autoverifica 5 domande mancante |
-| D10 | Commercio Elettronico | ⬜ | |
+| D9 | Firme Elettroniche | 🔄 | Appunti elaborati + studiati; autoverifica 5 domande mancante |
+| D10 | Commercio Elettronico | 🔄 | Lezione pronta |
 | D11 | Reati Informatici | ⬜ | |
 | D12 | AI Act | ⬜ | |
 | D13 | DSA/DMA/Data Act | ⬜ | |
@@ -79,9 +79,9 @@ Diritto   ██████░░░░  62%  (8/13 moduli ✅)
 
 ## Prossimi Passi
 
-> 🚨 **Urgenza Diritto**: D9 autoverifica + D10 + D11 + D12 + D13 = **5 step in 20 giorni** (esame 16/06). Ritmo necessario: ~1 modulo ogni 4 giorni a partire da oggi. Nessun margine di ritardo.
+> 🚨 **Urgenza Diritto**: D9 autoverifica + D10 grezzi+appunti + D11 + D12 + D13 = **5 step in 20 giorni** (esame 16/06). Ritmo necessario: ~1 modulo ogni 4 giorni. Nessun margine.
 
-**Diritto** → D9: rispondere alle 5 domande di autoverifica → portare a ✅ → poi `/lezione D10`
+**Diritto** → D9: rispondere alle 5 domande di autoverifica → ✅ → D10: lezione pronta, scrivere appunti grezzi → `/appunti D10`
 **SysAdmin** → 3D Es. 2-6: avviare VM, eseguire ping, ss -tlnp, /etc/hosts, dig, tcpdump → poi `/appunti 3D`
 **Security** → S1 LAB: lezione pronta, eseguire le 6 sezioni su VM Kali → poi `/appunti S1`
 

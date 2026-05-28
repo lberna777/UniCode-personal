@@ -13,7 +13,8 @@
       "Bash(git log:*)",
       "Bash(git diff:*)",
       "Bash(ls /home/lorenzo/UniCode/**)",
-      "Bash(awk:*)"
+      "Bash(awk:*)",
+      "Bash(git fetch:*)"
     ]
   },
   "hooks": {

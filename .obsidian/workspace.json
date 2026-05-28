@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0a77be76883e830b",
+            "id": "cfc04b8009611faa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "APPUNTI GREZZI/Diritto/Appunti_moduloD9.md",
+                "file": "APPUNTI GREZZI/Diritto/Appunti_ModuloD10.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Appunti_moduloD9"
+              "title": "Appunti_ModuloD10"
             }
           }
         ]
@@ -210,12 +210,13 @@
       "bases:Crea nuova Base": false
     }
   },
-  "active": "0a77be76883e830b",
+  "active": "cfc04b8009611faa",
   "lastOpenFiles": [
+    "APPUNTI GREZZI/Diritto/Appunti_ModuloD10.md",
+    "claudeLezioni/LEZIONI DIRITTO/lezione_moduloD10_commercio_elettronico.md",
     "APPUNTI GREZZI/Diritto/Appunti_moduloD9.md",
     "claudeAppunti/APPUNTI DIRITTO/appunti_moduloD7_proprieta_industriale.md",
     "APPUNTI GREZZI/Diritto/appunti_moduloD8.md",
-    "Senza nome.md",
     "APPUNTI GREZZI/Diritto/appunti_moduloD7.md",
     "master_map_studio.md.tmp.73637.1779459864584",
     "master_map_studio.md.tmp.73637.1779459853937",
@@ -246,7 +247,6 @@
     "esercizi/ESERCIZI sysadm.md",
     "esercizi/es_01_conta_estensioni.md",
     "template_appunti_grezzi.md",
-    "claudeAppunti/APPUNTI SYSADM/appunti_modulo0B_pipe_redirect_filtri.md",
-    "claudeLezioni/LEZIONI SYSADM/lezione_modulo0B_pipe_redirect_filtri.md"
+    "claudeAppunti/APPUNTI SYSADM/appunti_modulo0B_pipe_redirect_filtri.md"
   ]
 }
