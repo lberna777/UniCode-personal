@@ -35,6 +35,8 @@
 | Dato sensibile = capacità identificativa | D8 | Dato sensibile = natura dell'informazione (salute, orientamento, ecc.), non capacità identificativa |
 | CC BY = pubblico dominio | D5 | CC BY ≠ pubblico dominio; CC0 = rinuncia totale inclusa attribuzione |
 | FEQ definita genericamente | D9 | FEQ = dispositivo qualificato + certificato qualificato (due elementi precisi) |
+| "danno" usato al posto di "nocumento" | D11 | Nocumento ≠ danno generico: è pregiudizio giuridicamente rilevante (condizione oggettiva di punibilità art. 621) |
+| Titolo sezione parafrasato invece del nome del reato | D11 | Il reato si chiama "Intercettazione, impedimento o interruzione illecita" — non "Rivelazione di Intercettazioni" |
 
 ### Pattern Ricorrenti Diritto
 - **Tendenza a semplificare le distinzioni**: Lorenzo fonde concetti che il PDF tiene separati (es. variazioni richieste vs necessarie in D6, doppia base art. 6 + art. 9 in D8)
