@@ -14,7 +14,18 @@
       "Bash(git diff:*)",
       "Bash(ls /home/lorenzo/UniCode/**)",
       "Bash(awk:*)",
-      "Bash(git fetch:*)"
+      "Bash(git fetch:*)",
+      "Bash(git -C /home/lorenzo/UniCode show --stat d214228)",
+      "Bash(git -C /home/lorenzo/UniCode add \"claudeAppunti_PDF/APPUNTI DIRITTO/\")",
+      "Bash(git -C /home/lorenzo/UniCode status)",
+      "Bash(git -C /home/lorenzo/UniCode commit -m ' *)",
+      "Bash(git -C /home/lorenzo/UniCode push)",
+      "Bash(git -C /home/lorenzo/UniCode remote -v)",
+      "Bash(git -C /home/lorenzo/UniCode log --oneline origin/master..HEAD)",
+      "Bash(git -C /home/lorenzo/UniCode branch -vv)",
+      "Bash(git -C /home/lorenzo/UniCode log --oneline -5)",
+      "Bash(git -C /home/lorenzo/UniCode remote set-url origin git@github.com:lberna777/UniCode-personal.git)",
+      "Bash(git *)"
     ]
   },
   "hooks": {

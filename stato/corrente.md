@@ -60,7 +60,7 @@
 | D7 | Proprietà Industriale | ✅ | Sessione 25 |
 | D8 | Privacy e GDPR | ✅ | Sessione 26 |
 | D9 | Firme Elettroniche | ✅ | Sessione 28 — ripasso 2/5 corrette, lacuna su gerarchia firme e opponibilità PEC |
-| D10 | Commercio Elettronico | 🔄 | Appunti elaborati; autoverifica 5 domande mancante |
+| D10 | Commercio Elettronico | ✅ | Sessione 29 — lacuna: gerarchia 70/2003 vs Codice consumo |
 | D11 | Reati Informatici | ⬜ | |
 | D12 | AI Act | ⬜ | |
 | D13 | DSA/DMA/Data Act | ⬜ | |
@@ -72,7 +72,7 @@
 ```
 SysAdmin  ████████░░  77%  (10/13 moduli ✅)
 Security  ░░░░░░░░░░   0%  (0/12 moduli ✅)
-Diritto   ███████░░░  69%  (9/13 moduli ✅)
+Diritto   ████████░░  77%  (10/13 moduli ✅)
 ```
 
 ---
@@ -81,7 +81,7 @@ Diritto   ███████░░░  69%  (9/13 moduli ✅)
 
 > 🚨 **Urgenza Diritto**: D10 autoverifica + D11 + D12 + D13 = **4 step in 19 giorni** (esame 16/06). Ritmo necessario: ~1 modulo ogni 4-5 giorni. Nessun margine.
 
-**Diritto** → D10: rispondere alle 5 domande di autoverifica → ✅ → D11: lezione + grezzi + appunti
+**Diritto** → D11: lezione + grezzi + appunti
 **SysAdmin** → 3D Es. 2-6: avviare VM, eseguire ping, ss -tlnp, /etc/hosts, dig, tcpdump → poi `/appunti 3D`
 **Security** → S1 LAB: lezione pronta, eseguire le 6 sezioni su VM Kali → poi `/appunti S1`
 
