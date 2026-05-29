@@ -61,7 +61,7 @@
 | D8 | Privacy e GDPR | ✅ | Sessione 26 |
 | D9 | Firme Elettroniche | ✅ | Sessione 28 — ripasso 2/5 corrette, lacuna su gerarchia firme e opponibilità PEC |
 | D10 | Commercio Elettronico | ✅ | Sessione 29 — lacuna: gerarchia 70/2003 vs Codice consumo |
-| D11 | Reati Informatici | ⬜ | |
+| D11 | Reati Informatici | 🔄 | Lezione pronta — grezzi + appunti mancanti |
 | D12 | AI Act | ⬜ | |
 | D13 | DSA/DMA/Data Act | ⬜ | |
 
