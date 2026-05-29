@@ -8,26 +8,25 @@
 
 ---
 
-### Sessione 29 — 2026-05-29 (in corso)
-**Focus**: Diritto — D10 autoverifica + D11 lezione + appunti
+### Sessione 29 — 2026-05-29 (completata)
+**Focus**: Diritto — D10 autoverifica + D11 lezione + grezzi + appunti
 
 **Coperto in sessione**:
-- Autoverifica D10 (Commercio Elettronico): 5 domande, risultato complessivo buono — lacuna su gerarchia 70/2003 vs Codice del consumo (chi prevale) → D10 → ✅
-- Lezione D11 (Reati Informatici) creata → `lezione_moduloD11_reati_informatici.md`
-- Appunti definitivi D11 elaborati → `appunti_moduloD11_reati_informatici.md`
-  - 5 domande aperte risolte inline (utente autorizzato, duplicazione dati, 2 tabelle, art. 392, schema riepilogativo)
-  - 2 imprecisioni corrette: "danno"→"nocumento" (art. 621); titolo errato §6
-  - 1 sezione integrata con nota ⚠️ (Quadro Normativo, concorso 615-ter/640-ter)
-  - D11 → 🔄 (autoverifica mancante)
+- Autoverifica D10 (5 domande): risultato buono — lacuna su gerarchia D.Lgs. 70/2003 vs Codice del consumo → D10 → ✅
+- D11 (Reati Informatici): lezione creata + appunti grezzi scritti + appunti definitivi elaborati
+  - `lezione_moduloD11_reati_informatici.md` — tutti 11 topic dal "Attenzione ripasso!!!" coperti
+  - `appunti_moduloD11_reati_informatici.md` — 5 domande aperte risolte, 2 imprecisioni corrette, schema riepilogativo completo
+  - PDF generato e pushato
+  - D11 → 🔄 (lettura appunti + autoverifica 5 domande alla prossima sessione)
 
 **Non coperto / da riprendere**:
-- D11: autoverifica 5 domande
+- D11: leggere appunti definitivi + autoverifica 5 domande
 - D12, D13: da zero
 - SysAdmin 3D Es. 2–6 — invariato
 - Security S1 LAB — invariato
 
 **Prossima sessione — da dove partire**:
-→ **Diritto D11** — rispondere alle 5 domande di autoverifica → portare a ✅ → D12
+→ **Diritto D11** — leggere appunti + 5 domande autoverifica → ✅ → D12
 
 ---
 

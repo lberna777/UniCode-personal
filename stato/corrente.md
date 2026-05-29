@@ -1,5 +1,5 @@
 # Stato Corrente — Studio Attivo
-**Sessione**: 28 | **Aggiornato**: 2026-05-28
+**Sessione**: 29 | **Aggiornato**: 2026-05-29
 
 > **Istruzione per Claude**: questo file va letto ALL'INIZIO di ogni sessione. È l'unico file obbligatorio per avere contesto.
 > Per dettagli sui moduli (materiali, concetti, esercizi): `stato/percorso.md`

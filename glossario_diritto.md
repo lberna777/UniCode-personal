@@ -6,6 +6,8 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 
 ## A
 
+**accesso abusivo a un sistema informatico** (art. 615-ter c.p.) — reato necessariamente informatico: chiunque abusivamente si introduce in un sistema informatico o telematico protetto da misure di sicurezza ovvero vi si mantiene contro la volontà espressa o tacita di chi ha il diritto di escluderlo. Reato di mera condotta: si perfeziona con la violazione del domicilio informatico, a prescindere da danno o finalità. L'abusività è valutata in senso oggettivo (modalità dell'accesso, non intenzioni). Pena base: reclusione fino a 3 anni.
+
 **appalto (contratto di)** — contratto con cui l'appaltatore assume, con organizzazione dei propri mezzi e gestione a proprio rischio, il compimento di un'opera o servizio verso corrispettivo (art. 1655 c.c.). Carattere: **obbligazione di risultato**. Nello sviluppo software: si qualifica come appalto quando il committente ingaggia un'impresa (software house). La proprietà dell'opera passa al committente con la consegna.
 
 **atti ufficiali dello Stato** — atti normativi e documenti prodotti dallo Stato e dalle amministrazioni pubbliche. Non sono soggetti alla tutela del diritto d'autore (art. 5 l.d.a.): chiunque può riprodurli liberamente. Rilevante per la ricerca giuridica: testi di leggi, decreti e regolamenti sono liberamente reperibili e riproducibili.
@@ -72,6 +74,8 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 
 ## D
 
+**domicilio informatico** — bene giuridico tutelato dall'art. 615-ter c.p., per analogia con il domicilio fisico. Rappresenta lo spazio virtuale in cui si esercita lo "ius excludendi alios": il titolare ha il diritto di escludere chiunque non autorizzato. Il reato di accesso abusivo si perfeziona con la violazione di questo spazio, indipendentemente da lesioni ulteriori.
+
 **diritto di recesso** — diritto del consumatore di recedere da un contratto a distanza entro 14 giorni, senza penali e senza indicare il motivo. Il termine decorre dalla conclusione del contratto (servizi) o dal possesso fisico del bene. Se il professionista non informa il consumatore del diritto, il termine si estende di 12 mesi. Escluso in 13 casi tassativi (es. contenuto digitale fruito con consenso, beni personalizzati, beni deperibili). L'onere della prova dell'esercizio del recesso grava sul consumatore.
 
 **documento informatico** — il documento elettronico che contiene la rappresentazione informatica di atti, fatti o dati giuridicamente rilevanti (CAD). Ha l'efficacia della scrittura privata se sottoscritto con firma digitale, firma elettronica qualificata o firma elettronica avanzata. Non gli sono negati effetti giuridici per il solo fatto di essere in forma elettronica.
@@ -112,7 +116,9 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 
 **foro competente** — tribunale territorialmente competente a decidere le controversie relative a un determinato contratto o rapporto giuridico. Le parti possono scegliere il foro convenzionale (art. 29 c.p.c.) in deroga alle regole ordinarie di competenza territoriale (es. residenza del convenuto). Rilevante: nei contratti B2B tra soggetti italiani, la clausola "foro di Bologna" stabilisce che eventuali liti vengano discusse davanti al Tribunale di Bologna, indipendentemente da dove risiedono le parti. Non applicabile liberamente nei contratti B2C (tutela del consumatore).
 
-**fattispecie** — descrizione astratta di una situazione a cui la norma ricollega effetti giuridici. La norma si applica quando il caso concreto corrisponde alla fattispecie astratta.
+**fattispecie**
+
+**frode informatica** (art. 640-ter c.p.) — reato necessariamente informatico che condivide la struttura della truffa ma se ne differenzia perché l'attività fraudolenta dell'agente investe non la persona (di cui difetta l'induzione in errore) bensì il sistema informatico, attraverso la sua manipolazione o l'intervento sui dati. Condotte: alterare il funzionamento di un sistema informatico o intervenire senza diritto su dati/programmi per procurare ingiusto profitto con altrui danno. Può concorrere con l'accesso abusivo (art. 615-ter) poiché tutela beni giuridici distinti. — descrizione astratta di una situazione a cui la norma ricollega effetti giuridici. La norma si applica quando il caso concreto corrisponde alla fattispecie astratta.
 
 **fonti del diritto** — atti o fatti da cui traggono origine le norme giuridiche. Gerarchia: Costituzione → leggi costituzionali → leggi ordinarie/decreti → regolamenti → usi e consuetudini. Fonti UE (regolamenti, direttive) si collocano sopra la legge ordinaria.
 
@@ -145,6 +151,8 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 **nullità di protezione** — forma di nullità prevista dal Codice del consumo (art. 36 D.Lgs. 206/2005) per le clausole vessatorie. Caratteristiche: colpisce la singola clausola (non l'intero contratto), può essere fatta valere **solo dal consumatore** (non dal professionista), può essere rilevata d'ufficio dal giudice. Opera a tutela del contraente debole.
 
 **nullità parziale** — la nullità di una clausola o di una parte del contratto importa la nullità dell'**intero contratto** solo se risulta che le parti non lo avrebbero concluso senza quella parte (art. 1419 c.c.). Se le clausole nulle sono sostituite di diritto da **norme imperative**, la nullità non si trasmette al contratto nel suo insieme.
+
+**nocumento** — pregiudizio giuridicamente rilevante di qualsiasi natura subito dal titolare di un diritto. In alcuni reati (es. art. 621 c.p. — rivelazione di documenti segreti; art. 616 c.p. — rivelazione di corrispondenza) il nocumento è condizione oggettiva di punibilità: il reato non sussiste, neppure nella forma tentata, se dalla condotta non deriva un nocumento effettivo. Distinto dal generico "danno": non ogni disagio è nocumento, occorre che sia giuridicamente apprezzabile.
 
 **normativa** — insieme degli atti normativi presenti nell'ordinamento giuridico (direttive, leggi, decreti, regolamenti, ecc.), emanati da autorità a diversi livelli: internazionale, comunitario, nazionale, regionale/locale.
 
@@ -185,6 +193,10 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 **prescrizione** — estinzione di un diritto per mancato esercizio protratto per un periodo stabilito dalla legge. A differenza della decadenza, la prescrizione può essere interrotta (es. dalla messa in mora del debitore) o sospesa. Rilevante in D6: l'azione per difformità o vizi dell'opera si prescrive in **1 anno dalla consegna** (art. 2226 c.c.); entro tale termine, chi ha denunciato il vizio nei termini di decadenza deve anche agire in giudizio, pena la perdita definitiva del diritto.
 
 ## R
+
+**reati informatici** — reati che coinvolgono tecnologie informatiche, commessi *mediante* tecnologie informatiche (es. phishing) o *a danno di* tecnologie informatiche (es. cancellazione dati). Si distinguono in: (1) **eventualmente informatici** — il reato esiste anche senza l'elemento informatico (es. truffa online); (2) **necessariamente informatici** — la presenza del sistema informatico è necessaria perché il reato sussista (es. accesso abusivo). Fonti normative principali: L. 547/1993, Convenzione di Budapest 2001, L. 48/2008 (ratifica Budapest).
+
+**reato di mera condotta** — reato che si perfeziona con il solo compimento della condotta vietata, indipendentemente dal verificarsi di un risultato lesivo. Contrapposto al reato di evento (che richiede un risultato). L'accesso abusivo (art. 615-ter c.p.) è un reato di mera condotta: si perfeziona con l'introduzione nel sistema, senza che sia necessario un danno o una lesione effettiva.
 
 **PEC (Posta Elettronica Certificata)** — sistema di trasmissione telematica che certifica l'invio e la consegna di messaggi con valore legale. Equivale alla notificazione a mezzo posta. Data e ora di trasmissione e ricezione sono **opponibili ai terzi** se conformi alle norme vigenti. Costituisce validazione temporale (opponibile ai terzi). Disciplinata dal DPR 68/2005.
 
