@@ -8,6 +8,26 @@
 
 ---
 
+### Sessione 30 — 2026-06-03 (in corso)
+**Focus**: Diritto — D11 autoverifica + D12 lezione + grezzi + appunti
+
+**Coperto in sessione**:
+- Autoverifica D11 (5 domande): risultati parziali (D1 ✅, D2-D5 parziali) — errori documentati in errori_frequenti.md (615-quinquies, mera condotta, vittima frode) → D11 ✅
+- D12 (AI Act): lezione creata (`lezione_moduloD12_ai_act.md`); appunti grezzi scritti; appunti definitivi elaborati (`appunti_moduloD12_ai_act.md`)
+  - 9 domande aperte risolte inline; 2 imprecisioni corrette; 8 pratiche vietate espanse; schema casi pratici creato
+  - D12 → 🔄 (autoverifica 5 domande mancante)
+
+**Non coperto / da riprendere**:
+- D12: autoverifica 5 domande → poi ✅
+- D13: da zero
+- SysAdmin 3D Es. 2–6 — invariato
+- Security S1 LAB — invariato
+
+**Prossima sessione — da dove partire**:
+→ **Diritto D12** — autoverifica 5 domande → ✅ → D13
+
+---
+
 ### Sessione 29 — 2026-05-29 (completata)
 **Focus**: Diritto — D10 autoverifica + D11 lezione + grezzi + appunti
 

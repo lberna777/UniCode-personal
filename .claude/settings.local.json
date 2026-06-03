@@ -26,7 +26,15 @@
       "Bash(git -C /home/lorenzo/UniCode log --oneline -5)",
       "Bash(git -C /home/lorenzo/UniCode remote set-url origin git@github.com:lberna777/UniCode-personal.git)",
       "Bash(git *)",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(mkdir -p /home/lorenzo/Idee/ClaudeAnalysis)",
+      "Bash(repomix /home/lorenzo/.claude/ --ignore **/*.jsonl,**/.credentials.json,**/cache/**,**/image-cache/**,**/sessions/**,**/telemetry/**,**/usage-data/**,**/backups/**,**/downloads/**,**/file-history/**,**/paste-cache/**,**/shell-snapshots/**,**/daemon/**,**/stats-cache.json,**/mcp-needs-auth-cache.json,**/jobs/**,**/tasks/** --output /home/lorenzo/Idee/ClaudeAnalysis/claude-setup-context.md)",
+      "Bash(repomix *)",
+      "Bash(xargs '-I{}' sh -c 'dir=$\\(dirname {}\\); remote=$\\(git -C \"$dir\" remote get-url origin 2>/dev/null\\); echo \"$dir → $remote\"')",
+      "Bash(xargs '-I{}' sh -c 'dir=$\\(dirname {}\\); remote=$\\(git -C \"$dir\" remote get-url origin 2>/dev/null\\); echo \"$remote → $dir\"')",
+      "Bash(gh repo *)",
+      "Bash(mkdir -p /home/lorenzo/Boot_Debian/ClaudeAnalysis)",
+      "Bash(cp /home/lorenzo/Idee/ClaudeAnalysis/claude-setup-context.md /home/lorenzo/Boot_Debian/ClaudeAnalysis/)"
     ]
   },
   "hooks": {
