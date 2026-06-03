@@ -25,7 +25,8 @@
       "Bash(git -C /home/lorenzo/UniCode branch -vv)",
       "Bash(git -C /home/lorenzo/UniCode log --oneline -5)",
       "Bash(git -C /home/lorenzo/UniCode remote set-url origin git@github.com:lberna777/UniCode-personal.git)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(python3 *)"
     ]
   },
   "hooks": {
