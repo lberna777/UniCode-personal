@@ -131,6 +131,67 @@ Completare D11 con l'autoverifica delle 5 domande rimasta pendente, portarlo a �
 
 ---
 
+## Dettaglio Autoverifica D11 — Feedback Completo
+
+Riportato per completezza, utile per `/ripassa D11` futuro.
+
+**D1 (pentest)** → ✅ corretta. Punto aggiunto: il pentest autorizzato non è "un'eccezione" — manca strutturalmente l'elemento dell'abusività. Non è "ammesso nonostante sia uguale" — è giuridicamente diverso.
+
+**D2 (quater vs quinquies)** → errore principale: Lorenzo ha detto che quater = possesso, quinquies = uso effettivo. Corretto: ENTRAMBI puniscono possesso/produzione/diffusione. La differenza è nello **scopo**: quater → entrare; quinquies → fare danno. Mancavano anche esempi concreti richiesti dalla domanda.
+
+**D3 (dipendente credenziali legittime)** → due errori: (a) ragionamento basato su "dati a cui non avrebbe accesso" e "causa danno" — il criterio reale è "finalità diverse da quelle consentite" (Cass. 8/7/2008); (b) seconda parte "giurisprudenza univoca?" non risposta — risposta corretta: NO, oscillante. Cass. 8/7/2008 vs Cass. 8/10/2008.
+
+**D4 (ospedale pubblico)** → errore sistematico 615 vs 635: Lorenzo ha citato 615-quinquies per il danno effettivo. Risposta corretta: 615-ter (accesso) + 635-ter (dati/programmi ente pubblico danneggiati) + 635-quinquies (sistemi di pubblica utilità resi inservibili) — aggravante 635-quinquies per sistema inservibile 3 giorni.
+
+**D5 (frode informatica vs truffa)** → errore: ha definito la differenza come "avviene tramite strumento informatico" invece di "vittima è il sistema (non la persona); no induzione in errore". Sul concorso ha risposto "a seconda della situazione" — corretto è: sì, possono concorrere sempre (Cass. 30/09/2008), beni giuridici distinti.
+
+---
+
+## Stato Completo File Modificati Questa Sessione
+
+| File | Modifica |
+|------|----------|
+| `stato/corrente.md` | Sessione 29→30; aggiornato 2026-05-29→2026-06-03; D11 🔄→✅; D12 ⬜→🔄; Diritto 77%→85% (10→11/13); urgenza Diritto ricalcolata (4 step→2 moduli in 13 gg) |
+| `stato/tracker_ripasso.md` | Aggiunta riga D11: completato 2026-06-03, mai ripassato, prossimo 2026-06-06, 🟢 |
+| `stato/errori_frequenti.md` | Aggiunte 3 righe D11: (1) 615-quinquies confuso con danno effettivo; (2) citare danno come elemento 615-ter; (3) vittima frode informatica come persona |
+| `claudeLezioni/LEZIONI DIRITTO/lezione_moduloD12_ai_act.md` | File nuovo — lezione D12 AI Act completa da PDF 46pp |
+
+---
+
+## Contenuto Chiave Lezione D12 (per riferimento rapido)
+
+La lezione D12 copre nell'ordine:
+
+1. Quadro normativo: Reg. UE 2024/1689 — 4 tappe di applicazione (2/2/2025, 2/8/2025, 2/8/2026, proroghe Digital Omnibus)
+2. Ratio legis: IA antropocentrica affidabile — protezione diritti fondamentali + promozione innovazione
+3. Oggetto: 7 cose che la legge stabilisce (lett. a-g)
+4. Esclusioni: militare/difesa/sicurezza nazionale; ricerca scientifica; uso personale non professionale
+5. Definizioni: sistema di IA (3 tratti costitutivi), rischio, fornitore, deployer, incidente grave
+6. Alfabetizzazione: obbligo fornitore + deployer dal 2/2/2025
+7. **4 livelli di rischio** (piramide): inaccettabile → alto → limitato → minimo/nullo
+8. **8 pratiche vietate** — testo integrale di ciascuna dal PDF
+9. **Sistemi ad alto rischio**: 9 categorie elencate + 7 obblighi pre-mercato
+10. Rischio limitato: obblighi di trasparenza (chatbot, IA generativa, deepfake)
+11. Rischio minimo: nessuna norma (videogiochi, filtri antispam)
+12. **GPAI**: definizione, obblighi fornitori (dal 2/8/2025), modelli a rischio sistemico, Codice GPAI, AI Office
+13. **Sanzioni**: 3 fasce (35M€/7%, 15M€/3%, 7,5M€/1%) + sanzioni non pecuniarie + PMI
+14. **Digital Omnibus 2026**: cosa cambia (scadenze alto rischio, watermarking, nuovo divieto deepfake intimi) e cosa resta (divieti, alfabetizzazione, GPAI)
+15. Orientamenti etici (2019) + ALTAI (2020): 3 componenti IA affidabile, 4 principi etici, 7 requisiti
+16. **5 casi pratici**: Clearview AI, Amazon CV screening, manipolazione e-commerce, social scoring, riconoscimento emozioni in azienda
+
+**Domande di autoverifica D12** (le 5 nella lezione):
+1. Cos'è l'AI Act e qual è il suo oggetto? In quali casi non si applica?
+2. 4 livelli di rischio con esempio concreto e regime per ciascuno
+3. Almeno 4 delle 8 pratiche vietate + criterio comune che le accomuna; distinguerle dai sistemi ad alto rischio
+4. GPAI: definizione + obblighi fornitori vs alto rischio
+5. Sistema sanzionatorio: 3 fasce, rapporto con GDPR, cosa ha cambiato il Digital Omnibus
+
+**Pattern di errore preventivo per D12** (da errori_frequenti.md rilevanti):
+- Tendenza a semplificare distinzioni → in D12 non fondere: fornitore vs deployer; pratiche vietate vs alto rischio vs limitato; GPAI vs sistema di IA
+- Definizioni parafrasate invece di fedeli al PDF → le definizioni di "sistema di IA", "fornitore", "deployer" vanno riprodotte fedelmente
+
+---
+
 ## Quick Start Prossima Sessione
 
 ```
