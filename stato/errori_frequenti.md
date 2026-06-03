@@ -37,6 +37,9 @@
 | FEQ definita genericamente | D9 | FEQ = dispositivo qualificato + certificato qualificato (due elementi precisi) |
 | "danno" usato al posto di "nocumento" | D11 | Nocumento ≠ danno generico: è pregiudizio giuridicamente rilevante (condizione oggettiva di punibilità art. 621) |
 | Titolo sezione parafrasato invece del nome del reato | D11 | Il reato si chiama "Intercettazione, impedimento o interruzione illecita" — non "Rivelazione di Intercettazioni" |
+| 615-quinquies confuso con il danno effettivo | D11 | 615-quinquies = detenzione/diffusione strumenti per danneggiare. Il danno effettivo è famiglia 635-bis/ter/quater/quinquies |
+| Citare il danno come elemento del 615-ter | D11 | Art. 615-ter è reato di mera condotta: si perfeziona con l'accesso, il danno non è richiesto né motivo del reato |
+| Vittima della frode informatica identificata come persona | D11 | In art. 640-ter la vittima è il sistema informatico (manipolato), non una persona indotta in errore come in art. 640 |
 
 ### Pattern Ricorrenti Diritto
 - **Tendenza a semplificare le distinzioni**: Lorenzo fonde concetti che il PDF tiene separati (es. variazioni richieste vs necessarie in D6, doppia base art. 6 + art. 9 in D8)

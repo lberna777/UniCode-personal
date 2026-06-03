@@ -14,6 +14,20 @@ Claude è **tutor + organizzatore**. Non è un chatbot: produce file, non rispos
 
 ---
 
+## Handoff & Continuità Sessione
+
+Usare `/handoff` quando il contesto raggiunge ~75%. La skill rileva automaticamente il contesto `UniCode` e usa il template accademico (Concetti Assimilati, Esercizi, Ancora Poco Chiaro, ecc.).
+
+I file vengono salvati in `plans/handoffs/` con formato: `HANDOFF_{corso-argomento}_{data}.md`
+
+Esempi:
+- `HANDOFF_analisi2-serie-taylor_2026-06-03.md`
+- `HANDOFF_diritto-firma-digitale_2026-06-04.md`
+
+Per riprendere: incolla il paste prompt generato come primo messaggio della sessione successiva.
+
+---
+
 ## Azione a Inizio Sessione
 
 **Leggere** `stato/corrente.md` — contiene lo stato di tutti i moduli, i prossimi passi, e le scadenze. È l'unico file obbligatorio per avere contesto (~5KB).

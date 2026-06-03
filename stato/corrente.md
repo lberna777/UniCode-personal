@@ -1,5 +1,5 @@
 # Stato Corrente — Studio Attivo
-**Sessione**: 29 | **Aggiornato**: 2026-05-29
+**Sessione**: 30 | **Aggiornato**: 2026-06-03
 
 > **Istruzione per Claude**: questo file va letto ALL'INIZIO di ogni sessione. È l'unico file obbligatorio per avere contesto.
 > Per dettagli sui moduli (materiali, concetti, esercizi): `stato/percorso.md`
@@ -61,8 +61,8 @@
 | D8 | Privacy e GDPR | ✅ | Sessione 26 |
 | D9 | Firme Elettroniche | ✅ | Sessione 28 — ripasso 2/5 corrette, lacuna su gerarchia firme e opponibilità PEC |
 | D10 | Commercio Elettronico | ✅ | Sessione 29 — lacuna: gerarchia 70/2003 vs Codice consumo |
-| D11 | Reati Informatici | 🔄 | Appunti elaborati; autoverifica 5 domande mancante |
-| D12 | AI Act | ⬜ | |
+| D11 | Reati Informatici | ✅ | Sessione 30 — lacune: 615-quinquies vs 635-xx, mera condotta, vittima frode |
+| D12 | AI Act | 🔄 | Lezione pronta — grezzi + appunti da fare |
 | D13 | DSA/DMA/Data Act | ⬜ | |
 
 ---
@@ -72,16 +72,16 @@
 ```
 SysAdmin  ████████░░  77%  (10/13 moduli ✅)
 Security  ░░░░░░░░░░   0%  (0/12 moduli ✅)
-Diritto   ████████░░  77%  (10/13 moduli ✅)
+Diritto   █████████░  85%  (11/13 moduli ✅)
 ```
 
 ---
 
 ## Prossimi Passi
 
-> 🚨 **Urgenza Diritto**: D10 autoverifica + D11 + D12 + D13 = **4 step in 19 giorni** (esame 16/06). Ritmo necessario: ~1 modulo ogni 4-5 giorni. Nessun margine.
+> 🚨 **Urgenza Diritto**: D12 + D13 = **2 moduli in 13 giorni** (esame 16/06). Ritmo necessario: ~1 modulo ogni 6 giorni. Margine minimo.
 
-**Diritto** → D11: rispondere alle 5 domande di autoverifica → ✅ → D12: lezione + grezzi + appunti
+**Diritto** → D12: lezione + grezzi + appunti → D13: lezione + grezzi + appunti
 **SysAdmin** → 3D Es. 2-6: avviare VM, eseguire ping, ss -tlnp, /etc/hosts, dig, tcpdump → poi `/appunti 3D`
 **Security** → S1 LAB: lezione pronta, eseguire le 6 sezioni su VM Kali → poi `/appunti S1`
 
