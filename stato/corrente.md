@@ -62,7 +62,7 @@
 | D9 | Firme Elettroniche | ✅ | Sessione 28 — ripasso 2/5 corrette, lacuna su gerarchia firme e opponibilità PEC |
 | D10 | Commercio Elettronico | ✅ | Sessione 29 — lacuna: gerarchia 70/2003 vs Codice consumo |
 | D11 | Reati Informatici | ✅ | Sessione 30 — lacune: 615-quinquies vs 635-xx, mera condotta, vittima frode |
-| D12 | AI Act | 🔄 | Appunti definitivi pronti — autoverifica 5 domande da fare |
+| D12 | AI Act | ✅ | Sessione 31 — lacune: pratiche vietate (solo 2/8 elencate), obblighi GPAI, fasce sanzionatorie |
 | D13 | DSA/DMA/Data Act | ⬜ | |
 
 ---
@@ -81,7 +81,7 @@ Diritto   █████████░  85%  (11/13 moduli ✅)
 
 > 🚨 **Urgenza Diritto**: D12 + D13 = **2 moduli in 13 giorni** (esame 16/06). Ritmo necessario: ~1 modulo ogni 6 giorni. Margine minimo.
 
-**Diritto** → D12: autoverifica 5 domande → ✅ → D13: lezione + grezzi + appunti
+**Diritto** → D13: lezione + grezzi + appunti
 **SysAdmin** → 3D Es. 2-6: avviare VM, eseguire ping, ss -tlnp, /etc/hosts, dig, tcpdump → poi `/appunti 3D`
 **Security** → S1 LAB: lezione pronta, eseguire le 6 sezioni su VM Kali → poi `/appunti S1`
 
