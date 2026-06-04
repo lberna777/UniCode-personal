@@ -1,5 +1,5 @@
 # Stato Corrente — Studio Attivo
-**Sessione**: 30 | **Aggiornato**: 2026-06-03
+**Sessione**: 31 | **Aggiornato**: 2026-06-04
 
 > **Istruzione per Claude**: questo file va letto ALL'INIZIO di ogni sessione. È l'unico file obbligatorio per avere contesto.
 > Per dettagli sui moduli (materiali, concetti, esercizi): `stato/percorso.md`
@@ -63,7 +63,7 @@
 | D10 | Commercio Elettronico | ✅ | Sessione 29 — lacuna: gerarchia 70/2003 vs Codice consumo |
 | D11 | Reati Informatici | ✅ | Sessione 30 — lacune: 615-quinquies vs 635-xx, mera condotta, vittima frode |
 | D12 | AI Act | ✅ | Sessione 31 — lacune: pratiche vietate (solo 2/8 elencate), obblighi GPAI, fasce sanzionatorie |
-| D13 | DSA/DMA/Data Act | 🔄 | Lezione pronta — appunti grezzi + autoverifica da fare |
+| D13 | DSA/DMA/Data Act | 🔄 | Lezione ✅, appunti definitivi ✅, PDF ✅ — leggere appunti + autoverifica 5 domande → poi ✅ |
 
 ---
 
@@ -81,7 +81,7 @@ Diritto   █████████░  85%  (11/13 moduli ✅)
 
 > 🚨 **Urgenza Diritto**: D12 + D13 = **2 moduli in 13 giorni** (esame 16/06). Ritmo necessario: ~1 modulo ogni 6 giorni. Margine minimo.
 
-**Diritto** → D13: lezione + grezzi + appunti
+**Diritto** → D13: leggere appunti definitivi + autoverifica 5 domande → poi ✅ → ripassone (D9, D10, D11, D12, D13)
 **SysAdmin** → 3D Es. 2-6: avviare VM, eseguire ping, ss -tlnp, /etc/hosts, dig, tcpdump → poi `/appunti 3D`
 **Security** → S1 LAB: lezione pronta, eseguire le 6 sezioni su VM Kali → poi `/appunti S1`
 

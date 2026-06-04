@@ -8,7 +8,25 @@
 
 ---
 
-### Sessione 30 — 2026-06-03 (in corso)
+### Sessione 31 — 2026-06-04 (completata)
+**Focus**: Diritto — D12 autoverifica + D13 lezione + grezzi + appunti + PDF batch
+
+**Coperto in sessione**:
+- Autoverifica D12 (AI Act): domande completate → D12 ✅
+- D13 (DSA/DMA/Data Act): lezione creata (`lezione_moduloD13_pacchetto_digitale.md`); appunti grezzi scritti; appunti definitivi elaborati (`appunti_moduloD13_pacchetto_digitale.md`) — 28 domande aperte risolte inline, 2 imprecisioni corrette (titolare dati ≠ utente; designazione vs criteri gatekeeper) → D13 🔄 (leggere appunti + autoverifica 5 domande mancante)
+- PDF batch: convertiti PDF mancanti per D13 + naming allineato D01–D13 in `claudeAppunti_PDF/`
+
+**Non coperto / da riprendere**:
+- D13: leggere appunti definitivi + autoverifica 5 domande → poi ✅
+- SysAdmin 3D Es. 2–6 — invariato
+- Security S1 LAB — invariato
+
+**Prossima sessione — da dove partire**:
+→ **Diritto D13** — leggere appunti definitivi + autoverifica 5 domande → ✅ → ripassone D9–D13
+
+---
+
+### Sessione 30 — 2026-06-03 (completata)
 **Focus**: Diritto — D11 autoverifica + D12 lezione + grezzi + appunti
 
 **Coperto in sessione**:
