@@ -170,3 +170,10 @@ Dopo /appunti D13: rispondere a questa domanda senza guardare:
  Una stessa piattaforma può essere entrambi? Fai un esempio."
 Se ok → autoverifica D13 → ripassone
 ```
+
+---
+
+## Session Closed
+**Closed at:** 2026-06-04 ~15:15
+**Commit:** 42611fa (auto-commit sessione)
+**Session status:** Handed off to next session
