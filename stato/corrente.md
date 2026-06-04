@@ -63,7 +63,7 @@
 | D10 | Commercio Elettronico | ✅ | Sessione 29 — lacuna: gerarchia 70/2003 vs Codice consumo |
 | D11 | Reati Informatici | ✅ | Sessione 30 — lacune: 615-quinquies vs 635-xx, mera condotta, vittima frode |
 | D12 | AI Act | ✅ | Sessione 31 — lacune: pratiche vietate (solo 2/8 elencate), obblighi GPAI, fasce sanzionatorie |
-| D13 | DSA/DMA/Data Act | ⬜ | |
+| D13 | DSA/DMA/Data Act | 🔄 | Lezione pronta — appunti grezzi + autoverifica da fare |
 
 ---
 

@@ -363,12 +363,12 @@ Se un'autorità di un paese terzo ordina il trasferimento di dati non personali,
 
 ### I tre regolamenti si affiancano senza sovrapporsi [fonte: PDF]
 
-| | DSA | DMA | Data Act |
-|--|-----|-----|---------|
-| **Chi regola** | Intermediari online | Gatekeeper (grandi piattaforme) | Produttori di prodotti connessi + cloud |
-| **Cosa regola** | Contenuti, responsabilità, moderazione | Struttura dei mercati digitali | Accesso e circolazione dei dati IoT |
-| **Autorità di vigilanza** | Commissione (VLOP/VLOSE) + DSC nazionale | Commissione (competenza esclusiva) | Autorità nazionale designata + EDIB |
-| **Sanzione massima** | 6% fatturato mondiale | 10% / 20% in caso di recidiva | Sanzioni nazionali «efficaci» |
+|                           | DSA                                      | DMA                                | Data Act                                |
+| ------------------------- | ---------------------------------------- | ---------------------------------- | --------------------------------------- |
+| **Chi regola**            | Intermediari online                      | Gatekeeper (grandi piattaforme)    | Produttori di prodotti connessi + cloud |
+| **Cosa regola**           | Contenuti, responsabilità, moderazione   | Struttura dei mercati digitali     | Accesso e circolazione dei dati IoT     |
+| **Autorità di vigilanza** | Commissione (VLOP/VLOSE) + DSC nazionale | Commissione (competenza esclusiva) | Autorità nazionale designata + EDIB     |
+| **Sanzione massima**      | 6% fatturato mondiale                    | 10% / 20% in caso di recidiva      | Sanzioni nazionali «efficaci»           |
 
 **In comune per tutti e tre:** [fonte: PDF]
 - Applicazione extraterritoriale (valida per chi opera nell'UE, indipendentemente dalla sede)
