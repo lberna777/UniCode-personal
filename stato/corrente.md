@@ -79,9 +79,13 @@ Diritto   █████████░  92%  (12/13 moduli ✅)
 
 ## Prossimi Passi
 
-> 🚨 **Urgenza Diritto**: D12 + D13 = **2 moduli in 13 giorni** (esame 16/06). Ritmo necessario: ~1 modulo ogni 6 giorni. Margine minimo.
+> 🚨 **Urgenza Diritto**: esame **16/06**. Tutti i 13 moduli ✅ → fase di **ripasso intensivo MC** (esame = 22 quiz a scelta multipla, 1,5 pt/giusta, 0/errata, 45 min).
 
-**Diritto** → D13 ✅ → ripassone finale (D9, D10, D11, D12, D13) → poi D1-D8 veloce
+**Diritto** → **Kit di ripasso in `RIPASSO DIRITTO/`** (sorgenti .md + PDF stampabili in `claudeAppunti_PDF/RIPASSO DIRITTO/`):
+  1. **Speed review** D1–D13 (info essenziali + ⚠️ Trappole MC) — da studiare per primi
+  2. **Simulazione** `SIMULAZIONI ESAMI/DIRITTO/simulazione_diritto.html` — interattiva, 22 domande pescate a caso da un pool di 76, randomizzate a ogni lancio. Annotare ciò che manca negli speed review (slot finale di ogni file)
+  3. **Tabelle comparative** `RIPASSO DIRITTO/tabelle_comparative.md` — formato "copri e ricorda" + auto-test (stampabili)
+  4. **Attacco lacune** (tra qualche giorno): pratiche vietate AI Act, gerarchia firme, 615-quinquies vs 635-xx, anti-steering DMA
 **SysAdmin** → 3D Es. 2-6: avviare VM, eseguire ping, ss -tlnp, /etc/hosts, dig, tcpdump → poi `/appunti 3D`
 **Security** → S1 LAB: lezione pronta, eseguire le 6 sezioni su VM Kali → poi `/appunti S1`
 
