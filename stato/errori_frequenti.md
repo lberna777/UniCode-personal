@@ -42,6 +42,7 @@
 | Vittima della frode informatica identificata come persona | D11 | In art. 640-ter la vittima è il sistema informatico (manipolato), non una persona indotta in errore come in art. 640 |
 | Reg. UE "non ancora in vigore" quando è solo "non pienamente applicabile" | D12 | "In vigore" = esiste e vincola; "pienamente applicabile" = tutte le norme operative. Reg. 2024/1689: in vigore 1/8/2024, pienamente applicabile 2/8/2026 |
 | Lett. e) oggetto AI Act "uguale alla lett. a)" | D12 | Lett. a) = regole per sistemi IA in generale; lett. e) = regole specifiche per modelli GPAI — categorie e regimi distinti |
+| Titolare dati (Data Act) confuso con utente | D13 | Nel Data Act: «titolare dei dati» = chi ha il diritto/obbligo di mettere a disposizione (es. produttore); utente = beneficiario del diritto di accesso. ≠ GDPR dove «titolare del trattamento» ha significato diverso |
 
 ### Pattern Ricorrenti Diritto
 - **Tendenza a semplificare le distinzioni**: Lorenzo fonde concetti che il PDF tiene separati (es. variazioni richieste vs necessarie in D6, doppia base art. 6 + art. 9 in D8)

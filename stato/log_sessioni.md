@@ -8,6 +8,24 @@
 
 ---
 
+### Sessione 32 — 2026-06-05 (completata)
+**Focus**: Diritto — D13 autoverifica
+
+**Coperto in sessione**:
+- Autoverifica D13 (DSA/DMA/Data Act): 5 domande completate → D13 ✅
+- Risultato: 3.5/5 — buona comprensione del quadro generale
+- Lacuna emersa: anti-steering (soggetto invertito — riguarda gli utenti commerciali che non possono informare i clienti di offerte fuori piattaforma, non l'utente finale)
+
+**Non coperto / da riprendere**:
+- Ripassone D9–D13 (rimandato a sessione dedicata)
+- SysAdmin 3D Es. 2–6 — invariato
+- Security S1 LAB — invariato
+
+**Prossima sessione — da dove partire**:
+→ Lavoro metodologico UniCode per piano ripasso finale 10gg Diritto (nuovi metodi/tecniche); poi ripassone D9–D13
+
+---
+
 ### Sessione 31 — 2026-06-04 (completata)
 **Focus**: Diritto — D12 autoverifica + D13 lezione + grezzi + appunti + PDF batch
 

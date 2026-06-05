@@ -8,6 +8,8 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 
 **accesso abusivo a un sistema informatico** (art. 615-ter c.p.) — reato necessariamente informatico: chiunque abusivamente si introduce in un sistema informatico o telematico protetto da misure di sicurezza ovvero vi si mantiene contro la volontà espressa o tacita di chi ha il diritto di escluderlo. Reato di mera condotta: si perfeziona con la violazione del domicilio informatico, a prescindere da danno o finalità. L'abusività è valutata in senso oggettivo (modalità dell'accesso, non intenzioni). Pena base: reclusione fino a 3 anni.
 
+**anti-steering** (DMA) — pratica vietata ai gatekeeper dal Digital Markets Act: impedire agli utenti commerciali (sviluppatori, venditori) di informare i propri clienti dell'esistenza di offerte più convenienti fuori dalla piattaforma, o di inserire link verso canali di vendita alternativi. Esempio: Apple vietava a Spotify di inserire nell'app un link all'abbonamento sul proprio sito (più economico perché privo della commissione del 30%). Il DMA vieta questa pratica: lo sviluppatore deve poter indirizzare i propri clienti fuori dalla piattaforma.
+
 **appalto (contratto di)** — contratto con cui l'appaltatore assume, con organizzazione dei propri mezzi e gestione a proprio rischio, il compimento di un'opera o servizio verso corrispettivo (art. 1655 c.c.). Carattere: **obbligazione di risultato**. Nello sviluppo software: si qualifica come appalto quando il committente ingaggia un'impresa (software house). La proprietà dell'opera passa al committente con la consegna.
 
 **atti ufficiali dello Stato** — atti normativi e documenti prodotti dallo Stato e dalle amministrazioni pubbliche. Non sono soggetti alla tutela del diritto d'autore (art. 5 l.d.a.): chiunque può riprodurli liberamente. Rilevante per la ricerca giuridica: testi di leggi, decreti e regolamenti sono liberamente reperibili e riproducibili.
@@ -80,9 +82,17 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 
 **documento informatico** — il documento elettronico che contiene la rappresentazione informatica di atti, fatti o dati giuridicamente rilevanti (CAD). Ha l'efficacia della scrittura privata se sottoscritto con firma digitale, firma elettronica qualificata o firma elettronica avanzata. Non gli sono negati effetti giuridici per il solo fatto di essere in forma elettronica.
 
+**dark pattern** — interfaccia utente progettata per ingannare o manipolare l'utente, compromettendo la sua capacità di prendere decisioni libere e informate. Vietati dall'art. 25 DSA per le piattaforme online. Esempi: pulsanti di dissenso nascosti o difficili da trovare, confirm shaming ("no, non voglio risparmiare"), preimpostazioni a favore del fornitore, urgenza fittizia ("solo 2 posti rimasti!"). Connessione con AI Act: il DSA vieta i dark pattern nell'interfaccia; l'AI Act vieta tecniche manipolative realizzate tramite sistemi AI.
+
+**Data Act** — Regolamento (UE) 2023/2854. Obiettivo: rendere accessibili i dati generati dall'uso di prodotti connessi (IoT) e servizi correlati, eliminando il vendor lock-in del produttore. Principio fondante: i dati generati da un prodotto connesso devono essere accessibili all'utente, non monopolizzati dal produttore. Tre pilastri: (1) diritto di accesso dell'utente ai propri dati in tempo reale e in formato machine-readable; (2) condivisione dati con terzi designati dall'utente a condizioni FRAND; (3) portabilità tra servizi cloud (switching fees gratuite dal 12/09/2027). Autorità: designata da ogni Stato membro + Comitato europeo per i dati (EDIB). Sanzioni: non fissa massimali comuni, richiede sanzioni «efficaci, proporzionate e dissuasive» definite dagli Stati.
+
 **decadenza** — perdita definitiva di un diritto per mancato esercizio entro un termine perentorio stabilito dalla legge o dal contratto. A differenza della prescrizione, la decadenza non può essere interrotta o sospesa. Rilevante in D6: il committente decade dal diritto di far valere i vizi occulti dell'opera se non li denuncia entro 8 giorni dalla scoperta (art. 2226 c.c.). Dopo il termine, il diritto è perso irrecuperabilmente.
 
 **difformità dell'opera** — vizio contrattuale che ricorre quando l'opera realizzata *non corrisponde* alle specifiche pattuite: la funzionalità è presente ma non rispetta i parametri concordati (es. sistema che gestisce 1.000 utenti anziché 10.000 come previsto dal contratto). Distinta dai **vizi** (difetti intrinseci) e dalla **impossibilità sopravvenuta**.
+
+**Digital Markets Act (DMA)** — Regolamento (UE) 2022/1925. Obiettivo: garantire mercati digitali equi e contendibili. Logica **ex ante** (preventiva): impone obblighi strutturali a chi controlla snodi essenziali del mercato digitale (gatekeeper), senza attendere che si verifichi un danno concorrenziale. Vigilanza: Commissione europea (competenza esclusiva). Sanzioni: fino al 10% del fatturato mondiale (20% in caso di recidiva).
+
+**Digital Services Act (DSA)** — Regolamento (UE) 2022/2065. Obiettivo: garantire un ambiente online sicuro e responsabile. Principio cardine: «ciò che è illegale offline è illegale online». Regola gli intermediari online con obblighi proporzionati alla dimensione (da mere conduit a VLOP/VLOSE). Mantiene il safe harbour per i contenuti degli utenti. Vigilanza: Commissione europea (per VLOP/VLOSE) + DSC nazionale (per tutti gli altri). Sanzioni: fino al 6% del fatturato mondiale.
 
 **diritto d'autore (D.A.)** — insieme dei diritti riconosciuti all'autore di un'opera dell'ingegno. Si compone di diritti morali (irrinunciabili, inalienabili, imprescrittibili) e diritti patrimoniali (cedibili, durata 70 anni post mortem). Sorge al momento della creazione dell'opera senza adempimenti formali (art. 6 LDA). Fonte principale: L. 633/1941.
 
@@ -94,6 +104,8 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 
 **diritti patrimoniali** — diritti di utilizzazione economica dell'opera (riproduzione, distribuzione, comunicazione al pubblico, traduzione, noleggio, ecc.). Cedibili e trasmissibili; la trasmissione deve essere provata per iscritto (art. 110 LDA). Durata: 70 anni post mortem dell'autore.
 
+**DSC (Coordinatore dei Servizi Digitali)** — autorità nazionale designata da ogni Stato membro per vigilare sugli intermediari online ai sensi del DSA (Digital Services Act). Riceve le notifiche, gestisce le controversie, coordina con la Commissione europea. In Italia il DSC è **AGCOM** (Autorità per le Garanzie nelle Comunicazioni). La Commissione europea mantiene la vigilanza esclusiva sulle VLOP e VLOSE.
+
 **dottrina** — pubblicazioni scritte dagli studiosi del diritto (monografie, trattati, articoli su riviste giuridiche, atti di convegno, note a sentenza, ecc.). Fonte di **supporto** all'interpretazione e alla conoscenza della normativa o della giurisprudenza. **Non fornisce interpretazioni vincolanti**.
 
 ## L
@@ -103,6 +115,8 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 ## E
 
 **estrazione** (banche di dati) — trasferimento permanente o temporaneo della totalità o di una parte sostanziale del contenuto di una BD su un altro supporto, effettuato con qualsiasi mezzo e in qualsiasi forma (art. 102-bis LDA). Distinta dalla semplice consultazione. Vietata senza autorizzazione del costitutore.
+
+**ex ante / ex post** — distinzione temporale rilevante nel diritto della concorrenza e nella regolazione digitale. **Ex ante**: intervento normativo preventivo, prima che si verifichi il danno; impone obblighi e divieti strutturali precauzionali. **Ex post**: intervento successivo, dopo aver accertato il danno e dimostrato la violazione caso per caso. Il diritto antitrust tradizionale opera ex post; il DMA opera ex ante: vieta comportamenti anticoncorrenziali ai gatekeeper a prescindere dalla dimostrazione del danno.
 
 ## F
 
@@ -120,9 +134,13 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 
 **frode informatica** (art. 640-ter c.p.) — reato necessariamente informatico che condivide la struttura della truffa ma se ne differenzia perché l'attività fraudolenta dell'agente investe non la persona (di cui difetta l'induzione in errore) bensì il sistema informatico, attraverso la sua manipolazione o l'intervento sui dati. Condotte: alterare il funzionamento di un sistema informatico o intervenire senza diritto su dati/programmi per procurare ingiusto profitto con altrui danno. Può concorrere con l'accesso abusivo (art. 615-ter) poiché tutela beni giuridici distinti. — descrizione astratta di una situazione a cui la norma ricollega effetti giuridici. La norma si applica quando il caso concreto corrisponde alla fattispecie astratta.
 
-**fonti del diritto** — atti o fatti da cui traggono origine le norme giuridiche. Gerarchia: Costituzione → leggi costituzionali → leggi ordinarie/decreti → regolamenti → usi e consuetudini. Fonti UE (regolamenti, direttive) si collocano sopra la legge ordinaria.
+**fonti del diritto** — atti o fatti da cui traggono origine le norme giuridiche.
+
+**FRAND (fair, reasonable and non-discriminatory)** — condizioni eque, ragionevoli e non discriminatorie che il Data Act e il DMA impongono per la condivisione di dati e l'accesso alle piattaforme. Nel Data Act: il titolare dei dati deve condividere i dati con terzi designati dall'utente a condizioni FRAND (non può chiedere prezzi sproporzionati né rifiutare senza giustificazione). Nel DMA: i gatekeeper devono garantire accesso a API e dati a condizioni FRAND per gli utenti commerciali. Gerarchia: Costituzione → leggi costituzionali → leggi ordinarie/decreti → regolamenti → usi e consuetudini. Fonti UE (regolamenti, direttive) si collocano sopra la legge ordinaria.
 
 ## G
+
+**gatekeeper** (DMA) — impresa che gestisce uno o più servizi di piattaforma di base (CPS) e soddisfa **tre criteri cumulativi**: (1) impatto significativo nel mercato interno (fatturato ≥ 7,5 mld € in UE negli ultimi 3 anni O capitalizzazione ≥ 75 mld €, in ≥ 3 Stati membri); (2) ruolo di gateway (≥ 45 mln utenti attivi mensili UE + ≥ 10.000 utenti commerciali annui); (3) posizione consolidata e duratura. La designazione spetta alla Commissione europea (competenza esclusiva). Gatekeeper designati: Alphabet, Amazon, Apple, Booking, ByteDance, Meta, Microsoft. Distinto dalla VLOP (DSA), che si basa sul solo criterio degli utenti, senza soglie economiche.
 
 **giurisprudenza** — decisioni prese da soggetti istituzionali in base a criteri di competenza (territoriale, per materia, per valore). In senso stretto: le pronunce giudiziali (sentenze, ordinanze). Reperibile come **massima** o come **versione per esteso**.
 
@@ -224,6 +242,10 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 
 ## S
 
+**safe harbour (esenzione di responsabilità)** — principio per cui gli intermediari online sono esonerati dalla responsabilità per i contenuti degli utenti, a condizione che non li abbiano iniziati, selezionati o modificati (mere conduit), li abbiano rimossi prontamente alla notizia dell'illecito (caching, hosting). Introdotto dalla Direttiva e-commerce (D.Lgs. 70/2003), confermato e aggiornato dal DSA. Il principio del **buon samaritano** (art. 7 DSA) garantisce che le indagini volontarie in buona fede per rilevare contenuti illegali non facciano perdere l'esenzione. Non esiste un obbligo generale di sorveglianza (art. 8 DSA).
+
+**self-preferencing** (DMA) — pratica vietata ai gatekeeper: classificare i propri prodotti o servizi in modo più favorevole rispetto a quelli di terzi nei risultati di ricerca o nelle liste di offerte della propria piattaforma. Esempio: Google Shopping visualizzava i propri prodotti in posizione privilegiata rispetto a marketplace concorrenti nei risultati di ricerca Google. Con il DMA, il self-preferencing è vietato ex ante per tutti i gatekeeper, senza necessità di dimostrare la posizione dominante caso per caso.
+
 **sigillo elettronico** — equivalente della firma elettronica per le persone giuridiche (non fisiche). Nella versione qualificata (sigillo elettronico qualificato) gode della presunzione di integrità dei dati e di correttezza dell'origine. Disciplinato dal Regolamento eIDAS.
 
 **SPID (Sistema Pubblico di Identità Digitali)** — insieme di soggetti pubblici e privati, accreditati da AgID, che identificano gli utenti per consentire l'accesso ai servizi in rete. Equivale alla firma digitale per le istanze e dichiarazioni alla PA inviate per via telematica.
@@ -244,6 +266,8 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 
 ## T
 
+**titolare dei dati** (*data holder*, Data Act) — nel Data Act, chi ha il diritto/obbligo di mettere a disposizione i dati generati da un prodotto connesso — tipicamente il produttore, che li raccoglie fisicamente. **Distinto dall'utente** (che è il beneficiario dei diritti di accesso) e dal **titolare del trattamento** GDPR (chi determina finalità e mezzi del trattamento). L'utente non è «titolare» nel senso del Data Act: ha il diritto di richiedere i dati, riceverli e condividerli con terzi, ma non è il soggetto che li detiene e li eroga. Analogia: la banca detiene il database delle transazioni; il cliente ha il diritto di accedervi e portarli altrove, ma la banca è il «titolare» che li mette a disposizione.
+
 **termine essenziale** — termine fissato nel contratto la cui scadenza è di importanza tale per una delle parti da rendere inutile la prestazione tardiva. Se il termine è essenziale e scade senza adempimento, la parte avvantaggiata può esigere l'esecuzione nonostante la scadenza *solo* se ne dà notizia all'altra entro **3 giorni** (art. 1457 c.c.); in mancanza, il contratto si intende risoluto di diritto. Usato nei contratti di sviluppo software per stabilire date di consegna perentorie.
 
 **testo consolidato** — versione attualmente in vigore di una norma, che incorpora tutte le modifiche successive apportate da altre norme. Non reperibile in Gazzetta Ufficiale; si trova nelle banche dati giuridiche (es. normattiva.it, DeJure).
@@ -255,5 +279,7 @@ Aggiornato a ogni sessione. Ordine alfabetico.
 ## V
 
 **validazione temporale elettronica** — dati in forma elettronica che collegano altri dati a una particolare ora e data, provando che questi ultimi esistevano in quel momento. Strumento concreto per dimostrare che una firma qualificata/digitale era valida al momento dell'apposizione, anche se il certificato è poi scaduto o revocato. La PEC costituisce validazione temporale.
+
+**VLOP / VLOSE** (DSA) — categorie di intermediari soggetti agli obblighi massimi del Digital Services Act. **VLOP** (Very Large Online Platform): piattaforma online con ≥ 45 milioni di utenti attivi mensili nell'UE (esempi: Facebook, YouTube, TikTok, Amazon Store). **VLOSE** (Very Large Online Search Engine): motore di ricerca con ≥ 45 milioni di utenti attivi mensili nell'UE (esempi: Google Search, Bing). Entrambe sono soggette a vigilanza esclusiva della Commissione europea. Distinte dal gatekeeper DMA: la VLOP usa un solo criterio (utenti); il gatekeeper richiede tre criteri cumulativi comprese soglie economiche.
 
 **vizi dell'opera** — difetti *intrinseci* dell'opera che la rendono inidonea all'uso o ne diminuiscono il valore, indipendentemente dalla corrispondenza alle specifiche (art. 2226 c.c.). Possono essere palesi (rilevabili con esame ordinario al momento dell'accettazione) o **occulti** (non rilevabili se non dopo l'uso o con esame approfondito). Distinti dalle difformità (non corrispondenza alle specifiche). Regime: denuncia entro 8 giorni dalla scoperta a pena di decadenza; prescrizione in 1 anno dalla consegna.
