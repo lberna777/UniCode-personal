@@ -9,7 +9,10 @@
 # ─── Materiale universitario (copyright del corso) ───────────
 SLIDE TEORIA/
 SLIDE LAB/
-SIMULAZIONI ESAMI/
+SIMULAZIONI ESAMI/*
+!SIMULAZIONI ESAMI/DIRITTO/
+SIMULAZIONI ESAMI/DIRITTO/*
+!SIMULAZIONI ESAMI/DIRITTO/simulazione_diritto.html
 
 # ─── Pianificazione esami personale ──────────────────────────
 ESAMI.md

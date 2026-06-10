@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Diritto IT">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1a237e">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a237e' rx='20'/%3E%3Ctext y='.9em' font-size='75' text-anchor='middle' x='50'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<title>Quiz Diritto Informatica T</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#eef2ff;min-height:100vh;color:#1a1a2e}
+#app{max-width:580px;margin:0 auto;padding:12px 12px 32px}
+
+/* HOME */
+.home-hdr{background:linear-gradient(135deg,#1a237e 0%,#3949ab 100%);color:#fff;padding:24px 20px 20px;border-radius:18px;text-align:center;margin-bottom:18px;box-shadow:0 4px 20px rgba(26,35,126,.25)}
+.home-hdr h1{font-size:1.4rem;font-weight:800;letter-spacing:-.02em}
+.home-hdr p{font-size:.82rem;opacity:.82;margin-top:6px}
+.install-tip{background:#fff;border:1.5px dashed #c5cae9;border-radius:12px;padding:10px 14px;font-size:.75rem;color:#5c6bc0;text-align:center;margin-bottom:14px;line-height:1.5}
+.sec-label{font-size:.72rem;font-weight:700;color:#7986cb;text-transform:uppercase;letter-spacing:.08em;margin:14px 0 8px}
+.mod-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:10px}
+.mod-btn{background:#fff;border:2px solid #e8eaf6;border-radius:13px;padding:13px 10px;text-align:center;cursor:pointer;transition:border-color .12s,transform .1s;-webkit-user-select:none;user-select:none}
+.mod-btn:active{transform:scale(.96);border-color:#9fa8da}
+.mod-id{font-weight:800;color:#1a237e;font-size:1.05rem}
+.mod-name{font-size:.7rem;color:#555;margin-top:3px;line-height:1.25}
+.mod-count{font-size:.62rem;color:#aaa;margin-top:4px}
+.exam-btn{background:linear-gradient(135deg,#1565c0,#283593);color:#fff;border:none;border-radius:14px;padding:18px;width:100%;cursor:pointer;font-size:1rem;font-weight:700;letter-spacing:-.01em;transition:transform .1s;box-shadow:0 3px 12px rgba(21,101,192,.35)}
+.exam-btn:active{transform:scale(.98)}
+.exam-btn small{display:block;font-weight:400;font-size:.78rem;opacity:.82;margin-top:5px}
+
+/* QUIZ */
+.quiz-hdr{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.back-btn{background:#fff;border:none;border-radius:10px;padding:9px 13px;cursor:pointer;font-size:.95rem;color:#1a237e;font-weight:600;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.quiz-meta{flex:1;min-width:0}
+.quiz-meta h2{font-size:.88rem;font-weight:700;color:#1a237e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.quiz-meta .sub{font-size:.72rem;color:#888}
+.timer-badge{background:#fff;border-radius:8px;padding:6px 10px;font-size:.85rem;font-weight:700;color:#1a237e;flex-shrink:0;font-variant-numeric:tabular-nums;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.timer-badge.warn{color:#e65100}
+.timer-badge.danger{color:#c62828;animation:pulse .7s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.prog-bar{background:#dde1f5;border-radius:99px;height:5px;margin-bottom:14px;overflow:hidden}
+.prog-fill{background:#3949ab;height:100%;border-radius:99px;transition:width .35s}
+.q-card{background:#fff;border-radius:16px;padding:20px;margin-bottom:13px;box-shadow:0 2px 10px rgba(26,35,126,.07)}
+.q-num{font-size:.7rem;color:#aaa;margin-bottom:7px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.q-text{font-size:.97rem;line-height:1.55;color:#1a1a2e;font-weight:500}
+.opts{display:flex;flex-direction:column;gap:9px}
+.opt{background:#fff;border:2px solid #e8eaf6;border-radius:12px;padding:13px 14px;text-align:left;cursor:pointer;font-size:.9rem;line-height:1.42;color:#1a1a2e;transition:border-color .1s,background .1s;display:flex;align-items:flex-start;gap:10px;-webkit-user-select:none;user-select:none}
+.opt:active:not(.disabled){border-color:#9fa8da;background:#f3f4ff}
+.opt-l{background:#e8eaf6;color:#3949ab;border-radius:6px;width:24px;min-width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.78rem;margin-top:1px;flex-shrink:0;transition:background .1s,color .1s}
+.opt.correct{border-color:#2e7d32;background:#f1f8e9}
+.opt.correct .opt-l{background:#2e7d32;color:#fff}
+.opt.wrong{border-color:#c62828;background:#ffebee}
+.opt.wrong .opt-l{background:#c62828;color:#fff}
+.opt.disabled{cursor:default}
+.expl{background:#e3f2fd;border-radius:10px;padding:12px 14px;margin-top:11px;font-size:.83rem;color:#0d47a1;line-height:1.55;display:none}
+.expl.show{display:block}
+.next-btn{background:#1a237e;color:#fff;border:none;border-radius:12px;padding:15px;width:100%;font-size:.97rem;font-weight:700;cursor:pointer;margin-top:13px;display:none;transition:transform .1s}
+.next-btn.show{display:block}
+.next-btn:active{transform:scale(.98)}
+
+/* RESULT */
+.res-hdr{background:linear-gradient(135deg,#1a237e,#3949ab);color:#fff;padding:28px 20px;border-radius:18px;text-align:center;margin-bottom:18px;box-shadow:0 4px 20px rgba(26,35,126,.25)}
+.res-hdr h2{font-size:1.15rem;font-weight:700;margin-bottom:2px}
+.score-big{font-size:3.2rem;font-weight:900;line-height:1;margin:12px 0 6px}
+.score-pts{font-size:1rem;font-weight:700;opacity:.9;margin-bottom:4px}
+.score-sub{font-size:.82rem;opacity:.78}
+.res-pills{display:flex;gap:8px;margin-bottom:18px}
+.pill{flex:1;background:#fff;border-radius:12px;padding:12px 8px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.pill .pn{font-size:1.4rem;font-weight:800}
+.pill .pl{font-size:.7rem;color:#888;margin-top:2px}
+.pill.p-ok .pn{color:#2e7d32}
+.pill.p-ko .pn{color:#c62828}
+.pill.p-skip .pn{color:#9e9e9e}
+.res-bar{display:flex;gap:3px;margin-bottom:18px;border-radius:99px;overflow:hidden;height:8px}
+.rb-ok{background:#66bb6a}
+.rb-ko{background:#ef5350}
+.rb-none{background:#e0e0e0}
+.miss-sec h3{font-size:.8rem;font-weight:700;color:#c62828;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.miss-item{background:#fff;border-radius:12px;padding:14px;margin-bottom:9px;border-left:4px solid #ef5350;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.miss-q{font-size:.82rem;color:#333;margin-bottom:8px;line-height:1.45;font-weight:500}
+.miss-row{font-size:.78rem;margin-top:4px;line-height:1.4}
+.miss-ok{color:#2e7d32;font-weight:600}
+.miss-ko{color:#c62828}
+.res-acts{display:flex;gap:10px;margin-top:20px}
+.r-btn{flex:1;padding:14px;border-radius:12px;font-size:.92rem;font-weight:700;cursor:pointer;transition:transform .1s}
+.r-btn:active{transform:scale(.97)}
+.r-primary{background:#1a237e;color:#fff;border:none}
+.r-secondary{background:#fff;border:2px solid #1a237e;color:#1a237e}
+
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<div id="app">
+
+<!-- HOME -->
+<div id="home">
+  <div class="home-hdr">
+    <h1>⚖️ Quiz Diritto Informatica T</h1>
+    <p>Prof.ssa Cevenini · 3 opzioni · 1 sola corretta</p>
+  </div>
+  <div class="install-tip">
+    📱 <strong>Installa sul telefono:</strong> iOS → Condividi → "Aggiungi alla schermata Home" · Android → Menu browser → "Aggiungi a schermata Home"
+  </div>
+  <div class="sec-label">Scegli modulo</div>
+  <div class="mod-grid" id="modGrid"></div>
+  <div class="sec-label">Simulazione esame</div>
+  <button class="exam-btn" onclick="startExam()">
+    🎯 Esame Completo
+    <small>22 domande da tutti i moduli · timer 45 min · 1,5 pt/giusta · 0 pt/errata</small>
+  </button>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="hidden">
+  <div class="quiz-hdr">
+    <button class="back-btn" onclick="goHome()">← Menù</button>
+    <div class="quiz-meta">
+      <h2 id="quizTitle"></h2>
+      <div class="sub" id="quizSub"></div>
+    </div>
+    <div class="timer-badge hidden" id="timerBadge">45:00</div>
+  </div>
+  <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+  <div class="q-card">
+    <div class="q-num" id="qNum"></div>
+    <div class="q-text" id="qText"></div>
+  </div>
+  <div class="opts" id="opts"></div>
+  <div class="expl" id="expl"></div>
+  <button class="next-btn" id="nextBtn" onclick="nextQ()">Prossima domanda →</button>
+</div>
+
+<!-- RESULT -->
+<div id="result" class="hidden">
+  <div class="res-hdr">
+    <h2 id="resTitle"></h2>
+    <div class="score-big" id="resBig"></div>
+    <div class="score-pts" id="resPts"></div>
+    <div class="score-sub" id="resSub"></div>
+  </div>
+  <div class="res-pills" id="resPills"></div>
+  <div class="res-bar" id="resBar"></div>
+  <div class="miss-sec" id="missSec"></div>
+  <div class="res-acts">
+    <button class="r-btn r-secondary" onclick="goHome()">← Menù</button>
+    <button class="r-btn r-primary" id="retryBtn" onclick="retry()">Riprova</button>
+  </div>
+</div>
+
+</div>
+<script>
+// ===== DATI DOMANDE =====
+// Struttura: { q, opts:[A,B,C], c: indice corretto (0-2), e: spiegazione }
+const DB = {
+D1:{name:"Concetti Giuridici di Base",short:"D1",qs:[
+{q:"Come si distingue una norma giuridica da una sentenza?",opts:["La norma è generale e astratta; la sentenza è individuale e concreta","La norma è individuale e concreta; la sentenza è generale e astratta","Entrambe sono generali ma si differenziano per la fonte che le produce"],c:0,e:"La norma è un comando generale (a tutti) e astratto (situazioni-tipo); la sentenza è individuale (solo le parti) e concreta (caso specifico)."},
+{q:"Qual è l'effetto di un Decreto Legge non convertito in legge entro 60 giorni?",opts:["Perde efficacia solo per il futuro, restando valido per il passato","Rimane in vigore fino a una nuova disposizione abrogatrice","Perde efficacia retroattivamente: gli effetti prodotti vengono meno"],c:2,e:"Il D.L. non convertito perde efficacia retroattivamente (ex tunc), non solo dal momento della mancata conversione."},
+{q:"Quale delle seguenti affermazioni sulla capacità giuridica e di agire è corretta?",opts:["Entrambe si acquistano alla nascita, con effetti diversi","La capacità giuridica si acquista alla nascita; quella di agire alla maggiore età","La capacità giuridica si acquista alla maggiore età; quella di agire alla nascita"],c:1,e:"Capacità giuridica (titolarità di diritti/doveri) → nascita. Capacità di agire (compiere atti giuridici da soli) → maggiore età."},
+{q:"Quando si considera concluso un contratto secondo il codice civile?",opts:["Quando l'accettante firma il documento e lo invia","Quando il proponente riceve notizia dell'accettazione","Quando la proposta e l'accettazione coincidono per contenuto"],c:1,e:"Il contratto si conclude nel momento e nel luogo in cui il proponente ha conoscenza dell'accettazione (art. 1326 c.c.)."},
+{q:"Qual è la principale differenza tra nullità e annullabilità di un contratto?",opts:["La nullità si prescrive in 5 anni; l'annullabilità è imprescrittibile","Entrambe possono essere fatte valere da chiunque, ma per cause diverse","La nullità può essere fatta valere da chiunque e non si prescrive; l'annullabilità solo dalla parte protetta, entro 5 anni"],c:2,e:"Nullità: chiunque, rilevabile d'ufficio, imprescrittibile. Annullabilità: solo la parte protetta, non d'ufficio, prescrive in 5 anni."},
+{q:"In quale posizione gerarchica si collocano i Decreti Legislativi (D.Lgs.)?",opts:["A un livello superiore alle leggi ordinarie, perché emanati su delega del Parlamento","Allo stesso livello delle leggi ordinarie, non in un livello separato","A un livello inferiore alle leggi ordinarie, perché atti dell'esecutivo"],c:1,e:"D.L. e D.Lgs. hanno forza di legge pari alle leggi ordinarie: non formano un livello gerarchico separato."},
+{q:"Qual è la differenza tra Regolamento UE e Direttiva UE?",opts:["Il Regolamento UE fissa obiettivi vincolanti; la Direttiva è direttamente applicabile senza recepimento","Entrambi richiedono recepimento nazionale, ma con tempi diversi","Il Regolamento UE è direttamente applicabile; la Direttiva fissa obiettivi vincolanti che gli Stati recepiscono liberamente nei modi"],c:2,e:"Regolamento: direttamente applicabile. Direttiva: obiettivi vincolanti, ma gli Stati scelgono come recepirli entro la scadenza."},
+{q:"Quale tipo di responsabilità si fonda esclusivamente sul rapporto causale senza richiedere dolo o colpa?",opts:["Responsabilità contrattuale","Responsabilità indiretta (per fatto altrui)","Responsabilità oggettiva"],c:2,e:"La responsabilità oggettiva prescinde da dolo e colpa: si fonda sul solo nesso causale. Ci si libera provando di aver adottato tutte le misure possibili."},
+{q:"Per quale materia è tassativamente vietato il ricorso all'analogia?",opts:["In materia fiscale e per le norme che derogano a principi generali","In materia penale e per le norme eccezionali","Solo in materia costituzionale, per l'interpretazione della Carta"],c:1,e:"L'analogia è vietata in materia penale (art. 25 Cost., principio di legalità) e per le norme eccezionali."},
+{q:"Qual è la differenza fondamentale tra diritti reali e obbligazioni?",opts:["I diritti reali sono relativi (verso l'obbligato); le obbligazioni sono assolute (verso tutti)","Non vi è differenza pratica: producono gli stessi effetti economici","I diritti reali sono assoluti (verso tutti); le obbligazioni sono relative (verso l'obbligato)"],c:2,e:"Diritti reali = assoluti (efficaci erga omnes). Obbligazioni = relative (solo tra creditore e debitore)."}
+]},
+
+D2:{name:"Ricerca e Analisi delle Fonti",short:"D2",qs:[
+{q:"Dove si trova il testo consolidato (attualmente in vigore) di una legge nazionale?",opts:["Nella Gazzetta Ufficiale, che integra tutte le modifiche successive","Su normattiva.it, che pubblica la versione con tutte le modifiche integrate","Su EUR-Lex, il portale della normativa europea"],c:1,e:"Il testo storico è in G.U.; il testo consolidato (con le modifiche nel tempo) è su normattiva.it."},
+{q:"Qual è la differenza tra 'massima' e 'versione per esteso' di una sentenza?",opts:["La massima è il testo integrale della pronuncia; la versione per esteso è un riassunto","La massima è un breve riassunto dei principi giuridici; la versione per esteso è il testo integrale","Sono sinonimi: entrambe indicano il testo completo della sentenza"],c:1,e:"Massima = breve estratto dei principi di diritto (nei massimari). Versione per esteso = testo integrale della pronuncia."},
+{q:"Come si classificano giuridicamente le Autorità Garanti (es. Garante Privacy, AGCM)?",opts:["Sono fonti del diritto formali, equiparabili ai regolamenti governativi","Sono assimilabili alla dottrina: interpretazioni autorevoli ma non vincolanti","Sono una terza categoria con funzione para-giurisprudenziale: non fonti formali, non dottrina"],c:2,e:"Le Autorità Garanti non sono fonti formali né dottrina: sono soggetti istituzionali con funzione para-giurisprudenziale (interpretazione autentica/autorevole)."},
+{q:"Nella reperibilità normativa, cosa distingue un 'elenco' da una 'raccolta'?",opts:["L'elenco contiene il testo integrale; la raccolta solo i dati identificativi","Gli elenchi contengono solo dati identificativi; le raccolte includono anche il testo integrale","Non vi è differenza pratica: entrambi servono a identificare le norme"],c:1,e:"Elenchi = solo dati identificativi (tipo, numero, data). Raccolte = dati identificativi + testo integrale della norma."},
+{q:"Cosa distingue una sentenza da un'ordinanza?",opts:["La sentenza è emessa durante il processo senza decidere il merito; l'ordinanza lo conclude definitivamente","La sentenza decide il merito della controversia; l'ordinanza è emessa durante il processo senza decidere il merito","Non vi è differenza sostanziale: entrambe hanno lo stesso valore vincolante"],c:1,e:"Sentenza = definisce il giudizio decidendo sul merito. Ordinanza = provvedimento interlocutorio durante il processo, non decide il merito."},
+{q:"Gli atti ufficiali dello Stato (leggi, sentenze, atti pubblici) sono protetti dal diritto d'autore?",opts:["Sì, ma con durata ridotta: 20 anni dalla pubblicazione","No, sono liberamente riproducibili per espressa previsione di legge","Sì, con la stessa durata delle opere ordinarie (70 anni post mortem)"],c:1,e:"Gli atti ufficiali dello Stato non sono protetti dal diritto d'autore (art. 5 LDA): chiunque può riprodurli liberamente."},
+{q:"Quale rischio concreto comporta l'uso di strumenti di IA generativa nella ricerca giuridica?",opts:["Producono risultati troppo generici, privi di valore per uso professionale","Non sono utilizzabili perché i loro dati non sono mai aggiornati","Possono generare riferimenti normativi inesistenti ('allucinazioni'), come avvenuto nel caso dell'avvocato di New York"],c:2,e:"Un avvocato di New York ha depositato in giudizio sentenze inventate da ChatGPT. Il rischio di allucinazioni è reale e documentato."},
+{q:"Cosa si intende per 'orientamento della giurisprudenza'?",opts:["Il complesso delle norme emanate da un determinato organo giudiziario","La tendenza decisionale desumibile dall'insieme delle sentenze su una determinata questione","Il testo delle circolari interpretative emesse dalla magistratura"],c:1,e:"'Orientamento giurisprudenziale' = tendenza dei giudici su una questione, desunta dall'insieme delle pronunce. Diverso da 'ordinamento'."}
+]},
+
+D3:{name:"Diritto d'Autore e Software",short:"D3",qs:[
+{q:"Quando nasce il diritto d'autore su un'opera creativa?",opts:["Al momento della registrazione presso la SIAE o un ente equivalente","Al momento della prima pubblicazione o diffusione al pubblico","Al momento della creazione e concretizzazione dell'opera, senza formalità"],c:2,e:"Il D.A. nasce con la creazione dell'opera (art. 6 LDA): non occorre registrazione, deposito né pubblicazione."},
+{q:"Cosa tutela il diritto d'autore applicato al software?",opts:["La funzione del programma e le idee alla base del suo funzionamento","La forma espressiva (struttura e istruzioni), non la funzione né le idee sottostanti","Sia la forma espressiva che la funzione, purché entrambe siano originali"],c:1,e:"Il D.A. tutela la forma espressiva. Due software con la stessa funzione ma codice diverso non si copiano (es. Excel e LibreOffice Calc)."},
+{q:"Qual è la durata dei diritti patrimoniali d'autore per un'opera ordinaria?",opts:["50 anni dalla prima pubblicazione, come per i diritti connessi","70 anni dalla morte dell'autore (post mortem auctoris)","I diritti patrimoniali non hanno scadenza, esattamente come quelli morali"],c:1,e:"Diritti patrimoniali: 70 anni dalla morte dell'autore. PA: 20 anni dalla prima pubblicazione. Diritti morali: non scadono mai."},
+{q:"Un dipendente sviluppa software nell'esercizio delle proprie mansioni. A chi spettano i diritti patrimoniali?",opts:["Al dipendente, con obbligo di corrispondere un equo premio al datore di lavoro","Al datore di lavoro; i diritti morali restano all'autore e non è previsto equo premio","Al datore di lavoro, ma il dipendente ha diritto a un equo premio come per i brevetti"],c:1,e:"Per il software sviluppato dal dipendente nell'esecuzione delle mansioni: diritti patrimoniali al datore, morali all'autore, nessun equo premio (diversamente dai brevetti)."},
+{q:"Il software è brevettabile?",opts:["Sì, come qualsiasi invenzione tecnica originale e nuova","Sì, ma solo se registrato prima della pubblicazione del codice sorgente","Non 'in quanto tale': può rientrare in un brevetto solo se produce un effetto tecnico ulteriore"],c:2,e:"La Convenzione di Monaco (art. 52) esclude il software 'in quanto tale' dalla brevettabilità. Un algoritmo che controlla un motore fisico può essere brevettato come invenzione tecnica."},
+{q:"Qual è la differenza tra 'opera collettiva' e 'opera in comunione'?",opts:["Nell'opera collettiva i contributi sono inscindibili e i diritti sono in comune; in quella in comunione sono distinguibili","Non vi è differenza: in entrambi i casi i diritti appartengono equamente a tutti i contribuenti","Nell'opera collettiva i contributi sono distinguibili e i diritti sull'insieme spettano a chi organizza; in quella in comunione sono inscindibili e i diritti sono in comune"],c:2,e:"Collettiva (art. 7): contributi distinguibili → diritti sulle parti ai singoli, sull'insieme all'organizzatore. In comunione (art. 10): contributo inscindibile → diritti in comune, parti presunte uguali."},
+{q:"Quale delle seguenti eccezioni alla tutela del software è inderogabile per contratto?",opts:["La riproduzione necessaria per correggere errori del programma","Il diritto di osservare, studiare e sperimentare il funzionamento per conoscere le idee sottostanti","La realizzazione di copie aggiuntive per uso personale e familiare"],c:1,e:"Inderogabile: backup necessario all'uso, osservare/studiare/provare per conoscere le idee, decompilazione per interoperabilità. La riproduzione per correggere errori è derogabile."},
+{q:"Cosa distingue la licenza CC BY dalla licenza CC0?",opts:["CC BY vieta qualsiasi uso commerciale; CC0 lo consente senza restrizioni","CC BY richiede l'attribuzione all'autore; CC0 è una rinuncia completa ai diritti (pubblico dominio)","CC BY e CC0 sono sinonimi: entrambe consentono qualsiasi uso compreso quello commerciale"],c:1,e:"CC BY = uso libero ma con obbligo di attribuire la paternità. CC0 = rinuncia a tutti i diritti: equivalente al pubblico dominio."},
+{q:"Qual è il principio di esaurimento comunitario applicato al diritto d'autore?",opts:["La prima vendita in qualsiasi Paese esaurisce i diritti per l'intera UE, anche per le opere digitali","La prima vendita nell'UE esaurisce il controllo sulla rivendita di quell'esemplare fisico, ma non si applica alla distribuzione on demand","Il principio si applica solo al software, non alle altre categorie di opere protette"],c:1,e:"Esaurimento: dopo la prima vendita nell'UE non si può più controllare la rivendita di quell'esemplare fisico. NON si applica a streaming, download, messa a disposizione on demand."},
+{q:"Quando l'opera di un autore con pseudonimo è protetta dal diritto d'autore?",opts:["Non è protetta: occorre che l'autore sia identificabile con nome e cognome","È protetta se il pseudonimo è notoriamente riconducibile all'autore","È protetta solo se il vero nome è depositato presso la SIAE"],c:1,e:"L'opera è protetta e l'autore è chi è indicato come tale, anche con pseudonimo, purché notoriamente riconducibile alla persona fisica (art. 8 LDA)."}
+]},
+
+D4:{name:"Banche Dati e Siti Web",short:"D4",qs:[
+{q:"Qual è il requisito per il diritto del costitutore su una banca di dati?",opts:["La creatività nella scelta o disposizione degli elementi, come per il diritto d'autore","Un investimento rilevante (economico, di tempo o lavoro) per realizzare, verificare o presentare la BD","La registrazione della banca di dati presso un'autorità competente nazionale"],c:1,e:"Il diritto del costitutore (sui generis) non richiede creatività: basta un investimento rilevante per la costituzione, verifica o presentazione della BD."},
+{q:"La definizione normativa di banca di dati richiede che gli elementi siano 'sistematicamente E metodicamente' disposti?",opts:["Sì, entrambe le condizioni devono essere soddisfatte contemporaneamente","No, è sufficiente che gli elementi siano individualmente accessibili, indipendentemente dalla disposizione","No, è sufficiente che siano disposti sistematicamente O metodicamente"],c:2,e:"La norma usa 'O': basta sistematicamente oppure metodicamente. Non servono entrambe le condizioni."},
+{q:"Cosa si intende per 'estrazione' nel diritto del costitutore?",opts:["La messa a disposizione del pubblico della banca di dati o di una sua parte sostanziale","Il trasferimento permanente o temporaneo dell'insieme o di una parte sostanziale su un altro supporto","La consultazione reiterata di parti non sostanziali da parte di un utente non autorizzato"],c:1,e:"Estrazione = trasferimento su altro supporto. Reimpiego = messa a disposizione del pubblico. Il quiz li scambia frequentemente."},
+{q:"Il diritto del costitutore tutela anche banche di dati prive di originalità creativa?",opts:["No: richiede comunque un minimo di creatività nella struttura organizzativa","No: senza creatività si applica solo il diritto d'autore ordinario","Sì: tutela anche BD non originali purché vi sia stato un investimento rilevante"],c:2,e:"Questo è il valore aggiunto del diritto sui generis: protegge anche le BD non creative (es. elenchi telefonici) in presenza di investimento rilevante."},
+{q:"Cosa può fare l'utente legittimo di una banca di dati senza autorizzazione del costitutore?",opts:["Solo consultare gli elementi: qualsiasi estrazione richiede sempre l'autorizzazione","Qualsiasi operazione, purché non a fini commerciali diretti","Usare la BD nei limiti necessari per l'accesso e il normale impiego; le clausole contrarie sono nulle"],c:2,e:"L'utente legittimo ha diritto all'accesso e al normale impiego: le clausole che lo vietano sono nulle di diritto."},
+{q:"L'esaurimento del diritto del costitutore opera per le banche di dati trasmesse online?",opts:["Sì, il principio si applica a qualsiasi forma di distribuzione nell'UE","No: la trasmissione online è una prestazione di servizi, non vendita di un bene fisico","Dipende dal tipo di dati: per i dati personali vale il GDPR, non l'esaurimento"],c:1,e:"L'esaurimento riguarda la prima vendita di un bene. La trasmissione online è una prestazione di servizi: l'esaurimento non opera."},
+{q:"Chi detiene i diritti patrimoniali su una banca di dati creata da un dipendente nell'esercizio delle mansioni?",opts:["Il dipendente, salvo diversa pattuizione contrattuale scritta","I diritti sono condivisi al 50% tra dipendente e datore di lavoro","Il datore di lavoro, sia per il diritto d'autore sulla BD che per il diritto del costitutore"],c:2,e:"Art. 12-bis LDA: il datore di lavoro è titolare sia dei diritti patrimoniali d'autore che del diritto del costitutore sulla BD prodotta dal dipendente nell'esercizio delle mansioni."},
+{q:"Il diritto del costitutore ha la stessa durata del diritto d'autore sulla banca di dati?",opts:["Sì, entrambi durano 70 anni dalla morte dell'autore/creazione","No, il diritto del costitutore dura 15 anni dal completamento, con possibile rinnovo per nuovi investimenti rilevanti","No, il diritto del costitutore dura 20 anni, non rinnovabile, come i brevetti"],c:1,e:"Durata: DA sulla BD = 70 anni post mortem. Diritto costitutore = 15 anni dal completamento, rinnovabile se vi sono nuovi investimenti rilevanti."}
+]},
+
+D5:{name:"Contratti a Oggetto Informatico",short:"D5",qs:[
+{q:"Cosa caratterizza la 'nullità di protezione' nel Codice del consumo?",opts:["Colpisce l'intero contratto a tutela del consumatore, che può ottenere il rimborso integrale","Può essere fatta valere da entrambe le parti e rilevata d'ufficio, come la nullità ordinaria","Colpisce solo la clausola abusiva (il contratto resta valido) e può essere fatta valere solo dal consumatore"],c:2,e:"Nullità di protezione (art. 36 Cod. consumo): colpisce la singola clausola, non il contratto; solo il consumatore può invocarla; rilevabile d'ufficio."},
+{q:"Qual è la differenza principale tra appalto e opera intellettuale nello sviluppo software?",opts:["L'appalto comporta obbligazione di mezzi; l'opera intellettuale di risultato","L'appalto (software house/impresa) comporta obbligazione di risultato; l'opera intellettuale (professionista persona fisica) di mezzi","Non vi è differenza: entrambi prevedono sempre un'obbligazione di risultato"],c:1,e:"Appalto (imprenditore) = risultato. Opera intellettuale (professionista) = mezzi. Il criterio è la natura soggettiva del prestatore."},
+{q:"Una licenza d'uso del software trasferisce la titolarità del programma al licenziatario?",opts:["Sì, equivale a una cessione dei diritti di utilizzazione economica","Dipende dal tipo: la licenza aperta (open source) trasferisce la titolarità; quella proprietaria no","No, cede solo il diritto di godimento per l'uso nei limiti pattuiti; la titolarità resta al licenziante"],c:2,e:"La licenza è assimilata a una locazione: concede il diritto di usare, non la titolarità. Per cedere la titolarità serve un contratto di cessione."},
+{q:"Le clausole 'as is' in una licenza software escludono qualsiasi responsabilità del licenziante?",opts:["Sì, sono pienamente valide e coprono qualsiasi tipo di danno, incluso quello doloso","No, non possono escludere la responsabilità per dolo o colpa grave","No, non possono escludere la responsabilità per danni fisici alle persone"],c:1,e:"Art. 1229 c.c.: è nullo qualsiasi patto che escluda o limiti la responsabilità per dolo o colpa grave. Le clausole 'as is' valgono solo per colpa lieve."},
+{q:"Qual è il problema giuridico principale del contratto shrink-wrap?",opts:["Non è giuridicamente valido perché manca la firma digitale del licenziatario","Le clausole onerose richiederebbero la doppia firma specifica (art. 1341), che non è ottenibile in quel formato","Non permette al licenziatario di leggere le condizioni prima dell'acquisto, violando l'obbligo informativo"],c:1,e:"Lo shrink-wrap si perfeziona con l'apertura della confezione (art. 1327). Ma le clausole onerose richiedono doppia firma: impossibile in questo schema."},
+{q:"Cosa caratterizza una licenza copyleft (es. GPL)?",opts:["Vieta qualsiasi uso commerciale del software coperto dalla licenza","Consente uso e modifica ma vieta la redistribuzione del codice modificato","Obbliga a distribuire le opere derivate con la stessa identica licenza copyleft"],c:2,e:"Copyleft (es. GPL): puoi usare, studiare, modificare, distribuire, ma le versioni derivate devono essere distribuite con la stessa licenza. È il 'virus' del libero."},
+{q:"Quando si applicano le clausole vessatorie del Codice del consumo?",opts:["In qualsiasi contratto, anche tra due imprese di dimensioni diverse","Solo nei contratti tra professionisti e consumatori (B2C), non in quelli B2B","In tutti i contratti standardizzati, indipendentemente dalla natura delle parti"],c:1,e:"Le clausole vessatorie del Cod. consumo (artt. 33-38) si applicano solo ai contratti B2C: professionista → consumatore persona fisica."},
+{q:"Qual è la differenza tra clausola nulla e contratto annullabile?",opts:["La clausola nulla travolge sempre l'intero contratto; il contratto annullabile è valido finché non impugnato","Entrambi producono gli stessi effetti: il contratto deve essere rifatto dalle parti","La clausola nulla può essere sostituita da norme imperative; il contratto annullabile è valido ma impugnabile dalla parte protetta"],c:2,e:"Clausola nulla (art. 1419 c.c.): il contratto resta valido se avrebbe ugualmente concluso senza quella clausola, sostituita da norme imperative. Annullabilità: contratto valido, impugnabile entro 5 anni."},
+{q:"Per il software sviluppato da un dipendente, è previsto un equo premio simile a quello dei brevetti?",opts:["Sì, il dipendente ha sempre diritto a un equo premio per il contributo creativo","No, la legge sul diritto d'autore non prevede l'equo premio per il software: diversamente dai brevetti","Sì, ma solo se il software ha generato un fatturato superiore a una soglia minima"],c:1,e:"Per il software: diritti patrimoniali al datore, nessun equo premio. Per i brevetti: esiste l'equo premio nel caso 2 (inventore nel rapporto senza retribuzione specifica)."},
+{q:"Cosa si intende per contratto 'atipico'?",opts:["Un contratto che manca di uno o più elementi essenziali richiesti dalla legge","Un contratto con causa non espressamente prevista e disciplinata dalla legge, ma ammesso dall'ordinamento","Un contratto nullo per mancanza di forma scritta richiesta ad substantiam"],c:1,e:"Contratto atipico (art. 1322 c.c.): le parti possono concludere contratti con causa non tipizzata dalla legge, purché meritevoli di tutela. Es. licenza software, contratto di hosting."}
+]},
+
+D6:{name:"Contratto di Sviluppo Software",short:"D6",qs:[
+{q:"Se uno sviluppatore esercita una professione che richiede iscrizione all'albo senza esservi iscritto, cosa prevede la legge?",opts:["Il contratto è nullo per difetto di un requisito soggettivo essenziale","Il contratto è valido ma lo sviluppatore è soggetto a sanzione disciplinare e penale","La prestazione non dà diritto al pagamento: lo sviluppatore perde il corrispettivo"],c:2,e:"Art. 2231 c.c.: se la professione richiede iscrizione all'albo e il professionista non è iscritto, la prestazione non dà azione per il pagamento. Il contratto non è nullo, ma il compenso non è esigibile."},
+{q:"Qual è la differenza tra 'difformità' e 'vizio' nell'opera intellettuale?",opts:["La difformità è un difetto intrinseco che rende l'opera instabile; il vizio è uno scarto dalle specifiche","Non esiste differenza tecnica: entrambi comportano le stesse conseguenze giuridiche","La difformità è uno scarto dalle specifiche pattuite; il vizio è un difetto intrinseco che rende l'opera inidonea"],c:2,e:"Difformità = il risultato non corrisponde alle specifiche (funziona, ma non è quello pattuito). Vizio = difetto intrinseco (palese o occulto) che rende l'opera instabile o inidonea."},
+{q:"Per i vizi occulti nel contratto d'opera intellettuale, qual è il termine per la denuncia?",opts:["60 giorni dalla consegna dell'opera, a pena di decadenza","8 giorni dalla scoperta del vizio, a pena di decadenza (1 anno per l'azione)","30 giorni dalla scoperta, con prescrizione dell'azione in 2 anni dalla consegna"],c:1,e:"Vizi occulti (art. 2226 c.c.): denuncia entro 8 giorni dalla scoperta (decadenza); azione si prescrive in 1 anno dalla consegna dell'opera."},
+{q:"Cosa distingue la cessione dalla licenza dei diritti sul software sviluppato?",opts:["Con la cessione l'ingegnere mantiene la titolarità e concede l'uso; con la licenza la trasferisce definitivamente","Con la cessione l'ingegnere trasferisce definitivamente i diritti; con la licenza concede solo il diritto di usare restando titolare","Non vi è differenza economica: in entrambi i casi il corrispettivo e gli effetti sono identici"],c:1,e:"Cessione = trasferimento definitivo dei diritti di utilizzazione economica: l'ingegnere non può più disporne. Licenza = concessione del solo diritto d'uso: l'ingegnere resta titolare."},
+{q:"In base a quale criterio si distingue il contratto d'opera intellettuale dall'appalto nello sviluppo software?",opts:["Il criterio è il valore del contratto: sopra una certa soglia si applica l'appalto","Il criterio è il tipo di software: standard → appalto; personalizzato → opera intellettuale","Il criterio è la natura del soggetto prestatore: persona fisica → opera intellettuale; impresa → appalto"],c:2,e:"La qualificazione dipende dal soggetto: persona fisica professionista → opera intellettuale (obbligazione di mezzi). Impresa/software house → appalto (obbligazione di risultato)."},
+{q:"Come opera la 'clausola risolutiva espressa' in un contratto?",opts:["Risolve il contratto automaticamente al verificarsi dell'inadempimento, senza che serva alcuna dichiarazione","Consente al giudice di risolvere il contratto con procedura accelerata in caso di inadempimento grave","L'inadempimento di una specifica obbligazione risolve il contratto quando la parte interessata dichiara di avvalersene"],c:2,e:"Clausola risolutiva espressa (art. 1456 c.c.): non opera in automatico; la parte deve dichiarare di volersi avvalere della clausola. Solo da quel momento il contratto è risolto."},
+{q:"In un contratto di sviluppo software, chi è il 'responsabile del trattamento' ai sensi del GDPR se il software gestisce dati di terzi?",opts:["Il cliente che ha commissionato il software, perché determina le finalità del trattamento","Lo sviluppatore che tratta i dati di terzi per conto del cliente, su istruzioni di quest'ultimo","Il DPO nominato dal cliente, che supervisiona l'intero trattamento dei dati"],c:1,e:"Lo sviluppatore che accede a dati di terzi per conto del cliente (su istruzioni) è il responsabile del trattamento (art. 28 GDPR). Il cliente è il titolare. Il DPO è una figura di controllo."},
+{q:"Cosa prevede la legge in caso di risoluzione per impossibilità sopravvenuta senza colpa di nessuna delle parti?",opts:["La parte che subisce l'impossibilità ha diritto a un indennizzo equitativo dall'altra","La parte in difficoltà deve risarcire il danno, ma con riduzione equitativa dell'entità","Nessuna parte deve risarcire l'altra: le prestazioni già eseguite vengono regolate secondo le regole sull'arricchimento"],c:2,e:"Impossibilità sopravvenuta (art. 1463 c.c.): nessuno è in colpa, nessuno risarcisce. Le prestazioni già eseguite si regolano con le norme sull'arricchimento senza causa."}
+]},
+
+D7:{name:"Proprietà Industriale",short:"D7",qs:[
+{q:"Qual è la durata della protezione di un marchio registrato?",opts:["20 anni dal deposito, non rinnovabile (come i brevetti)","70 anni, come per il diritto d'autore sulle opere dell'ingegno","10 anni dalla registrazione, rinnovabile indefinitamente per ulteriori periodi di 10 anni"],c:2,e:"Marchio: 10 anni dalla registrazione, rinnovabile indefinitamente. Brevetto: 20 anni dal deposito, NON rinnovabile. Confondere le durate è l'errore classico."},
+{q:"Cosa si intende per 'decadenza' di un marchio, e come si distingue dalla 'nullità'?",opts:["Decadenza = il marchio non avrebbe mai dovuto essere registrato; nullità = il marchio perde i requisiti dopo la registrazione","Sono sinonimi: entrambe comportano la perdita definitiva della protezione per lo stesso motivo","Nullità = il marchio non avrebbe mai dovuto essere registrato; decadenza = il marchio nasce valido ma perde i requisiti (es. volgarizzazione)"],c:2,e:"Nullità: vizio originario (non doveva nascere). Decadenza: vizio sopravvenuto (nasce valido, poi perde i requisiti: volgarizzazione, ingannevolezza sopravvenuta, non uso)."},
+{q:"Quali sono i tre requisiti di brevettabilità di un'invenzione industriale?",opts:["Creatività, originalità e utilità industriale","Novità, attività inventiva e industrialità","Novità, originalità e non ovvietà per un esperto del settore"],c:1,e:"Requisiti brevetto: (1) Novità = non nello stato della tecnica; (2) Attività inventiva = non evidente per l'esperto del ramo; (3) Industrialità = fabbricabile/utilizzabile in industria."},
+{q:"In quale caso un programma per elaboratore può rientrare in un brevetto?",opts:["Non può mai rientrare in un brevetto: è protetto esclusivamente dal diritto d'autore","Se è incorporato in un'invenzione che produce un effetto tecnico ulteriore (es. controlla un processo industriale)","Può essere brevettato autonomamente se rappresenta un progresso significativo rispetto allo stato dell'arte"],c:1,e:"Il software 'in quanto tale' non è brevettabile. Ma se è parte di un'invenzione con effetto tecnico ulteriore (es. riduzione consumi, controllo di un motore), l'insieme può essere brevettato."},
+{q:"Cosa caratterizza un 'marchio forte' rispetto a un 'marchio debole'?",opts:["Il marchio forte è quello più longevo e più conosciuto dal grande pubblico","Il marchio forte è di pura fantasia (ampia tutela); il marchio debole è descrittivo o evocativo (tutela ristretta)","Il marchio forte è registrato a livello internazionale; quello debole solo a livello nazionale"],c:1,e:"Marchio forte: fantasia pura (es. 'Nike' per scarpe) → tutela ampia. Marchio debole: descrittivo/evocativo (es. 'Freschezza' per deodoranti) → tutela ristretta."},
+{q:"Un dipendente inventa qualcosa nel rapporto di lavoro senza una retribuzione specifica per l'attività inventiva. Cosa accade?",opts:["L'invenzione spetta al dipendente in ogni caso, salvo accordo contrario","I diritti patrimoniali spettano al datore di lavoro; il dipendente ha però diritto a un equo premio","I diritti sono condivisi al 50% tra datore e dipendente per legge"],c:1,e:"Caso 2 art. 64 CPI: invenzione nel rapporto ma senza retribuzione specifica → diritti patrimoniali al datore, equo premio al dipendente. Diverso dal software (nessun equo premio)."},
+{q:"Cosa si intende per 'attività inventiva' come requisito di brevettabilità?",opts:["L'invenzione deve essere stata realizzata con un processo creativo formalmente documentato","L'invenzione deve comportare un miglioramento misurabile e quantificabile rispetto allo stato della tecnica","L'invenzione non deve essere evidente per la persona esperta del settore tecnico di riferimento"],c:2,e:"Attività inventiva: l'invenzione non deve essere ovvia per la 'persona esperta del ramo' (skilled person). Non serve un genio, basta che un esperto del settore non l'avrebbe sviluppata naturalmente."},
+{q:"In cosa consiste il 'secondary meaning' nel diritto dei marchi?",opts:["Un marchio già registrato acquista un significato commerciale secondario e può essere esteso a nuove classi merceologiche","Un segno originariamente generico o descrittivo acquista capacità distintiva grazie all'uso intenso nel tempo","Un marchio forte perde la propria distintività e diventa generico (es. 'scotch', 'post-it')"],c:1,e:"Secondary meaning (significato secondario): un segno descrittivo che normalmente non sarebbe registrabile acquista capacità distintiva grazie all'uso intenso e continuativo nel mercato."},
+{q:"Qual è la differenza tra 'brevettazione' e 'registrazione' come vie di acquisto nella proprietà industriale?",opts:["La brevettazione tutela i segni distintivi; la registrazione tutela le invenzioni tecniche","Sono procedure equivalenti che producono gli stessi diritti esclusivi","La brevettazione tutela le invenzioni; la registrazione tutela marchi, disegni e modelli"],c:2,e:"Brevettazione → invenzioni, modelli di utilità, nuove varietà vegetali. Registrazione → marchi, disegni, modelli, topografie di semiconduttori."},
+{q:"La tutela della proprietà industriale riguarda anche i 'segreti commerciali'?",opts:["No, i segreti commerciali sono tutelati solo dal codice penale attraverso i reati di spionaggio industriale","Sì, il Codice della Proprietà Industriale include espressamente i segreti commerciali nella lista tassativa dei beni tutelati","No, sono tutelati solo se il detentore ha investito in misure di sicurezza certificate"],c:1,e:"Il CPI tutela in forma tassativa: marchi, indicazioni geografiche, denominazioni d'origine, disegni, invenzioni, modelli di utilità, topografie, segreti commerciali, nuove varietà vegetali."}
+]},
+
+D8:{name:"Privacy e GDPR",short:"D8",qs:[
+{q:"Qual è la differenza tra dato pseudonimizzato e dato anonimizzato ai fini del GDPR?",opts:["Il dato pseudonimizzato è fuori dal GDPR; quello anonimizzato rimane soggetto al regolamento","Entrambi sono soggetti al GDPR ma con obblighi semplificati rispetto ai dati ordinari","Il dato pseudonimizzato è ancora personale (GDPR si applica); quello anonimizzato non è più personale (GDPR non si applica)"],c:2,e:"Pseudonimizzazione = dato ancora riconducibile con informazioni aggiuntive separate → GDPR si applica. Anonimizzazione = dato non più riconducibile in nessun modo → GDPR non si applica."},
+{q:"Qual è la differenza tra 'titolare del trattamento' e 'responsabile del trattamento'?",opts:["Il titolare tratta i dati per conto del responsabile; il responsabile determina finalità e mezzi","Il titolare è l'interessato i cui dati vengono trattati; il responsabile li gestisce tecnicamente","Il titolare determina finalità e mezzi del trattamento; il responsabile tratta i dati per conto del titolare su istruzioni di quest'ultimo"],c:2,e:"Titolare (controller) = chi determina finalità e mezzi per proprio conto. Responsabile (processor) = chi tratta per conto del titolare su istruzioni. Devono stipulare un contratto (art. 28 GDPR)."},
+{q:"In caso di data breach, entro quanto tempo il titolare deve notificarlo al Garante?",opts:["Entro 24 ore dalla scoperta, in ogni caso","Entro 72 ore dalla conoscenza del breach, salvo che sia improbabile un rischio per i diritti degli interessati","Entro 30 giorni, se il breach riguarda categorie particolari di dati"],c:1,e:"Art. 33 GDPR: 72 ore al Garante, salvo improbabilità del rischio. Attenzione: le 72 ore decorrono dalla conoscenza del breach da parte del titolare, non dalla sua scoperta da parte del responsabile."},
+{q:"Quando il titolare del trattamento deve comunicare il data breach anche all'interessato?",opts:["In ogni caso, contestualmente alla notifica al Garante entro 72 ore","Solo quando il breach presenta un rischio elevato per i diritti e le libertà delle persone fisiche","Solo quando il breach riguarda categorie particolari (dati sanitari, biometrici, ecc.)"],c:1,e:"Art. 34 GDPR: la comunicazione all'interessato è obbligatoria solo se il breach presenta un rischio elevato per i suoi diritti. Non è dovuta se i dati erano cifrati o se il rischio non è elevato."},
+{q:"Quali dati rientrano nelle 'categorie particolari' che richiedono protezione rafforzata?",opts:["Tutti i dati identificativi diretti (nome, cognome, indirizzo, codice fiscale)","Dati genetici, biometrici intesi a identificare univocamente, salute, vita/orientamento sessuale, razza/etnia, opinioni politiche, credenze religiose/filosofiche, appartenenza sindacale","Solo i dati sanitari e quelli relativi a condanne penali o misure di sicurezza"],c:1,e:"Art. 9 GDPR: 8 categorie particolari. 'Intesi a identificare univocamente' modifica solo i 'dati biometrici', non tutti i sensibili."},
+{q:"Il DPO (Data Protection Officer) può ricevere istruzioni dal titolare sullo svolgimento dei suoi compiti?",opts:["Sì, ma solo per attività non legate alla conformità normativa","Sì, come qualsiasi altro funzionario aziendale alle dipendenze del titolare","No, il DPO è indipendente, non riceve istruzioni, non può esservi conflitto di interessi"],c:2,e:"Art. 38 GDPR: il DPO non riceve istruzioni, non viene rimosso per aver svolto il suo compito, non ha conflitti di interessi. È una figura indipendente, non un dirigente subordinato."},
+{q:"Il 'legittimo interesse' come base giuridica del trattamento può essere utilizzato dalle autorità pubbliche?",opts:["Sì, ma solo per attività di interesse generale non coperte da altra base giuridica","Sì, senza limitazioni: le autorità pubbliche agiscono sempre nell'interesse collettivo","No, il legittimo interesse non vale come base giuridica per le autorità pubbliche nell'esercizio dei loro compiti"],c:2,e:"Art. 6 par. 1 lett. f) GDPR: il legittimo interesse NON può essere invocato dalle autorità pubbliche nell'esercizio dei loro compiti istituzionali."},
+{q:"Quale fascia di sanzione GDPR si applica alla violazione dei principi fondamentali del trattamento?",opts:["Fascia bassa: fino a 10 milioni di euro o il 2% del fatturato globale annuo (il maggiore)","Fascia alta: fino a 20 milioni di euro o il 4% del fatturato globale annuo (il maggiore)","Non è prevista una sanzione specifica: il Garante valuta caso per caso"],c:1,e:"Art. 83 GDPR: fascia alta (20M€/4%) → principi, basi giuridiche, diritti degli interessati, trasferimenti. Fascia bassa (10M€/2%) → obblighi del titolare/responsabile (DPIA, DPO, registri)."},
+{q:"Qual è l'età minima in Italia per prestare il consenso al trattamento dati per i servizi online?",opts:["13 anni, come previsto dalla norma UE minima","16 anni, come previsto dal GDPR senza variazioni nazionali","14 anni, come previsto dalla norma italiana di recepimento"],c:2,e:"GDPR prevede 16 anni come default, ma consente agli Stati di abbassare a 13 anni. L'Italia ha fissato 14 anni. Mai sotto i 13 anni in nessun caso."},
+{q:"Cosa si intende per 'privacy by design'?",opts:["I dati vengono cifrati per impostazione predefinita nei sistemi informatici","La conformità al GDPR viene documentata in fase di audit, non di progettazione","La protezione dei dati è integrata nella progettazione del sistema fin dall'inizio, non aggiunta ex post"],c:2,e:"Privacy by design (art. 25 GDPR): protezione dei dati integrata fin dalla progettazione del sistema. Privacy by default: solo i dati necessari per default, accesso non aperto a numero indefinito."},
+{q:"Il GDPR si applica al trattamento dei dati personali di persone giuridiche (società, enti)?",opts:["Sì, se i dati permettono l'identificazione indiretta di persone fisiche coinvolte","No, il GDPR tutela esclusivamente le persone fisiche","Sì, se la persona giuridica è stabilita nell'Unione Europea"],c:1,e:"Il GDPR tutela solo le persone fisiche (art. 1 e 4). I dati di persone giuridiche non rientrano nel suo ambito, anche se la PG è stabilita nell'UE."},
+{q:"Cosa si intende per 'DPIA' e quando è obbligatoria?",opts:["È la valutazione del rischio di sicurezza informatica: obbligatoria per tutti i titolari con più di 50 dipendenti","È una valutazione d'impatto sulla protezione dei dati: obbligatoria prima di trattamenti ad alto rischio per i diritti degli interessati","È il documento di nomina del DPO: obbligatorio per le autorità pubbliche e le grandi imprese"],c:1,e:"DPIA (Data Protection Impact Assessment, art. 35 GDPR): obbligatoria prima di trattamenti che presentano un rischio elevato per i diritti e le libertà delle persone fisiche (es. profilazione sistematica, biometria su larga scala)."}
+]},
+
+D9:{name:"Firme Elettroniche",short:"D9",qs:[
+{q:"Quale valore probatorio ha la firma elettronica avanzata nel sistema eIDAS?",opts:["Equivale a una firma autografa, come la firma elettronica qualificata","Ha valore liberamente apprezzabile dal giudice, senza presunzioni di legge","Equivale a una scrittura privata ai sensi del codice civile"],c:2,e:"Gerarchia eIDAS: FE semplice = liberamente apprezzabile. FE avanzata = scrittura privata (art. 2702 c.c.). FE qualificata/FD = equivalente alla firma autografa."},
+{q:"Cosa rende una firma elettronica 'qualificata'?",opts:["L'utilizzo di una qualsiasi chiave crittografica riconosciuta da un ente pubblico","La registrazione della firma presso un'autorità di certificazione accreditata","Essere una firma avanzata + dispositivo qualificato per la creazione della firma + certificato qualificato"],c:2,e:"Firma qualificata = avanzata + dispositivo qualificato (QSCD) + certificato qualificato rilasciato da prestatore di servizi fiduciari qualificato. Entrambi i requisiti sono necessari."},
+{q:"La firma digitale è un livello superiore alla firma qualificata nel sistema eIDAS?",opts:["No, è un tipo specifico di firma qualificata previsto dal diritto italiano (CAD), non un livello separato","Sì, è il livello massimo di sicurezza: superiore alla qualificata e previsto dal diritto europeo","Sì, ma solo per gli atti della pubblica amministrazione italiana"],c:0,e:"La firma digitale (CAD, art. 1) è un tipo specifico di firma qualificata: usa crittografia asimmetrica ed è una specie del genere 'qualificata'. Non è un livello gerarchico distinto in eIDAS."},
+{q:"Un documento con firma qualificata che contiene macro o codice eseguibile è immodificabile?",opts:["Sì, la presenza della firma qualificata garantisce sempre l'immodificabilità del documento","Dipende: le macro di sola lettura non compromettono l'immodificabilità; quelle che scrivono sì","No, la presenza di macro o codice eseguibile fa venir meno il requisito di immodificabilità"],c:2,e:"Art. 4 c. 3 regolamento tecnico: il documento con firma qualificata/digitale NON soddisfa il requisito di immodificabilità se contiene macro, script PDF, JavaScript o codice eseguibile."},
+{q:"Cosa succede a una firma qualificata apposta su un certificato che viene successivamente revocato?",opts:["La firma rimane sempre valida: la revoca ha effetti solo per le firme future","La firma è valida per 90 giorni dalla revoca, poi decade automaticamente","Equivale a mancata sottoscrizione, salvo che un riferimento temporale opponibile ai terzi dimostri che è stata apposta prima della revoca"],c:2,e:"Firma su certificato revocato/scaduto = mancata sottoscrizione. Eccezione: se esiste un riferimento temporale opponibile ai terzi (es. marca temporale) che colloca la firma prima della revoca/scadenza."},
+{q:"Da quando ha effetto la revoca o sospensione di un certificato qualificato?",opts:["Dalla comunicazione formale al titolare del certificato","Dopo 30 giorni dalla data di richiesta di revoca","Dalla pubblicazione nella lista delle revoche e sospensioni (CRL o equivalente)"],c:2,e:"La revoca/sospensione ha effetto dalla pubblicazione nelle liste ufficiali. Non basta la richiesta o la comunicazione al titolare: finché non è pubblicata, il certificato è considerato valido."},
+{q:"La trasmissione via PEC ha valore legale equivalente a quale atto?",opts:["A una comunicazione ufficiale dello Stato, con pubblica fede e contestabile solo con querela di falso","A una raccomandata con avviso di ricevimento: data e ora opponibili ai terzi","A una semplice email con firma digitale allegata del mittente"],c:1,e:"PEC (DPR 68/2005): la trasmissione via PEC equivale a una notificazione a mezzo posta (raccomandata A/R). Data e ora della consegna sono opponibili ai terzi."},
+{q:"Cosa garantisce il 'sigillo elettronico' nel sistema eIDAS?",opts:["L'autenticazione di una persona fisica titolare di una carica pubblica rilevante","Un livello di sicurezza superiore alla firma qualificata nelle comunicazioni B2B","L'integrità e l'origine dei dati: è l'equivalente della firma elettronica per le persone giuridiche"],c:2,e:"Sigillo elettronico (art. 3 eIDAS): garantisce integrità e origine, ma è usato dalle persone giuridiche (non fisiche). La firma elettronica è per le persone fisiche."},
+{q:"Quale tipo di documento ha 'pubblica fede' e può essere contestato solo con querela di falso?",opts:["La scrittura privata autenticata da un notaio con firma digitale","Il documento informatico con firma qualificata associata a marca temporale","L'atto pubblico redatto e sottoscritto da un pubblico ufficiale nelle sue funzioni"],c:2,e:"Atto pubblico (art. 2699 c.c.): redatto da pubblico ufficiale nelle sue funzioni → pubblica fede su provenienza, data e contenuto → contestabile solo con querela di falso."},
+{q:"Cosa si intende per 'crittografia asimmetrica' nel meccanismo della firma digitale?",opts:["Si usa un'unica chiave segreta sia per firmare che per verificare, condivisa tra le parti","Si usano due chiavi distinte e matematicamente correlate: la privata per firmare, la pubblica per verificare","Si usa la chiave pubblica per firmare il documento e quella privata del destinatario per decifrarlo"],c:1,e:"Crittografia asimmetrica: coppia di chiavi correlate. Il mittente firma con la propria chiave privata (conosciuta solo da lui). Il destinatario verifica con la chiave pubblica (conoscibile da tutti)."}
+]},
+
+D10:{name:"Commercio Elettronico",short:"D10",qs:[
+{q:"Quale delle tre figure di intermediario è associata al meccanismo 'notice & take down'?",opts:["Il mere conduit: trasporta i dati senza modificarli né selezionarli","Il caching: memorizza temporaneamente i contenuti per migliorare le prestazioni","Il hosting: ospita stabilmente i contenuti e deve rimuoverli appena a conoscenza dell'illiceità"],c:2,e:"Hosting = memorizzazione stabile (YouTube, web host). Esonero condizionato: finché non è a conoscenza dell'illiceità; appena lo sa, deve rimuovere (notice & take down)."},
+{q:"Gli intermediari online hanno un obbligo generale di sorvegliare i contenuti che trasmettono o ospitano?",opts:["Sì, devono monitorare proattivamente per individuare attività illecite","Sì, ma solo i grandi intermediari con più di 45 milioni di utenti nell'UE","No, la legge esclude esplicitamente un obbligo generale di sorveglianza; devono però informare le autorità se scoprono illeciti"],c:2,e:"Art. 17 D.Lgs. 70/2003: nessun obbligo generale di sorveglianza per gli intermediari. Devono però informare le autorità competenti in caso di scoperta di attività illecite."},
+{q:"Entro quanti giorni il consumatore può esercitare il diritto di recesso in un contratto a distanza?",opts:["7 giorni lavorativi dalla consegna del bene o dalla conclusione del contratto","30 giorni, salvo diversa indicazione contrattuale del professionista","14 giorni, senza penali né necessità di fornire motivazioni"],c:2,e:"Recesso (art. 52 Cod. consumo): 14 giorni senza penali né motivazione. Per beni: dalla consegna fisica. Per servizi: dalla conclusione del contratto."},
+{q:"Se il professionista non informa il consumatore del diritto di recesso, come si modifica il periodo?",opts:["Il contratto è automaticamente nullo per omissione di informazione obbligatoria precontrattuale","Il periodo si estende di 30 giorni aggiuntivi rispetto ai 14 ordinari","Il periodo si estende di 12 mesi; oppure termina 14 giorni dopo l'eventuale informazione tardiva"],c:2,e:"Art. 53 Cod. consumo: se il professionista non informa sul recesso, il periodo si estende di 12 mesi. Se informa tardivamente, il periodo di 14 giorni decorre da quella data."},
+{q:"In caso di conflitto tra le norme del D.Lgs. 70/2003 (e-commerce) e quelle del Codice del consumo, quale prevale?",opts:["Prevale il D.Lgs. 70/2003 come norma speciale per il settore digitale","Prevale la norma più favorevole al consumatore, valutata caso per caso","Prevale sempre il Codice del consumo"],c:2,e:"Il Codice del consumo prevale sempre sul D.Lgs. 70/2003 in caso di conflitto. Il 70/2003 si applica ai rapporti B2B e alle questioni non coperte dal Cod. consumo."},
+{q:"Il diritto di recesso si applica a un software acquistato su CD con confezione sigillata già aperta?",opts:["Sì, il recesso può essere esercitato entro 14 giorni dall'acquisto in ogni caso","No, il software su supporto fisico con confezione sigillata aperta è tra le eccezioni tassative al recesso","Sì, ma il consumatore deve restituire il supporto fisico e cancellare ogni copia installata"],c:1,e:"Art. 59 Cod. consumo: tra le 13 eccezioni tassative al recesso c'è la fornitura di audio, video e software sigillati, aperti dal consumatore. Il professionista deve informare preventivamente."},
+{q:"Cosa si intende per 'commercio elettronico diretto'?",opts:["Un contratto tra professionisti senza intermediari (vendita diretta al grossista online)","Un e-commerce dove il venditore gestisce direttamente senza marketplace di terze parti","Sia l'ordine che la consegna avvengono per via elettronica: riguarda beni immateriali (software, musica, video)"],c:2,e:"CE diretto: ordine + distribuzione online → beni immateriali (software, musica, film in streaming). CE indiretto: ordine online, consegna fisica tradizionale (es. Amazon per prodotti fisici)."},
+{q:"Quale informazione deve contenere obbligatoriamente il pulsante di conferma d'ordine in un sito e-commerce?",opts:["Il prezzo totale comprensivo di tutte le imposte e le spese di consegna","La data stimata di consegna e la politica di reso del venditore","'Ordine con obbligo di pagare' o formulazione equivalente; se manca, il consumatore non è vincolato all'ordine"],c:2,e:"Art. 51 Cod. consumo: il pulsante deve indicare chiaramente 'ordine con obbligo di pagare'. Se il professionista non adempie, il consumatore non è vincolato dal contratto."}
+]},
+
+D11:{name:"Reati Informatici",short:"D11",qs:[
+{q:"Il reato di accesso abusivo a sistema informatico richiede la prova di un danno causato o di una finalità illecita?",opts:["Sì, senza danno concreto non è configurabile il reato","Sì, ma è sufficiente anche una semplice finalità illecita (dolo specifico)","No, è un reato di mera condotta: si perfeziona con il solo accesso abusivo, indipendentemente da danno o finalità"],c:2,e:"615-ter c.p.: reato di mera condotta. Si perfeziona con l'accesso/mantenimento nel sistema protetto. L'abusività è valutata in senso oggettivo: conta il 'come' dell'accesso, non il 'perché'."},
+{q:"Qual è la differenza tra il reato di 'detenzione di mezzi di accesso' e quello di 'detenzione di strumenti di danneggiamento'?",opts:["Sono la stessa condotta descritta in due norme diverse per ragioni storiche","Il primo riguarda strumenti per danneggiare; il secondo codici e password per accedere","Il primo riguarda codici, password e strumenti per accedere abusivamente; il secondo riguarda malware e strumenti per danneggiare"],c:2,e:"615-quater: grimaldelli informatici (password, codici) per accedere. 615-quinquies: strumenti per danneggiare (malware, DDoS). La distinzione è nello scopo dello strumento."},
+{q:"In un attacco ransomware che cifra i file di una vittima privata, quale reato è più correttamente configurabile?",opts:["Accesso abusivo a sistema informatico (per l'intrusione iniziale nel sistema della vittima)","Frode informatica (perché l'obiettivo finale è ottenere un riscatto/profitto)","Danneggiamento di dati e programmi informatici (perché l'oggetto del danno sono i dati di un privato)"],c:2,e:"635-bis c.p.: danneggiamento dati/programmi su sistema privato. Se il sistema fosse di pubblica utilità → 635-ter. La cifratura senza consenso integra il danneggiamento dei dati."},
+{q:"Qual è la vittima dell'azione nella frode informatica rispetto alla truffa ordinaria?",opts:["Non vi è differenza: in entrambi la vittima è sempre una persona fisica che subisce il danno","Nella frode informatica la vittima è la persona indotta in errore; nella truffa è il sistema manipolato","Nella frode informatica la vittima dell'azione è il sistema informatico (manipolato/alterato); nella truffa è la persona (indotta in errore)"],c:2,e:"640-ter c.p. vs 640 c.p.: truffa = artifizi su una persona che cade in errore. Frode informatica = alterazione del sistema o intervento sui dati (la 'vittima' dell'azione diretta è il sistema, non una persona)."},
+{q:"L'accesso abusivo e la frode informatica possono concorrere nello stesso fatto criminoso?",opts:["No, il reato di accesso abusivo assorbe sempre la frode informatica come reato più specifico","No, si applica solo il reato più grave (la frode informatica), che comprende l'accesso","Sì, possono concorrere perché tutelano beni giuridici diversi (domicilio informatico vs patrimonio)"],c:2,e:"Cass. 30/09/2008: 615-ter e 640-ter concorrono perché proteggono beni giuridici diversi: il primo il domicilio informatico (riservatezza/integrità del sistema), il secondo il patrimonio."},
+{q:"Quale reato tutela specificamente il 'domicilio informatico' come estensione del domicilio fisico?",opts:["Il danneggiamento di sistemi informatici privati","La violazione di corrispondenza informatica","L'accesso abusivo a sistema informatico"],c:2,e:"615-ter c.p. è costruito sul modello del domicilio fisico (art. 614 c.p.): il sistema informatico protetto è assimilato al 'domicilio informatico'. La dottrina e la giurisprudenza usano questa espressione."},
+{q:"Cosa distingue un reato 'eventualmente informatico' da uno 'necessariamente informatico'?",opts:["Non esiste questa distinzione: nel codice penale italiano tutti i reati informatici sono necessariamente informatici","Il reato necessariamente informatico può essere commesso anche senza sistemi informatici; quello eventualmente informatico no","Il reato eventualmente informatico può essere commesso anche senza sistemi informatici; quello necessariamente informatico richiede un sistema informatico per essere integrato"],c:2,e:"Eventualmente informatico: esiste anche nella versione 'analogica' (es. truffa, art. 640; violenza sulle cose, art. 392). Necessariamente informatico: richiede sistemi informatici (es. 615-ter, 635-bis)."},
+{q:"Il 'nocumento' nella violazione di corrispondenza è un elemento costitutivo del reato o una condizione di punibilità?",opts:["È un elemento costitutivo: senza nocumento il fatto non costituisce reato","È un'aggravante che aumenta la pena base prevista per il reato","È una condizione di punibilità: il fatto è reato ma si procede penalmente solo se ne deriva nocumento"],c:2,e:"Art. 616 c.p.: il nocumento è condizione di punibilità (per la versione punibile a querela). Il reato esiste, ma si procede solo in presenza di nocumento. Termine esatto: 'nocumento', non 'danno'."},
+{q:"Un attacco DDoS che rende inaccessibili i server di un'azienda privata integra quale reato?",opts:["Danneggiamento di dati e programmi informatici di privati","Accesso abusivo a sistema informatico, con l'aggravante del danno causato","Danneggiamento di sistemi informatici o telematici privati"],c:2,e:"635-quater c.p.: danneggiamento di sistemi informatici (contenitore), non di dati/programmi (contenuto). Il DDoS rende il sistema indisponibile → 635-quater. Oggetto pubblico → 635-quinquies."},
+{q:"L'abusività nell'accesso a un sistema informatico è valutata in modo oggettivo o soggettivo?",opts:["Soggettivo: rileva la finalità illecita (perché si accede), non il modo dell'accesso","Misto: devono essere illeciti sia il modo dell'accesso che la finalità perseguita","Oggettivo: rileva il modo (come) dell'accesso, indipendentemente dalla finalità soggettiva dell'agente"],c:2,e:"La giurisprudenza ha affermato l'abusività in senso oggettivo: conta come si accede (violando le regole di accesso al sistema), non perché. Chi accede con credenziali rubate è punibile anche se curiosa solo."}
+]},
+
+D12:{name:"AI Act",short:"D12",qs:[
+{q:"Qual è la differenza tra 'sistema di IA' e 'modello GPAI' nell'AI Act?",opts:["Sono sinonimi: entrambi indicano qualsiasi sistema basato su intelligenza artificiale","Il sistema di IA è regolamentato; il modello GPAI è escluso dall'ambito dell'AI Act","Il modello GPAI è il modello base (es. GPT, Gemini); il sistema di IA lo incorpora in un'applicazione specifica con un contesto d'uso definito"],c:2,e:"Modello GPAI (es. GPT-4, Claude): addestrato su dati massivi, capacità generali. Sistema di IA: incorpora un modello in un contesto specifico (es. assistente di recrutamento). Obblighi diversi per ciascuno."},
+{q:"Quale categoria di rischio prevede il divieto assoluto nell'AI Act?",opts:["Alto rischio: richiede obblighi di conformità rigorosi prima dell'immissione sul mercato","Rischio limitato: prevede solo obblighi di trasparenza verso l'utente","Rischio inaccettabile: i sistemi sono vietati in modo assoluto perché ledono diritti fondamentali"],c:2,e:"I 4 livelli: inaccettabile (vietato), alto rischio (ammesso con obblighi), limitato (solo trasparenza), minimo/nullo (nessuna norma). Il divieto assoluto riguarda solo il livello inaccettabile."},
+{q:"Il sistema di CV screening usato da Amazon, che discriminava le candidate donne, rientra in quale categoria AI Act?",opts:["Rischio limitato: opera solo su documenti, non su persone fisiche in modo diretto","Pratica vietata: la discriminazione di genere è una delle pratiche proibite dall'art. 5","Alto rischio: è un sistema di selezione del personale soggetto agli obblighi di conformità più rigorosi"],c:2,e:"Il CV screening è un sistema ad alto rischio (allegato III AI Act): ammesso ma con obblighi (gestione rischi, dati di qualità, sorveglianza umana). NON è pratica vietata. Era il bias nei dati a discriminare."},
+{q:"Chi è il 'deployer' nell'AI Act, e come si distingue dal 'fornitore'?",opts:["Il deployer sviluppa il sistema di IA; il fornitore lo utilizza nell'organizzazione","Il deployer testa il sistema di IA per il fornitore prima dell'immissione sul mercato","Il fornitore sviluppa/immette il sistema con il proprio marchio; il deployer lo utilizza sotto la propria autorità"],c:2,e:"Fornitore (provider): sviluppa o fa sviluppare il sistema e lo immette con il proprio nome/marchio. Deployer: lo usa nell'esercizio della propria attività, non per uso personale. La stessa azienda può essere entrambe le cose."},
+{q:"Quale organo ha competenza esclusiva per la vigilanza sui modelli GPAI?",opts:["Le autorità nazionali per l'IA di ciascuno Stato membro UE","L'ENISA (Agenzia per la cybersicurezza) per i profili di sicurezza informatica","La Commissione europea, tramite l'AI Office, con competenza esclusiva sulle questioni GPAI"],c:2,e:"Governance GPAI: competenza esclusiva della Commissione UE (AI Office). Le autorità nazionali NON hanno giurisdizione sui modelli GPAI. Dal 2 agosto 2025."},
+{q:"L'identificazione biometrica remota in tempo reale in spazi pubblici è sempre vietata dall'AI Act?",opts:["No, è classificata come alto rischio e ammessa con obblighi di conformità rigorosi","No, è vietata in linea di principio ma ammessa con eccezioni tassative (es. ricerca di persone scomparse, minacce terroristiche imminenti)","Sì, è una pratica vietata senza eccezioni in qualsiasi circostanza"],c:1,e:"Art. 5 AI Act: la biometria in tempo reale in spazi pubblici è vietata in linea di principio, ma con 3 eccezioni tassative. La biometria retroattiva è invece alto rischio (ammessa con obblighi)."},
+{q:"Le sanzioni dell'AI Act si cumulano con quelle del GDPR per la stessa condotta?",opts:["No, si applica solo la sanzione più elevata tra le due per evitare il doppio rischio sanzionatorio","Sì, si cumulano perché tutelano beni giuridici diversi (sicurezza dell'IA vs protezione dei dati personali)","No, il GDPR prevale sull'AI Act come norma speciale sulla protezione dei dati"],c:1,e:"Le sanzioni AI Act e GDPR si cumulano: tutelano beni giuridici diversi. Un sistema di IA che viola sia le norme AI che il GDPR è soggetto a entrambe le sanzioni."},
+{q:"Da quando sono applicabili i divieti per le pratiche vietate dell'AI Act?",opts:["Dal 1° agosto 2024, data di entrata in vigore del regolamento","Dal 2 agosto 2026, data di piena applicabilità del regolamento","Dal 2 febbraio 2025, sei mesi dopo l'entrata in vigore"],c:2,e:"Tappe AI Act: in vigore 1/8/2024 → divieti + alfabetizzazione 2/2/2025 → governance + obblighi GPAI 2/8/2025 → piena applicabilità 2/8/2026."},
+{q:"Quale delle seguenti pratiche è esplicitamente vietata dall'AI Act?",opts:["L'uso di sistemi di raccomandazione basati sulla profilazione degli utenti online","L'inferenza delle emozioni dei lavoratori in contesti lavorativi (salvo motivi medici o di sicurezza)","L'addestramento di modelli GPAI su dati senza esplicito consenso degli autori originali"],c:1,e:"Pratica 6: vietata l'inferenza delle emozioni sul lavoro e a scuola, salvo motivi medici o di sicurezza. Questa pratica lede la dignità e la privacy in modo non negoziabile."},
+{q:"Quale fascia sanzionatoria dell'AI Act si applica alle pratiche vietate?",opts:["15 milioni di euro o il 3% del fatturato mondiale annuo (il maggiore)","35 milioni di euro o il 7% del fatturato mondiale annuo (il maggiore)","10 milioni di euro o il 2% del fatturato mondiale annuo (il maggiore)"],c:1,e:"3 fasce AI Act: pratiche vietate = 35M€/7%; obblighi alto rischio = 15M€/3%; info false alle autorità = 7,5M€/1%. Non confondere con GDPR (20M€/4% e 10M€/2%)."}
+]},
+
+D13:{name:"DSA / DMA / Data Act",short:"D13",qs:[
+{q:"Qual è la differenza tra VLOP (DSA) e Gatekeeper (DMA)?",opts:["VLOP e gatekeeper sono sinonimi: entrambi indicano le grandi piattaforme con oltre 45 milioni di utenti","VLOP richiede tre criteri cumulativi (utenti, fatturato, posizione); gatekeeper uno solo (45 mln utenti)","VLOP richiede un solo criterio (≥45 mln utenti UE); gatekeeper richiede tre criteri cumulativi (impatto, gateway, consolidamento)"],c:2,e:"VLOP/VLOSE (DSA): 1 criterio = ≥45 mln utenti. Gatekeeper (DMA): 3 criteri cumulativi: impatto significativo (fatturato/capitalizzazione), ruolo di gateway (utenti), posizione consolidata. Una piattaforma con 50 mln utenti ma piccola → VLOP ma non gatekeeper."},
+{q:"Chi è il soggetto protetto dal divieto di 'anti-steering' nel DMA?",opts:["L'utente finale (consumatore) che cerca offerte migliori al di fuori della piattaforma","La piattaforma concorrente che subisce le pratiche anticoncorrenziali del gatekeeper","L'utente commerciale (sviluppatore/venditore) che vuole informare i propri clienti di offerte migliori fuori dalla piattaforma"],c:2,e:"Anti-steering: vietato impedire agli utenti commerciali (es. Spotify) di informare i propri utenti finali di offerte migliori disponibili altrove (es. abbonamenti fuori dall'App Store). Il soggetto protetto è l'utente commerciale, NON l'utente finale."},
+{q:"Quale principio fondamentale stabilisce il DSA riguardo ai contenuti illegali online?",opts:["Le piattaforme sono responsabili di qualsiasi contenuto ospitato, indipendentemente dalla conoscenza","I contenuti illegali online sono tollerati se il danno è limitato alla sfera digitale","Ciò che è illegale offline è illegale anche online: il DSA non crea una zona franca digitale"],c:2,e:"Il principio cardine del DSA: 'ciò che è illegale offline è illegale online'. Non si crea uno spazio di impunità per il mondo digitale."},
+{q:"Il DSA prevede un obbligo generale di sorveglianza dei contenuti per gli intermediari online?",opts:["Sì, in particolare per i VLOP che devono monitorare proattivamente i contenuti a rischio","Sì, per tutti gli intermediari ma con soglie di intensità crescente in base alle dimensioni","No, art. 8 DSA: non vi è obbligo generale di sorveglianza per nessun intermediario"],c:2,e:"Art. 8 DSA: nessun obbligo generale di sorveglianza, in continuità con il D.Lgs. 70/2003 italiano. Gli intermediari devono però cooperare con le autorità e rispondere ai provvedimenti legittimi."},
+{q:"Nel Data Act, chi è il 'titolare dei dati' (data holder)?",opts:["L'utente che possiede fisicamente il dispositivo IoT e genera i dati con il proprio comportamento","Il regolatore nazionale che definisce le regole di accesso ai dati generati nel suo territorio","Il produttore o fornitore di servizi che detiene o ha il diritto di mettere a disposizione i dati"],c:2,e:"Data Act: titolare dei dati (data holder) = produttore/fornitore che detiene i dati. L'utente è il beneficiario dell'accesso, non il 'titolare'. Non confondere con 'titolare del trattamento' del GDPR."},
+{q:"Cosa prevede il DSA riguardo agli intermediari che svolgono volontariamente indagini sui contenuti ('buon samaritano')?",opts:["Perdono l'esenzione dalla responsabilità: dimostrando consapevolezza dei contenuti, assumono responsabilità per quelli che non hanno rimosso","Mantengono l'esenzione: le indagini volontarie in buona fede non fanno perdere il safe harbour","Acquisiscono responsabilità ridotta: sono soggetti a sanzioni dimezzate rispetto al regime ordinario"],c:1,e:"Art. 7 DSA (buon samaritano): le indagini volontarie in buona fede NON fanno perdere l'esenzione dalla responsabilità. Si vuole incoraggiare le piattaforme a cercare attivamente contenuti illeciti."},
+{q:"Qual è la sanzione massima prevista dal DMA per un gatekeeper che viola i suoi obblighi?",opts:["6% del fatturato mondiale annuo (come il DSA per i VLOP)","35 milioni di euro o il 7% del fatturato (come l'AI Act per le pratiche vietate)","10% del fatturato mondiale annuo, elevabile al 20% in caso di recidiva"],c:2,e:"Sanzioni: DSA = 6% fatturato. DMA = 10% (20% recidiva). AI Act = 7%/3%/1% per le tre fasce. Non confondere le percentuali tra i tre regolamenti."},
+{q:"In caso di conflitto tra le norme del Data Act e il GDPR, quale prevale?",opts:["Prevale il Data Act come norma più recente e speciale per i dati IoT","Prevale il GDPR: l'art. 1 par. 5 del Data Act lo afferma esplicitamente","Prevale la norma più favorevole all'utente, valutata caso per caso"],c:1,e:"Art. 1 §5 Data Act: in caso di conflitto con il GDPR, prevale il GDPR. Lo stesso principio vale per DSA e DMA. Il GDPR è la lex specialis per i dati personali."},
+{q:"Cosa si intende per 'self-preferencing' vietato dal DMA?",opts:["Un gatekeeper impedisce ai propri utenti finali di accedere a prodotti o servizi concorrenti","Un gatekeeper impone il proprio sistema di pagamento come esclusivo agli utenti commerciali","Un gatekeeper favorisce nella classificazione o nel ranking i propri prodotti/servizi rispetto a quelli dei concorrenti"],c:2,e:"Self-preferencing: favorire i propri prodotti/servizi nelle classifiche o nei risultati (es. Google Shopping che mostrava i propri prodotti in cima). Vietato per i gatekeeper. Diverso dall'anti-steering."},
+{q:"Da quale data i fornitori di modelli GPAI sono soggetti agli obblighi specifici dell'AI Act?",opts:["Dal 2 febbraio 2025, insieme ai divieti per le pratiche vietate","Dal 2 agosto 2026, con la piena applicabilità del regolamento","Dal 2 agosto 2025, dodici mesi dopo l'entrata in vigore"],c:2,e:"Dal 2 agosto 2025: obblighi governance + obblighi GPAI. I fornitori GPAI devono fornire documentazione tecnica, rispettare il diritto d'autore e pubblicare una sintesi dei dati di addestramento."}
+]}
+};
+
+// ===== STATO =====
+let S = {
+  screen: 'home',
+  module: null,
+  qs: [],
+  idx: 0,
+  answers: [],
+  isExam: false,
+  timerInterval: null,
+  timeLeft: 45 * 60,
+  lastModule: null,
+  lastIsExam: false
+};
+
+// ===== UTILITY =====
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function shuffleQ(q) {
+  const idxs = shuffle([0, 1, 2]);
+  return {
+    q: q.q,
+    opts: idxs.map(i => q.opts[i]),
+    c: idxs.indexOf(q.c),
+    e: q.e
+  };
+}
+
+function show(id) { document.getElementById(id).classList.remove('hidden'); }
+function hide(id) { document.getElementById(id).classList.add('hidden'); }
+
+// ===== HOME =====
+function renderHome() {
+  S.screen = 'home';
+  clearTimer();
+  hide('quiz'); hide('result'); show('home');
+
+  const grid = document.getElementById('modGrid');
+  grid.innerHTML = '';
+  Object.entries(DB).forEach(([id, mod]) => {
+    const btn = document.createElement('button');
+    btn.className = 'mod-btn';
+    btn.innerHTML = `<div class="mod-id">${id}</div><div class="mod-name">${mod.name}</div><div class="mod-count">${mod.qs.length} domande</div>`;
+    btn.onclick = () => startModule(id);
+    grid.appendChild(btn);
+  });
+}
+
+function goHome() { renderHome(); }
+
+// ===== AVVIA MODULO =====
+function startModule(modId) {
+  S.module = modId;
+  S.isExam = false;
+  S.lastModule = modId;
+  S.lastIsExam = false;
+  const rawQs = shuffle([...DB[modId].qs]);
+  S.qs = rawQs.map(shuffleQ);
+  S.idx = 0;
+  S.answers = [];
+  hide('home'); hide('result'); show('quiz');
+  document.getElementById('quizTitle').textContent = `${modId} — ${DB[modId].short || DB[modId].name}`;
+  hide('timerBadge');
+  renderQuestion();
+}
+
+// ===== AVVIA ESAME =====
+function startExam() {
+  S.isExam = true;
+  S.lastIsExam = true;
+  // Prendi 2 domande per modulo, poi seleziona 22
+  let pool = [];
+  Object.entries(DB).forEach(([id, mod]) => {
+    const picked = shuffle([...mod.qs]).slice(0, 2);
+    picked.forEach(q => pool.push({...q, _mod: id}));
+  });
+  pool = shuffle(pool).slice(0, 22);
+  S.qs = pool.map(shuffleQ);
+  S.idx = 0;
+  S.answers = [];
+  S.timeLeft = 45 * 60;
+  hide('home'); hide('result'); show('quiz');
+  document.getElementById('quizTitle').textContent = '🎯 Esame Completo';
+  show('timerBadge');
+  startTimer();
+  renderQuestion();
+}
+
+// ===== TIMER =====
+function startTimer() {
+  clearTimer();
+  updateTimerDisplay();
+  S.timerInterval = setInterval(() => {
+    S.timeLeft--;
+    updateTimerDisplay();
+    if (S.timeLeft <= 0) {
+      clearTimer();
+      showResult();
+    }
+  }, 1000);
+}
+
+function clearTimer() {
+  if (S.timerInterval) { clearInterval(S.timerInterval); S.timerInterval = null; }
+}
+
+function updateTimerDisplay() {
+  const el = document.getElementById('timerBadge');
+  if (!el) return;
+  const m = Math.floor(S.timeLeft / 60);
+  const s = S.timeLeft % 60;
+  el.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  el.className = 'timer-badge';
+  if (S.timeLeft <= 300) el.classList.add('danger');
+  else if (S.timeLeft <= 600) el.classList.add('warn');
+}
+
+// ===== RENDER DOMANDA =====
+function renderQuestion() {
+  const q = S.qs[S.idx];
+  const total = S.qs.length;
+  const pct = (S.idx / total) * 100;
+
+  document.getElementById('progFill').style.width = pct + '%';
+  document.getElementById('qNum').textContent = `Domanda ${S.idx + 1} di ${total}`;
+  document.getElementById('qText').textContent = q.q;
+  document.getElementById('quizSub').textContent = S.isExam ? `Esame · 1,5 pt/corretta · 0 pt/errata` : `Modalità pratica`;
+
+  const letters = ['A', 'B', 'C'];
+  const ol = document.getElementById('opts');
+  ol.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'opt';
+    btn.innerHTML = `<span class="opt-l">${letters[i]}</span><span>${opt}</span>`;
+    btn.onclick = () => selectAnswer(i);
+    ol.appendChild(btn);
+  });
+
+  document.getElementById('expl').className = 'expl';
+  document.getElementById('expl').textContent = '';
+  document.getElementById('nextBtn').className = 'next-btn';
+  document.getElementById('nextBtn').textContent = S.idx < S.qs.length - 1 ? 'Prossima domanda →' : 'Vedi risultati →';
+}
+
+// ===== SELEZIONE RISPOSTA =====
+function selectAnswer(selected) {
+  const q = S.qs[S.idx];
+  const buttons = document.querySelectorAll('.opt');
+  buttons.forEach((btn, i) => {
+    btn.classList.add('disabled');
+    btn.onclick = null;
+    if (i === q.c) btn.classList.add('correct');
+    if (i === selected && selected !== q.c) btn.classList.add('wrong');
+  });
+
+  S.answers.push({ selected, correct: q.c, q: q.q, opts: q.opts, e: q.e });
+
+  const expl = document.getElementById('expl');
+  expl.textContent = q.e;
+  expl.className = 'expl show';
+
+  document.getElementById('nextBtn').classList.add('show');
+}
+
+// ===== PROSSIMA =====
+function nextQ() {
+  S.idx++;
+  if (S.idx >= S.qs.length) {
+    clearTimer();
+    showResult();
+  } else {
+    renderQuestion();
+  }
+}
+
+// ===== RISULTATI =====
+function showResult() {
+  hide('quiz'); hide('home'); show('result');
+
+  const n = S.answers.length;
+  const total = S.qs.length;
+  const correct = S.answers.filter(a => a.selected === a.correct).length;
+  const wrong = S.answers.filter(a => a.selected !== a.correct && a.selected !== undefined).length;
+  const skipped = total - n;
+
+  const pts = correct * 1.5;
+  const maxPts = total * 1.5;
+
+  let emoji = pts >= maxPts * 0.9 ? '🏆' : pts >= maxPts * 0.7 ? '✅' : pts >= maxPts * 0.5 ? '⚠️' : '❌';
+
+  document.getElementById('resTitle').textContent = S.isExam ? 'Risultato Esame' : `Risultato — ${S.module}`;
+  document.getElementById('resBig').textContent = emoji + ' ' + correct + '/' + total;
+  document.getElementById('resPts').textContent = pts.toFixed(1) + ' punti su ' + maxPts.toFixed(1);
+  document.getElementById('resSub').textContent = S.isExam
+    ? (pts >= 18 ? '🎉 Sufficiente per superare l\'esame!' : '📚 Continua a studiare: servono almeno 18 pt.')
+    : 'Modalità pratica';
+
+  // Pills
+  document.getElementById('resPills').innerHTML = `
+    <div class="pill p-ok"><div class="pn">${correct}</div><div class="pl">Corrette</div></div>
+    <div class="pill p-ko"><div class="pn">${wrong}</div><div class="pl">Errate</div></div>
+    <div class="pill p-skip"><div class="pn">${skipped}</div><div class="pl">Non risp.</div></div>
+  `;
+
+  // Bar
+  const bar = document.getElementById('resBar');
+  bar.innerHTML = '';
+  S.qs.forEach((_, i) => {
+    const div = document.createElement('div');
+    div.className = 'res-bar-item ' + (i >= n ? 'rb-none' : S.answers[i].selected === S.answers[i].correct ? 'rb-ok' : 'rb-ko');
+    bar.appendChild(div);
+  });
+
+  // Errori
+  const wrong_answers = S.answers.filter(a => a.selected !== a.correct);
+  const missEl = document.getElementById('missSec');
+  if (wrong_answers.length === 0) {
+    missEl.innerHTML = '<p style="color:#2e7d32;font-weight:700;text-align:center;padding:12px">🎯 Nessun errore!</p>';
+  } else {
+    missEl.innerHTML = `<h3>Risposte errate (${wrong_answers.length})</h3>` +
+      wrong_answers.map(a => `
+        <div class="miss-item">
+          <div class="miss-q">${a.q}</div>
+          <div class="miss-row miss-ok">✓ Corretta: ${a.opts[a.correct]}</div>
+          ${a.selected !== undefined ? `<div class="miss-row miss-ko">✗ Tua: ${a.opts[a.selected]}</div>` : ''}
+          <div class="miss-row" style="color:#0d47a1;margin-top:4px;font-style:italic">${a.e}</div>
+        </div>`).join('');
+  }
+}
+
+// ===== RETRY =====
+function retry() {
+  if (S.lastIsExam) startExam();
+  else if (S.lastModule) startModule(S.lastModule);
+}
+
+// ===== INIT =====
+renderHome();
+</script>
+</body>
+</html>
