@@ -90,6 +90,60 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .r-primary{background:#1a237e;color:#fff;border:none}
 .r-secondary{background:#fff;border:2px solid #1a237e;color:#1a237e}
 
+/* SCORE BADGE su mod-btn */
+.mod-btn{position:relative}
+.mod-score{font-size:.65rem;font-weight:700;margin-top:5px;padding:2px 7px;border-radius:99px;display:inline-block}
+.mod-score.good{background:#e8f5e9;color:#2e7d32}
+.mod-score.ok{background:#fff8e1;color:#f57f17}
+.mod-score.bad{background:#ffebee;color:#c62828}
+.mod-err-dot{position:absolute;top:7px;right:9px;width:8px;height:8px;background:#ef5350;border-radius:50%}
+
+/* AUX BUTTONS (errori + stats) */
+.aux-btns{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
+.aux-btn{background:#fff;border:2px solid #e8eaf6;border-radius:13px;padding:14px 10px;text-align:center;cursor:pointer;font-size:.88rem;font-weight:700;color:#1a237e;transition:transform .1s;-webkit-user-select:none;user-select:none}
+.aux-btn:active{transform:scale(.97)}
+.aux-btn.err-btn{border-color:#ffcdd2;color:#c62828}
+.aux-sub{display:block;font-size:.68rem;font-weight:400;color:#888;margin-top:3px}
+.aux-btn.err-btn .aux-sub{color:#ef5350}
+
+/* ERR MODE BANNER in quiz */
+.err-mode-banner{background:#fff3e0;border:1.5px solid #ff9800;border-radius:10px;padding:9px 13px;font-size:.78rem;color:#e65100;font-weight:600;margin-bottom:12px;text-align:center}
+
+/* RESULT: errori eliminati */
+.err-cleared{background:#e8f5e9;border:1.5px solid #66bb6a;border-radius:10px;padding:10px 14px;font-size:.82rem;color:#2e7d32;font-weight:600;margin-bottom:14px;text-align:center}
+
+/* STATS SCREEN */
+.page-hdr{color:#fff;padding:22px 20px 18px;border-radius:18px;text-align:center;margin-bottom:18px;box-shadow:0 4px 20px rgba(26,35,126,.25)}
+.page-hdr h2{font-size:1.15rem;font-weight:700}
+.page-hdr p{font-size:.82rem;opacity:.82;margin-top:5px}
+.hdr-blue{background:linear-gradient(135deg,#1a237e,#3949ab)}
+.hdr-red{background:linear-gradient(135deg,#b71c1c,#c62828);box-shadow:0 4px 20px rgba(183,28,28,.25)}
+.stats-global{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:16px}
+.sg-card{background:#fff;border-radius:13px;padding:13px 8px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.sg-n{font-size:1.35rem;font-weight:800;color:#1a237e}
+.sg-l{font-size:.68rem;color:#888;margin-top:2px}
+.stats-table{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.07);margin-bottom:14px}
+.st-row{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #f0f2ff}
+.st-row:last-child{border-bottom:none}
+.st-mod{font-weight:800;color:#1a237e;font-size:.85rem;min-width:34px}
+.st-name{flex:1;font-size:.74rem;color:#555;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.st-mini-bar{width:50px;background:#eef2ff;border-radius:99px;height:5px;overflow:hidden;flex-shrink:0}
+.st-mini-fill{height:100%;border-radius:99px;background:#3949ab}
+.st-pct{font-size:.76rem;font-weight:700;min-width:34px;text-align:right}
+.st-pct.good{color:#2e7d32}.st-pct.ok{color:#f57f17}.st-pct.bad{color:#c62828}.st-pct.none{color:#bbb}
+.st-att{font-size:.68rem;color:#aaa;min-width:22px;text-align:right}
+.reset-btn{background:#fff;border:2px solid #ef5350;color:#c62828;border-radius:12px;padding:13px;width:100%;font-size:.88rem;font-weight:700;cursor:pointer;margin-bottom:12px}
+
+/* ERRORI MENU */
+.emenu-empty{background:#fff;border-radius:14px;padding:28px 20px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.07);color:#888;margin-bottom:14px;line-height:1.6}
+.emenu-groups{margin-bottom:14px}
+.emenu-group{background:#fff;border-radius:12px;padding:11px 14px;margin-bottom:7px;box-shadow:0 1px 4px rgba(0,0,0,.06);display:flex;align-items:center;gap:10px}
+.emg-id{font-weight:800;color:#1a237e;font-size:.88rem;min-width:32px}
+.emg-name{flex:1;font-size:.76rem;color:#555}
+.emg-cnt{background:#ffebee;color:#c62828;border-radius:99px;padding:2px 9px;font-size:.72rem;font-weight:700}
+.err-start-btn{background:linear-gradient(135deg,#b71c1c,#c62828);color:#fff;border:none;border-radius:14px;padding:16px;width:100%;cursor:pointer;font-size:.97rem;font-weight:700;margin-bottom:10px;box-shadow:0 3px 12px rgba(183,28,28,.3);transition:transform .1s}
+.err-start-btn:active{transform:scale(.98)}
+
 .hidden{display:none!important}
 </style>
 </head>
@@ -112,10 +166,37 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     🎯 Esame Completo
     <small>22 domande da tutti i moduli · timer 45 min · 1,5 pt/giusta · 0 pt/errata</small>
   </button>
+  <div class="aux-btns">
+    <button class="aux-btn err-btn" onclick="showErrMenu()">
+      ❌ Banco Errori
+      <span class="aux-sub" id="errCountLbl">0 errori</span>
+    </button>
+    <button class="aux-btn" onclick="showStats()">
+      📊 Statistiche
+      <span class="aux-sub" id="statsLbl">—</span>
+    </button>
+  </div>
+</div>
+
+<!-- STATS -->
+<div id="stats" class="hidden">
+  <div class="page-hdr hdr-blue"><h2>📊 Statistiche</h2></div>
+  <div class="stats-global" id="statsGlobal"></div>
+  <div class="stats-table" id="statsTable"></div>
+  <button class="reset-btn" onclick="resetStats()">🗑️ Azzera tutto</button>
+  <button class="r-btn r-secondary" style="width:100%;padding:14px;border-radius:12px;font-size:.92rem;font-weight:700;cursor:pointer;border:2px solid #1a237e;color:#1a237e;background:#fff" onclick="goHome()">← Menù</button>
+</div>
+
+<!-- ERRORI MENU -->
+<div id="errMenu" class="hidden">
+  <div class="page-hdr hdr-red"><h2>❌ Banco Errori</h2><p id="emenuSub"></p></div>
+  <div id="emenuBody"></div>
+  <button class="r-btn r-secondary" style="width:100%;padding:14px;border-radius:12px;font-size:.92rem;font-weight:700;cursor:pointer;border:2px solid #1a237e;color:#1a237e;background:#fff" onclick="goHome()">← Menù</button>
 </div>
 
 <!-- QUIZ -->
 <div id="quiz" class="hidden">
+  <div class="err-mode-banner hidden" id="errModeBanner">⚠️ Ripasso errori — rispondi correttamente per eliminare la domanda dal banco</div>
   <div class="quiz-hdr">
     <button class="back-btn" onclick="goHome()">← Menù</button>
     <div class="quiz-meta">
@@ -142,6 +223,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <div class="score-pts" id="resPts"></div>
     <div class="score-sub" id="resSub"></div>
   </div>
+  <div class="err-cleared hidden" id="errCleared"></div>
   <div class="res-pills" id="resPills"></div>
   <div class="res-bar" id="resBar"></div>
   <div class="miss-sec" id="missSec"></div>
@@ -153,6 +235,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
 </div>
 <script>
+// ===== PERSISTENZA =====
+function loadData(){try{return JSON.parse(localStorage.getItem('diritto_v1')||'{"scores":{},"errors":[]}')}catch(e){return{scores:{},errors:[]}}}
+function saveData(d){localStorage.setItem('diritto_v1',JSON.stringify(d))}
+function addErrors(wrongList,modId){
+  const d=loadData();
+  wrongList.forEach(a=>{if(!d.errors.find(e=>e.q===a.q))d.errors.push({q:a.q,opts:a.opts,c:a.correct,e:a.e,mod:modId})});
+  saveData(d);
+}
+function clearCorrectErrors(qtexts){const d=loadData();d.errors=d.errors.filter(e=>!qtexts.includes(e.q));saveData(d)}
+function updateScore(key,ok,tot){const d=loadData();if(!d.scores[key])d.scores[key]={att:0,ok:0,tot:0};d.scores[key].att++;d.scores[key].ok+=ok;d.scores[key].tot+=tot;saveData(d)}
+
 // ===== DATI DOMANDE =====
 // Struttura: { q, opts:[A,B,C], c: indice corretto (0-2), e: spiegazione }
 const DB = {
@@ -185,7 +278,7 @@ D3:{name:"Diritto d'Autore e Software",short:"D3",qs:[
 {q:"Cosa tutela il diritto d'autore applicato al software?",opts:["La funzione del programma e le idee alla base del suo funzionamento","La forma espressiva (struttura e istruzioni), non la funzione né le idee sottostanti","Sia la forma espressiva che la funzione, purché entrambe siano originali"],c:1,e:"Il D.A. tutela la forma espressiva. Due software con la stessa funzione ma codice diverso non si copiano (es. Excel e LibreOffice Calc)."},
 {q:"Qual è la durata dei diritti patrimoniali d'autore per un'opera ordinaria?",opts:["50 anni dalla prima pubblicazione, come per i diritti connessi","70 anni dalla morte dell'autore (post mortem auctoris)","I diritti patrimoniali non hanno scadenza, esattamente come quelli morali"],c:1,e:"Diritti patrimoniali: 70 anni dalla morte dell'autore. PA: 20 anni dalla prima pubblicazione. Diritti morali: non scadono mai."},
 {q:"Un dipendente sviluppa software nell'esercizio delle proprie mansioni. A chi spettano i diritti patrimoniali?",opts:["Al dipendente, con obbligo di corrispondere un equo premio al datore di lavoro","Al datore di lavoro; i diritti morali restano all'autore e non è previsto equo premio","Al datore di lavoro, ma il dipendente ha diritto a un equo premio come per i brevetti"],c:1,e:"Per il software sviluppato dal dipendente nell'esecuzione delle mansioni: diritti patrimoniali al datore, morali all'autore, nessun equo premio (diversamente dai brevetti)."},
-{q:"Il software è brevettabile?",opts:["Sì, come qualsiasi invenzione tecnica originale e nuova","Sì, ma solo se registrato prima della pubblicazione del codice sorgente","Non 'in quanto tale': può rientrare in un brevetto solo se produce un effetto tecnico ulteriore"],c:2,e:"La Convenzione di Monaco (art. 52) esclude il software 'in quanto tale' dalla brevettabilità. Un algoritmo che controlla un motore fisico può essere brevettato come invenzione tecnica."},
+{q:"Il software è brevettabile?",opts:["Sì, come qualsiasi invenzione tecnica originale e nuova","Sì, purché implementi un algoritmo non ovvio e produce un effetto tecnico misurabile: questa è la via usata nella prassi europea","Non 'in quanto tale': può rientrare in un brevetto solo se produce un effetto tecnico ulteriore rispetto al normale funzionamento del computer"],c:2,e:"La Convenzione di Monaco (art. 52) esclude il software 'in quanto tale'. L'opzione B è insidia: 'effetto tecnico misurabile' non basta — deve essere ULTERIORE (beyond normal computer operation). Un algoritmo di compressione più efficiente non è brevettabile; uno che controlla un motore fisico sì."},
 {q:"Qual è la differenza tra 'opera collettiva' e 'opera in comunione'?",opts:["Nell'opera collettiva i contributi sono inscindibili e i diritti sono in comune; in quella in comunione sono distinguibili","Non vi è differenza: in entrambi i casi i diritti appartengono equamente a tutti i contribuenti","Nell'opera collettiva i contributi sono distinguibili e i diritti sull'insieme spettano a chi organizza; in quella in comunione sono inscindibili e i diritti sono in comune"],c:2,e:"Collettiva (art. 7): contributi distinguibili → diritti sulle parti ai singoli, sull'insieme all'organizzatore. In comunione (art. 10): contributo inscindibile → diritti in comune, parti presunte uguali."},
 {q:"Quale delle seguenti eccezioni alla tutela del software è inderogabile per contratto?",opts:["La riproduzione necessaria per correggere errori del programma","Il diritto di osservare, studiare e sperimentare il funzionamento per conoscere le idee sottostanti","La realizzazione di copie aggiuntive per uso personale e familiare"],c:1,e:"Inderogabile: backup necessario all'uso, osservare/studiare/provare per conoscere le idee, decompilazione per interoperabilità. La riproduzione per correggere errori è derogabile."},
 {q:"Cosa distingue la licenza CC BY dalla licenza CC0?",opts:["CC BY vieta qualsiasi uso commerciale; CC0 lo consente senza restrizioni","CC BY richiede l'attribuzione all'autore; CC0 è una rinuncia completa ai diritti (pubblico dominio)","CC BY e CC0 sono sinonimi: entrambe consentono qualsiasi uso compreso quello commerciale"],c:1,e:"CC BY = uso libero ma con obbligo di attribuire la paternità. CC0 = rinuncia a tutti i diritti: equivalente al pubblico dominio."},
@@ -220,7 +313,7 @@ D5:{name:"Contratti a Oggetto Informatico",short:"D5",qs:[
 D6:{name:"Contratto di Sviluppo Software",short:"D6",qs:[
 {q:"Se uno sviluppatore esercita una professione che richiede iscrizione all'albo senza esservi iscritto, cosa prevede la legge?",opts:["Il contratto è nullo per difetto di un requisito soggettivo essenziale","Il contratto è valido ma lo sviluppatore è soggetto a sanzione disciplinare e penale","La prestazione non dà diritto al pagamento: lo sviluppatore perde il corrispettivo"],c:2,e:"Art. 2231 c.c.: se la professione richiede iscrizione all'albo e il professionista non è iscritto, la prestazione non dà azione per il pagamento. Il contratto non è nullo, ma il compenso non è esigibile."},
 {q:"Qual è la differenza tra 'difformità' e 'vizio' nell'opera intellettuale?",opts:["La difformità è un difetto intrinseco che rende l'opera instabile; il vizio è uno scarto dalle specifiche","Non esiste differenza tecnica: entrambi comportano le stesse conseguenze giuridiche","La difformità è uno scarto dalle specifiche pattuite; il vizio è un difetto intrinseco che rende l'opera inidonea"],c:2,e:"Difformità = il risultato non corrisponde alle specifiche (funziona, ma non è quello pattuito). Vizio = difetto intrinseco (palese o occulto) che rende l'opera instabile o inidonea."},
-{q:"Per i vizi occulti nel contratto d'opera intellettuale, qual è il termine per la denuncia?",opts:["60 giorni dalla consegna dell'opera, a pena di decadenza","8 giorni dalla scoperta del vizio, a pena di decadenza (1 anno per l'azione)","30 giorni dalla scoperta, con prescrizione dell'azione in 2 anni dalla consegna"],c:1,e:"Vizi occulti (art. 2226 c.c.): denuncia entro 8 giorni dalla scoperta (decadenza); azione si prescrive in 1 anno dalla consegna dell'opera."},
+{q:"Per i vizi occulti nel contratto d'opera intellettuale, qual è il termine per la denuncia?",opts:["8 giorni dalla consegna dell'opera (non dalla scoperta), a pena di decadenza; l'azione si prescrive in 1 anno dalla consegna","8 giorni dalla scoperta del vizio, a pena di decadenza; l'azione si prescrive in 1 anno dalla consegna dell'opera","30 giorni dalla scoperta, con prescrizione dell'azione in 2 anni dalla consegna"],c:1,e:"Art. 2226 c.c.: 8 giorni dalla SCOPERTA (non dalla consegna) → decadenza. Azione: 1 anno dalla consegna. L'opzione A è il tranello classico: ricorda '8 giorni' ma sbaglia il dies a quo."},
 {q:"Cosa distingue la cessione dalla licenza dei diritti sul software sviluppato?",opts:["Con la cessione l'ingegnere mantiene la titolarità e concede l'uso; con la licenza la trasferisce definitivamente","Con la cessione l'ingegnere trasferisce definitivamente i diritti; con la licenza concede solo il diritto di usare restando titolare","Non vi è differenza economica: in entrambi i casi il corrispettivo e gli effetti sono identici"],c:1,e:"Cessione = trasferimento definitivo dei diritti di utilizzazione economica: l'ingegnere non può più disporne. Licenza = concessione del solo diritto d'uso: l'ingegnere resta titolare."},
 {q:"In base a quale criterio si distingue il contratto d'opera intellettuale dall'appalto nello sviluppo software?",opts:["Il criterio è il valore del contratto: sopra una certa soglia si applica l'appalto","Il criterio è il tipo di software: standard → appalto; personalizzato → opera intellettuale","Il criterio è la natura del soggetto prestatore: persona fisica → opera intellettuale; impresa → appalto"],c:2,e:"La qualificazione dipende dal soggetto: persona fisica professionista → opera intellettuale (obbligazione di mezzi). Impresa/software house → appalto (obbligazione di risultato)."},
 {q:"Come opera la 'clausola risolutiva espressa' in un contratto?",opts:["Risolve il contratto automaticamente al verificarsi dell'inadempimento, senza che serva alcuna dichiarazione","Consente al giudice di risolvere il contratto con procedura accelerata in caso di inadempimento grave","L'inadempimento di una specifica obbligazione risolve il contratto quando la parte interessata dichiara di avvalersene"],c:2,e:"Clausola risolutiva espressa (art. 1456 c.c.): non opera in automatico; la parte deve dichiarare di volersi avvalere della clausola. Solo da quel momento il contratto è risolto."},
@@ -244,7 +337,7 @@ D7:{name:"Proprietà Industriale",short:"D7",qs:[
 D8:{name:"Privacy e GDPR",short:"D8",qs:[
 {q:"Qual è la differenza tra dato pseudonimizzato e dato anonimizzato ai fini del GDPR?",opts:["Il dato pseudonimizzato è fuori dal GDPR; quello anonimizzato rimane soggetto al regolamento","Entrambi sono soggetti al GDPR ma con obblighi semplificati rispetto ai dati ordinari","Il dato pseudonimizzato è ancora personale (GDPR si applica); quello anonimizzato non è più personale (GDPR non si applica)"],c:2,e:"Pseudonimizzazione = dato ancora riconducibile con informazioni aggiuntive separate → GDPR si applica. Anonimizzazione = dato non più riconducibile in nessun modo → GDPR non si applica."},
 {q:"Qual è la differenza tra 'titolare del trattamento' e 'responsabile del trattamento'?",opts:["Il titolare tratta i dati per conto del responsabile; il responsabile determina finalità e mezzi","Il titolare è l'interessato i cui dati vengono trattati; il responsabile li gestisce tecnicamente","Il titolare determina finalità e mezzi del trattamento; il responsabile tratta i dati per conto del titolare su istruzioni di quest'ultimo"],c:2,e:"Titolare (controller) = chi determina finalità e mezzi per proprio conto. Responsabile (processor) = chi tratta per conto del titolare su istruzioni. Devono stipulare un contratto (art. 28 GDPR)."},
-{q:"In caso di data breach, entro quanto tempo il titolare deve notificarlo al Garante?",opts:["Entro 24 ore dalla scoperta, in ogni caso","Entro 72 ore dalla conoscenza del breach, salvo che sia improbabile un rischio per i diritti degli interessati","Entro 30 giorni, se il breach riguarda categorie particolari di dati"],c:1,e:"Art. 33 GDPR: 72 ore al Garante, salvo improbabilità del rischio. Attenzione: le 72 ore decorrono dalla conoscenza del breach da parte del titolare, non dalla sua scoperta da parte del responsabile."},
+{q:"In caso di data breach, entro quanto tempo il titolare deve notificarlo al Garante?",opts:["Entro 72 ore dalla scoperta del breach da parte del responsabile del trattamento, che funge da dies a quo per il titolare","Entro 72 ore dalla conoscenza del breach da parte del titolare, salvo che sia improbabile un rischio per i diritti degli interessati","Entro 30 giorni, se il breach riguarda categorie particolari di dati"],c:1,e:"Art. 33 GDPR: 72 ore dalla CONOSCENZA DEL TITOLARE. L'opzione A è il tranello: le 72 ore non decorrono da quando lo scopre il responsabile, ma da quando il titolare ne viene a conoscenza (può essere successivo)."},
 {q:"Quando il titolare del trattamento deve comunicare il data breach anche all'interessato?",opts:["In ogni caso, contestualmente alla notifica al Garante entro 72 ore","Solo quando il breach presenta un rischio elevato per i diritti e le libertà delle persone fisiche","Solo quando il breach riguarda categorie particolari (dati sanitari, biometrici, ecc.)"],c:1,e:"Art. 34 GDPR: la comunicazione all'interessato è obbligatoria solo se il breach presenta un rischio elevato per i suoi diritti. Non è dovuta se i dati erano cifrati o se il rischio non è elevato."},
 {q:"Quali dati rientrano nelle 'categorie particolari' che richiedono protezione rafforzata?",opts:["Tutti i dati identificativi diretti (nome, cognome, indirizzo, codice fiscale)","Dati genetici, biometrici intesi a identificare univocamente, salute, vita/orientamento sessuale, razza/etnia, opinioni politiche, credenze religiose/filosofiche, appartenenza sindacale","Solo i dati sanitari e quelli relativi a condanne penali o misure di sicurezza"],c:1,e:"Art. 9 GDPR: 8 categorie particolari. 'Intesi a identificare univocamente' modifica solo i 'dati biometrici', non tutti i sensibili."},
 {q:"Il DPO (Data Protection Officer) può ricevere istruzioni dal titolare sullo svolgimento dei suoi compiti?",opts:["Sì, ma solo per attività non legate alla conformità normativa","Sì, come qualsiasi altro funzionario aziendale alle dipendenze del titolare","No, il DPO è indipendente, non riceve istruzioni, non può esservi conflitto di interessi"],c:2,e:"Art. 38 GDPR: il DPO non riceve istruzioni, non viene rimosso per aver svolto il suo compito, non ha conflitti di interessi. È una figura indipendente, non un dirigente subordinato."},
@@ -258,7 +351,7 @@ D8:{name:"Privacy e GDPR",short:"D8",qs:[
 
 D9:{name:"Firme Elettroniche",short:"D9",qs:[
 {q:"Quale valore probatorio ha la firma elettronica avanzata nel sistema eIDAS?",opts:["Equivale a una firma autografa, come la firma elettronica qualificata","Ha valore liberamente apprezzabile dal giudice, senza presunzioni di legge","Equivale a una scrittura privata ai sensi del codice civile"],c:2,e:"Gerarchia eIDAS: FE semplice = liberamente apprezzabile. FE avanzata = scrittura privata (art. 2702 c.c.). FE qualificata/FD = equivalente alla firma autografa."},
-{q:"Cosa rende una firma elettronica 'qualificata'?",opts:["L'utilizzo di una qualsiasi chiave crittografica riconosciuta da un ente pubblico","La registrazione della firma presso un'autorità di certificazione accreditata","Essere una firma avanzata + dispositivo qualificato per la creazione della firma + certificato qualificato"],c:2,e:"Firma qualificata = avanzata + dispositivo qualificato (QSCD) + certificato qualificato rilasciato da prestatore di servizi fiduciari qualificato. Entrambi i requisiti sono necessari."},
+{q:"Cosa rende una firma elettronica 'qualificata'?",opts:["L'utilizzo di una qualsiasi chiave crittografica riconosciuta da un ente pubblico","Essere una firma avanzata associata a un certificato qualificato rilasciato da un prestatore fiduciario nell'eIDAS Trust List, indipendentemente dal dispositivo utilizzato per crearla","Essere una firma avanzata + dispositivo qualificato per la creazione della firma (QSCD) + certificato qualificato rilasciato da prestatore fiduciario qualificato"],c:2,e:"FEQ = FEA + QSCD (dispositivo qualificato, es. smart card) + certificato qualificato. L'opzione B è il tranello: il certificato qualificato è necessario ma NON sufficiente — senza il QSCD la firma non è qualificata."},
 {q:"La firma digitale è un livello superiore alla firma qualificata nel sistema eIDAS?",opts:["No, è un tipo specifico di firma qualificata previsto dal diritto italiano (CAD), non un livello separato","Sì, è il livello massimo di sicurezza: superiore alla qualificata e previsto dal diritto europeo","Sì, ma solo per gli atti della pubblica amministrazione italiana"],c:0,e:"La firma digitale (CAD, art. 1) è un tipo specifico di firma qualificata: usa crittografia asimmetrica ed è una specie del genere 'qualificata'. Non è un livello gerarchico distinto in eIDAS."},
 {q:"Un documento con firma qualificata che contiene macro o codice eseguibile è immodificabile?",opts:["Sì, la presenza della firma qualificata garantisce sempre l'immodificabilità del documento","Dipende: le macro di sola lettura non compromettono l'immodificabilità; quelle che scrivono sì","No, la presenza di macro o codice eseguibile fa venir meno il requisito di immodificabilità"],c:2,e:"Art. 4 c. 3 regolamento tecnico: il documento con firma qualificata/digitale NON soddisfa il requisito di immodificabilità se contiene macro, script PDF, JavaScript o codice eseguibile."},
 {q:"Cosa succede a una firma qualificata apposta su un certificato che viene successivamente revocato?",opts:["La firma rimane sempre valida: la revoca ha effetti solo per le firme future","La firma è valida per 90 giorni dalla revoca, poi decade automaticamente","Equivale a mancata sottoscrizione, salvo che un riferimento temporale opponibile ai terzi dimostri che è stata apposta prima della revoca"],c:2,e:"Firma su certificato revocato/scaduto = mancata sottoscrizione. Eccezione: se esiste un riferimento temporale opponibile ai terzi (es. marca temporale) che colloca la firma prima della revoca/scadenza."},
@@ -307,7 +400,7 @@ D12:{name:"AI Act",short:"D12",qs:[
 ]},
 
 D13:{name:"DSA / DMA / Data Act",short:"D13",qs:[
-{q:"Qual è la differenza tra VLOP (DSA) e Gatekeeper (DMA)?",opts:["VLOP e gatekeeper sono sinonimi: entrambi indicano le grandi piattaforme con oltre 45 milioni di utenti","VLOP richiede tre criteri cumulativi (utenti, fatturato, posizione); gatekeeper uno solo (45 mln utenti)","VLOP richiede un solo criterio (≥45 mln utenti UE); gatekeeper richiede tre criteri cumulativi (impatto, gateway, consolidamento)"],c:2,e:"VLOP/VLOSE (DSA): 1 criterio = ≥45 mln utenti. Gatekeeper (DMA): 3 criteri cumulativi: impatto significativo (fatturato/capitalizzazione), ruolo di gateway (utenti), posizione consolidata. Una piattaforma con 50 mln utenti ma piccola → VLOP ma non gatekeeper."},
+{q:"Qual è la differenza tra VLOP (DSA) e Gatekeeper (DMA)?",opts:["Entrambi richiedono la soglia di 45 milioni di utenti UE mensili, ma si differenziano per gli obblighi: rimozione contenuti per il VLOP, obblighi di interoperabilità per il gatekeeper","VLOP richiede tre criteri cumulativi (utenti, fatturato, posizione); gatekeeper uno solo (45 mln utenti)","VLOP richiede un solo criterio (≥45 mln utenti UE); gatekeeper richiede tre criteri cumulativi (impatto significativo, ruolo di gateway, posizione consolidata)"],c:2,e:"VLOP (DSA): 1 criterio = ≥45 mln utenti. Gatekeeper (DMA): 3 criteri cumulativi. L'opzione A è il tranello: la soglia 45 mln vale per il VLOP, non per il gatekeeper che richiede tre criteri distinti. Una piattaforma con 50 mln utenti ma fatturato basso → VLOP, non gatekeeper."},
 {q:"Chi è il soggetto protetto dal divieto di 'anti-steering' nel DMA?",opts:["L'utente finale (consumatore) che cerca offerte migliori al di fuori della piattaforma","La piattaforma concorrente che subisce le pratiche anticoncorrenziali del gatekeeper","L'utente commerciale (sviluppatore/venditore) che vuole informare i propri clienti di offerte migliori fuori dalla piattaforma"],c:2,e:"Anti-steering: vietato impedire agli utenti commerciali (es. Spotify) di informare i propri utenti finali di offerte migliori disponibili altrove (es. abbonamenti fuori dall'App Store). Il soggetto protetto è l'utente commerciale, NON l'utente finale."},
 {q:"Quale principio fondamentale stabilisce il DSA riguardo ai contenuti illegali online?",opts:["Le piattaforme sono responsabili di qualsiasi contenuto ospitato, indipendentemente dalla conoscenza","I contenuti illegali online sono tollerati se il danno è limitato alla sfera digitale","Ciò che è illegale offline è illegale anche online: il DSA non crea una zona franca digitale"],c:2,e:"Il principio cardine del DSA: 'ciò che è illegale offline è illegale online'. Non si crea uno spazio di impunità per il mondo digitale."},
 {q:"Il DSA prevede un obbligo generale di sorveglianza dei contenuti per gli intermediari online?",opts:["Sì, in particolare per i VLOP che devono monitorare proattivamente i contenuti a rischio","Sì, per tutti gli intermediari ma con soglie di intensità crescente in base alle dimensioni","No, art. 8 DSA: non vi è obbligo generale di sorveglianza per nessun intermediario"],c:2,e:"Art. 8 DSA: nessun obbligo generale di sorveglianza, in continuità con il D.Lgs. 70/2003 italiano. Gli intermediari devono però cooperare con le autorità e rispondere ai provvedimenti legittimi."},
@@ -328,10 +421,13 @@ let S = {
   idx: 0,
   answers: [],
   isExam: false,
+  isErrors: false,
   timerInterval: null,
   timeLeft: 45 * 60,
   lastModule: null,
-  lastIsExam: false
+  lastIsExam: false,
+  lastIsErrors: false,
+  errClearedCount: 0
 };
 
 // ===== UTILITY =====
@@ -361,56 +457,76 @@ function hide(id) { document.getElementById(id).classList.add('hidden'); }
 function renderHome() {
   S.screen = 'home';
   clearTimer();
-  hide('quiz'); hide('result'); show('home');
+  ['quiz','result','stats','errMenu'].forEach(hide);
+  show('home');
 
+  const d = loadData();
   const grid = document.getElementById('modGrid');
   grid.innerHTML = '';
   Object.entries(DB).forEach(([id, mod]) => {
+    const sc = d.scores[id];
+    const pct = sc && sc.tot > 0 ? Math.round(sc.ok/sc.tot*100) : null;
+    const hasErr = d.errors.some(e => e.mod === id);
+    const cls = pct === null ? '' : pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'bad';
+    const scoreBadge = pct !== null ? `<div class="mod-score ${cls}">${pct}% · ${sc.att} tent.</div>` : '';
+    const errDot = hasErr ? '<div class="mod-err-dot"></div>' : '';
     const btn = document.createElement('button');
     btn.className = 'mod-btn';
-    btn.innerHTML = `<div class="mod-id">${id}</div><div class="mod-name">${mod.name}</div><div class="mod-count">${mod.qs.length} domande</div>`;
+    btn.innerHTML = `${errDot}<div class="mod-id">${id}</div><div class="mod-name">${mod.name}</div><div class="mod-count">${mod.qs.length} domande</div>${scoreBadge}`;
     btn.onclick = () => startModule(id);
     grid.appendChild(btn);
   });
+
+  const errCount = d.errors.length;
+  document.getElementById('errCountLbl').textContent = errCount === 0 ? '0 errori' : `${errCount} error${errCount===1?'e':'i'}`;
+  const totAtt = Object.values(d.scores).reduce((s,v)=>s+v.att,0);
+  const totOk = Object.values(d.scores).reduce((s,v)=>s+v.ok,0);
+  const totTot = Object.values(d.scores).reduce((s,v)=>s+v.tot,0);
+  document.getElementById('statsLbl').textContent = totTot > 0 ? `${Math.round(totOk/totTot*100)}% media` : 'Nessun dato';
 }
 
 function goHome() { renderHome(); }
 
 // ===== AVVIA MODULO =====
 function startModule(modId) {
-  S.module = modId;
-  S.isExam = false;
-  S.lastModule = modId;
-  S.lastIsExam = false;
-  const rawQs = shuffle([...DB[modId].qs]);
-  S.qs = rawQs.map(shuffleQ);
-  S.idx = 0;
-  S.answers = [];
-  hide('home'); hide('result'); show('quiz');
-  document.getElementById('quizTitle').textContent = `${modId} — ${DB[modId].short || DB[modId].name}`;
-  hide('timerBadge');
+  S.module = modId; S.isExam = false; S.isErrors = false;
+  S.lastModule = modId; S.lastIsExam = false; S.lastIsErrors = false;
+  S.qs = shuffle([...DB[modId].qs]).map(shuffleQ);
+  S.idx = 0; S.answers = [];
+  ['home','result','stats','errMenu'].forEach(hide); show('quiz');
+  document.getElementById('quizTitle').textContent = `${modId} — ${DB[modId].name}`;
+  hide('timerBadge'); hide('errModeBanner');
   renderQuestion();
 }
 
 // ===== AVVIA ESAME =====
 function startExam() {
-  S.isExam = true;
-  S.lastIsExam = true;
-  // Prendi 2 domande per modulo, poi seleziona 22
+  S.isExam = true; S.isErrors = false;
+  S.lastIsExam = true; S.lastIsErrors = false;
   let pool = [];
   Object.entries(DB).forEach(([id, mod]) => {
-    const picked = shuffle([...mod.qs]).slice(0, 2);
-    picked.forEach(q => pool.push({...q, _mod: id}));
+    shuffle([...mod.qs]).slice(0,2).forEach(q => pool.push({...q, _mod:id}));
   });
-  pool = shuffle(pool).slice(0, 22);
-  S.qs = pool.map(shuffleQ);
-  S.idx = 0;
-  S.answers = [];
-  S.timeLeft = 45 * 60;
-  hide('home'); hide('result'); show('quiz');
+  S.qs = shuffle(pool).slice(0,22).map(shuffleQ);
+  S.idx = 0; S.answers = []; S.timeLeft = 45*60;
+  ['home','result','stats','errMenu'].forEach(hide); show('quiz');
   document.getElementById('quizTitle').textContent = '🎯 Esame Completo';
-  show('timerBadge');
-  startTimer();
+  show('timerBadge'); hide('errModeBanner');
+  startTimer(); renderQuestion();
+}
+
+// ===== AVVIA RIPASSO ERRORI =====
+function startErrors() {
+  const d = loadData();
+  if (!d.errors.length) return;
+  S.isErrors = true; S.isExam = false;
+  S.lastIsErrors = true; S.lastIsExam = false;
+  S.errClearedCount = 0;
+  S.qs = shuffle([...d.errors]).map(q => shuffleQ({q:q.q,opts:q.opts,c:q.c,e:q.e}));
+  S.idx = 0; S.answers = [];
+  ['home','result','stats','errMenu'].forEach(hide); show('quiz');
+  document.getElementById('quizTitle').textContent = '❌ Ripasso Errori';
+  hide('timerBadge'); show('errModeBanner');
   renderQuestion();
 }
 
@@ -504,63 +620,133 @@ function nextQ() {
 
 // ===== RISULTATI =====
 function showResult() {
-  hide('quiz'); hide('home'); show('result');
+  ['quiz','home','stats','errMenu'].forEach(hide); show('result');
 
-  const n = S.answers.length;
-  const total = S.qs.length;
+  const n = S.answers.length, total = S.qs.length;
   const correct = S.answers.filter(a => a.selected === a.correct).length;
-  const wrong = S.answers.filter(a => a.selected !== a.correct && a.selected !== undefined).length;
+  const wrong   = S.answers.filter(a => a.selected !== a.correct && a.selected !== undefined).length;
   const skipped = total - n;
+  const pct = total > 0 ? Math.round(correct/total*100) : 0;
+  const pts = correct * 1.5, maxPts = total * 1.5;
 
-  const pts = correct * 1.5;
-  const maxPts = total * 1.5;
+  // Salva score + errori (solo nei quiz normali)
+  if (!S.isErrors) {
+    const key = S.isExam ? 'exam' : S.module;
+    updateScore(key, correct, total);
+    const wrongList = S.answers.filter(a => a.selected !== a.correct);
+    if (wrongList.length) addErrors(wrongList, key);
+    hide('errCleared');
+  } else {
+    // Rimuovi gli errori risposti correttamente
+    const okTexts = S.answers.filter(a=>a.selected===a.correct).map(a=>a.q);
+    clearCorrectErrors(okTexts);
+    S.errClearedCount = okTexts.length;
+    const rem = loadData().errors.length;
+    const el = document.getElementById('errCleared');
+    el.textContent = `✅ ${S.errClearedCount} eliminat${S.errClearedCount===1?'a':'e'} dal banco · ${rem} rimanent${rem===1?'e':'i'}`;
+    show('errCleared');
+  }
 
-  let emoji = pts >= maxPts * 0.9 ? '🏆' : pts >= maxPts * 0.7 ? '✅' : pts >= maxPts * 0.5 ? '⚠️' : '❌';
-
-  document.getElementById('resTitle').textContent = S.isExam ? 'Risultato Esame' : `Risultato — ${S.module}`;
+  let emoji = pct >= 90 ? '🏆' : pct >= 70 ? '✅' : pct >= 50 ? '⚠️' : '❌';
+  document.getElementById('resTitle').textContent = S.isErrors ? 'Ripasso Errori' : S.isExam ? 'Risultato Esame' : `Risultato — ${S.module}`;
   document.getElementById('resBig').textContent = emoji + ' ' + correct + '/' + total;
-  document.getElementById('resPts').textContent = pts.toFixed(1) + ' punti su ' + maxPts.toFixed(1);
+  document.getElementById('resPts').textContent = S.isExam ? pts.toFixed(1)+' pt su '+maxPts.toFixed(1) : pct+'% corretto';
   document.getElementById('resSub').textContent = S.isExam
-    ? (pts >= 18 ? '🎉 Sufficiente per superare l\'esame!' : '📚 Continua a studiare: servono almeno 18 pt.')
-    : 'Modalità pratica';
+    ? (pts >= 18 ? '🎉 Sufficiente!' : '📚 Servono almeno 18 pt.')
+    : S.isErrors ? 'Modalità ripasso errori' : 'Modalità pratica';
 
-  // Pills
   document.getElementById('resPills').innerHTML = `
     <div class="pill p-ok"><div class="pn">${correct}</div><div class="pl">Corrette</div></div>
     <div class="pill p-ko"><div class="pn">${wrong}</div><div class="pl">Errate</div></div>
-    <div class="pill p-skip"><div class="pn">${skipped}</div><div class="pl">Non risp.</div></div>
-  `;
+    <div class="pill p-skip"><div class="pn">${skipped}</div><div class="pl">Non risp.</div></div>`;
 
-  // Bar
-  const bar = document.getElementById('resBar');
-  bar.innerHTML = '';
-  S.qs.forEach((_, i) => {
+  const bar = document.getElementById('resBar'); bar.innerHTML = '';
+  S.qs.forEach((_,i) => {
     const div = document.createElement('div');
-    div.className = 'res-bar-item ' + (i >= n ? 'rb-none' : S.answers[i].selected === S.answers[i].correct ? 'rb-ok' : 'rb-ko');
+    div.className = 'res-bar-item '+(i>=n?'rb-none':S.answers[i].selected===S.answers[i].correct?'rb-ok':'rb-ko');
     bar.appendChild(div);
   });
 
-  // Errori
-  const wrong_answers = S.answers.filter(a => a.selected !== a.correct);
+  const wrongAnswers = S.answers.filter(a => a.selected !== a.correct);
   const missEl = document.getElementById('missSec');
-  if (wrong_answers.length === 0) {
+  if (!wrongAnswers.length) {
     missEl.innerHTML = '<p style="color:#2e7d32;font-weight:700;text-align:center;padding:12px">🎯 Nessun errore!</p>';
   } else {
-    missEl.innerHTML = `<h3>Risposte errate (${wrong_answers.length})</h3>` +
-      wrong_answers.map(a => `
+    missEl.innerHTML = `<h3>Risposte errate (${wrongAnswers.length})</h3>`+
+      wrongAnswers.map(a=>`
         <div class="miss-item">
           <div class="miss-q">${a.q}</div>
           <div class="miss-row miss-ok">✓ Corretta: ${a.opts[a.correct]}</div>
-          ${a.selected !== undefined ? `<div class="miss-row miss-ko">✗ Tua: ${a.opts[a.selected]}</div>` : ''}
+          ${a.selected!==undefined?`<div class="miss-row miss-ko">✗ Tua: ${a.opts[a.selected]}</div>`:''}
           <div class="miss-row" style="color:#0d47a1;margin-top:4px;font-style:italic">${a.e}</div>
         </div>`).join('');
   }
+
+  document.getElementById('retryBtn').textContent = S.isErrors ? '🔄 Riprova errori' : 'Riprova';
 }
 
 // ===== RETRY =====
 function retry() {
-  if (S.lastIsExam) startExam();
+  if (S.lastIsErrors) startErrors();
+  else if (S.lastIsExam) startExam();
   else if (S.lastModule) startModule(S.lastModule);
+}
+
+// ===== STATS =====
+function showStats() {
+  ['home','quiz','result','errMenu'].forEach(hide); show('stats');
+  const d = loadData();
+  const allSc = Object.values(d.scores);
+  const totAtt = allSc.reduce((s,v)=>s+v.att,0);
+  const totOk  = allSc.reduce((s,v)=>s+v.ok,0);
+  const totTot = allSc.reduce((s,v)=>s+v.tot,0);
+  const gPct = totTot>0 ? Math.round(totOk/totTot*100) : null;
+  document.getElementById('statsGlobal').innerHTML = `
+    <div class="sg-card"><div class="sg-n">${totAtt}</div><div class="sg-l">Tentativi</div></div>
+    <div class="sg-card"><div class="sg-n">${totOk}/${totTot}</div><div class="sg-l">Corrette</div></div>
+    <div class="sg-card"><div class="sg-n">${gPct!==null?gPct+'%':'—'}</div><div class="sg-l">Media</div></div>`;
+
+  const modRows = Object.entries(DB).map(([id,mod])=>{
+    const sc=d.scores[id]; const pct=sc&&sc.tot>0?Math.round(sc.ok/sc.tot*100):null;
+    const cls=pct===null?'none':pct>=80?'good':pct>=60?'ok':'bad';
+    return `<div class="st-row"><span class="st-mod">${id}</span><span class="st-name">${mod.name}</span>
+      <div class="st-mini-bar"><div class="st-mini-fill" style="width:${pct||0}%"></div></div>
+      <span class="st-pct ${cls}">${pct!==null?pct+'%':'—'}</span><span class="st-att">${sc?sc.att:0}</span></div>`;
+  });
+  const exSc=d.scores['exam']; const exPct=exSc&&exSc.tot>0?Math.round(exSc.ok/exSc.tot*100):null;
+  const exCls=exPct===null?'none':exPct>=80?'good':exPct>=60?'ok':'bad';
+  modRows.push(`<div class="st-row" style="background:#f0f4ff"><span class="st-mod" style="color:#1565c0">🎯</span>
+    <span class="st-name" style="font-weight:700;color:#1565c0">Esame Completo</span>
+    <div class="st-mini-bar"><div class="st-mini-fill" style="width:${exPct||0}%;background:#1565c0"></div></div>
+    <span class="st-pct ${exCls}">${exPct!==null?exPct+'%':'—'}</span><span class="st-att">${exSc?exSc.att:0}</span></div>`);
+  document.getElementById('statsTable').innerHTML = modRows.join('');
+}
+
+function resetStats() {
+  if (!confirm('Azzerare statistiche e banco errori?')) return;
+  saveData({scores:{},errors:[]});
+  renderHome();
+}
+
+// ===== ERRORI MENU =====
+function showErrMenu() {
+  ['home','quiz','result','stats'].forEach(hide); show('errMenu');
+  const d = loadData(); const errors = d.errors;
+  document.getElementById('emenuSub').textContent = errors.length===0 ? 'Banco vuoto' : `${errors.length} domand${errors.length===1?'a':'e'} da ripassare`;
+  const body = document.getElementById('emenuBody');
+  if (!errors.length) {
+    body.innerHTML = `<div class="emenu-empty">🎯 Banco errori vuoto!<br><span style="font-size:.8rem">Gli errori nei quiz normali vengono salvati qui automaticamente.</span></div>`;
+    return;
+  }
+  const groups = {};
+  errors.forEach(e=>{if(!groups[e.mod])groups[e.mod]=0;groups[e.mod]++;});
+  const gHtml = Object.entries(groups).map(([k,c])=>`
+    <div class="emenu-group">
+      <span class="emg-id">${k}</span>
+      <span class="emg-name">${k==='exam'?'Esame Completo':DB[k]?DB[k].name:k}</span>
+      <span class="emg-cnt">${c}</span>
+    </div>`).join('');
+  body.innerHTML = `<button class="err-start-btn" onclick="startErrors()">❌ Avvia quiz errori (${errors.length}) →</button><div class="emenu-groups">${gHtml}</div>`;
 }
 
 // ===== INIT =====
